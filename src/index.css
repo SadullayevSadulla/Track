@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@theme {
+    --font-primary: "Fira Code";
+    --text-sm-base: 15px;
+}
+
+.container{
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+body {
+    font-family: "Fira Sans", sans-serif;
+}

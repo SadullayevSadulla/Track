@@ -1,0 +1,33 @@
+:root {
+    --font-fira: "Fira Sans", sans-serif;
+}
+
+.header_top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.divider {
+    width: 2px;
+    height: 30px;
+    background-color: yellow;
+    flex-shrink: 0;
+    margin-inline: 10px;
+}
+
+.img{
+    background-color: #FEC80B;
+    border-radius: 100%;
+    padding: 7px;
+}
+
+.catalog_btn{
+    padding:12px 19px;
+}
+
+.header_actions button i{
+    width: 30px;
+    height: 30px;
+    
+}

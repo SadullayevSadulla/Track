@@ -1,0 +1,11 @@
+.input input{
+    padding: 8px 12px;
+    border: 1px solid;
+    border-radius: 4px;
+}   
+
+.button{
+    padding: 13px 30px;
+    background-color: #FEC80B;
+    border-radius: 4px;
+}
