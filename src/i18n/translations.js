@@ -129,6 +129,21 @@ const translations = {
         zapros_submit_btn: "Отправить",
         zapros_consent_prefix: "Нажимая на кнопку отправить",
         zapros_consent_link: "Вы соглашаетесь на обработку персональных данных",
+        footer_phone: "Тел/факс: 8(831) 225-00-55",
+        footer_email: "Email: info@rtrf.ru",
+        footer_address: "Нижний Новгород, ул. Торфяная, 35",
+        footer_call_btn: "Заказать звонок",
+
+        footer_nav_title: "Название блока",
+        footer_link_categories: "Категории",
+        footer_link_catalog: "Каталог",
+        footer_link_favorites: "Избранное",
+        footer_link_about: "О компании",
+        footer_link_vacancies: "Вакансии",
+
+        footer_copyright: "2009 - 2021 © Rus - Trucks",
+        footer_disclaimer: "Информация на сайте не является публичной офертой и носит исключительно информационный характер",
+        footer_dev: "Разработка R-top",
     },
 
     uz: {
@@ -260,6 +275,21 @@ const translations = {
         zapros_submit_btn: "Yuborish",
         zapros_consent_prefix: "Yuborish tugmasini bosish orqali",
         zapros_consent_link: "Siz shaxsiy ma'lumotlarni qayta ishlashga rozilik bildirasiz",
+        footer_phone: "Tel/faks: 8(831) 225-00-55",
+        footer_email: "Email: info@rtrf.ru",
+        footer_address: "Nijniy Novgorod, Torfyanaya ko'chasi, 35",
+        footer_call_btn: "Qo'ng'iroq buyurtma qilish",
+
+        footer_nav_title: "Blok nomi",
+        footer_link_categories: "Kategoriyalar",
+        footer_link_catalog: "Katalog",
+        footer_link_favorites: "Sevimlilar",
+        footer_link_about: "Kompaniya haqida",
+        footer_link_vacancies: "Bo'sh ish o'rinlari",
+
+        footer_copyright: "2009 - 2021 © Rus - Trucks",
+        footer_disclaimer: "Saytdagi ma'lumotlar ommaviy oferta emas va faqat axborot xarakteriga ega",
+        footer_dev: "R-top tomonidan ishlab chiqildi",
     },
 
     en: {
@@ -391,6 +421,21 @@ const translations = {
         zapros_submit_btn: "Submit",
         zapros_consent_prefix: "By clicking submit",
         zapros_consent_link: "you agree to the processing of personal data",
+        footer_phone: "Phone/Fax: 8(831) 225-00-55",
+        footer_email: "Email: info@rtrf.ru",
+        footer_address: "35 Torfyanaya St., Nizhny Novgorod",
+        footer_call_btn: "Request a call",
+
+        footer_nav_title: "Block title",
+        footer_link_categories: "Categories",
+        footer_link_catalog: "Catalog",
+        footer_link_favorites: "Favorites",
+        footer_link_about: "About company",
+        footer_link_vacancies: "Vacancies",
+
+        footer_copyright: "2009 - 2021 © Rus - Trucks",
+        footer_disclaimer: "The information on the site is not a public offer and is for informational purposes only",
+        footer_dev: "Developed by R-top",
     },
 };
 

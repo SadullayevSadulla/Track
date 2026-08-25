@@ -6,6 +6,12 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.header_logo {
+    flex-shrink: 0;
 }
 
 .divider {
@@ -20,14 +26,280 @@
     background-color: #FEC80B;
     border-radius: 100%;
     padding: 7px;
+    flex-shrink: 0;
 }
 
 .catalog_btn{
     padding:12px 19px;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .header_actions button i{
     width: 30px;
     height: 30px;
-    
+}
+
+.chevron_icon {
+    width: 16px;
+    height: 16px;
+    color: #FEC80B;
+    transition: transform .2s ease;
+    flex-shrink: 0;
+}
+.chevron_icon.rotate-180 {
+    transform: rotate(180deg);
+}
+
+.header_bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    width: 100%;
+}
+
+.sa {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    min-width: 0;
+    flex: 0 0 auto;
+}
+
+.nav_menu {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    white-space: nowrap;
+}
+.nav_menu::-webkit-scrollbar { display: none; }
+
+.header_actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-shrink: 0;
+}
+
+.fav_btn {
+    position: relative;
+}
+.fav_badge {
+    position: absolute;
+    top: -6px;
+    right: -8px;
+    background: #FEC80B;
+    color: #000;
+    font-size: 11px;
+    font-weight: 700;
+    border-radius: 999px;
+    min-width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.search_box input {
+    transition: width 0.2s ease;
+}
+
+@media (max-width: 1024px) {
+    .header_logo .text,
+    .header_logo .divider {
+        display: none;
+    }
+
+    .header_contact {
+        display: none;
+    }
+
+    .header_phone .texttt {
+        display: none;
+    }
+
+    .salom {
+        gap: 16px !important;
+    }
+
+    .search_box input {
+        display: none;
+    }
+
+    .search_box {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        flex: 0 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: #fff;
+    }
+
+    .search_box i {
+        position: static !important;
+        transform: none !important;
+        font-size: 16px;
+        color: #000;
+        width: auto !important;
+        height: auto !important;
+    }
+}
+
+@media (max-width: 850px) {
+    .nav_menu {
+        display: none;
+    }
+
+    .catalog_btn {
+        width: auto !important;
+        padding: 10px 14px;
+        font-size: 14px !important;
+    }
+
+    .header_bottom {
+        flex-wrap: nowrap;
+    }
+
+    .header_actions {
+        gap: 14px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        margin-top: 6px !important;
+    }
+
+    .header_logo img {
+        width: 110px !important;
+        height: auto !important;
+    }
+
+    .lang_switcher {
+        display: none;
+    }
+
+    .header_contact {
+        display: none;
+    }
+
+    .header_phone .texttt {
+        display: none;
+    }
+
+    .header_top {
+        gap: 8px;
+    }
+
+    .section {
+        margin-top: 12px !important;
+        padding: 14px 0 !important;
+    }
+
+    .header_bottom {
+        gap: 10px;
+        justify-content: space-between;
+    }
+
+    .sa {
+        gap: 10px !important;
+    }
+
+    .catalog_btn {
+        height: 38px !important;
+        padding: 0 12px !important;
+        font-size: 13px !important;
+        gap: 6px !important;
+    }
+
+    .catalog_btn svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .search_box {
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
+    }
+
+    .header_actions {
+        gap: 10px !important;
+    }
+
+    .header_actions button i {
+        width: 20px !important;
+        height: 20px !important;
+    }
+}
+
+
+.mobile_menu {
+    display: none;
+}
+
+@media (max-width: 850px) {
+    .mobile_menu {
+        display: block;
+        position: fixed;
+        inset: 0;
+        top: 160px; 
+        background: #fff;
+        z-index: 999;
+        overflow-y: auto;
+    }
+
+    .mobile_menu_list {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .mobile_menu_list > li {
+        border-bottom: 1px solid #eee;
+    }
+
+    .mobile_menu_list > li > button,
+    .mobile_menu_list > li > a {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: 16px;
+        font-size: 16px;
+        font-weight: 700;
+        font-family: var(--font-fira);
+        color: #000;
+        background: none;
+        border: none;
+        text-align: left;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    .mobile_menu_list .chevron_icon {
+        width: 16px;
+        height: 16px;
+    }
+
+    .mobile_submenu {
+        display: flex;
+        flex-direction: column;
+        padding: 0 16px 14px 16px;
+        background: #fafafa;
+    }
+
+    .mobile_submenu li a {
+        display: block;
+        padding: 10px 0;
+        font-size: 14px;
+        font-family: var(--font-fira);
+        color: #333;
+        text-decoration: none;
+    }
 }

@@ -1,0 +1,105 @@
+:root {
+    --font-fira: "Fira Sans", sans-serif;
+}
+
+.footer_top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.footer_bosh_text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.footer_bosh_text p {
+    font-size: 16px;
+    font-weight: 500;
+    font-family: var(--font-fira);
+    color: white;
+}
+
+.footer_bosh button {
+    padding: 13px 30px;
+    background-color: #FEC80B;
+    color: #000000;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: var(--font-fira);
+    border: none;
+}
+
+.footer_menu {
+    width: 55%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer_nav {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.footer_nav h1 {
+    color: white;
+    font-family: var(--font-fira);
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.footer_nav nav {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer_nav nav a {
+    color: white;
+    text-decoration: none;
+    font-family: var(--font-fira);
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.footer_boot_logo {
+    display: flex;
+    gap: 10px;
+}
+
+.logoo {
+    width: 36px;
+    height: 36px;
+    border: 1px solid #666666;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.logoo i {
+    font-size: 14px;
+    color: #666666;
+}
+
+.footer_bot_text {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.footer_bot_text p {
+    font-size: 14px;
+    font-weight: 400px;
+    color: #666666;
+}
+
+.po{
+    max-width: 424px;
+}
