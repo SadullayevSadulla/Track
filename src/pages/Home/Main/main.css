@@ -8,6 +8,7 @@
   align-items: center;
   justify-content: space-between;
   margin-bottom: 24px;
+  gap: 16px;
 }
 
 .categories__top h2 {
@@ -20,6 +21,7 @@
 .categories__buttons {
   display: flex;
   gap: 10px;
+  flex-shrink: 0;
 }
 
 .categories-prev,
@@ -43,11 +45,10 @@
   border-color: black;
 }
 
-
-
 .categories-prev.swiper-button-disabled,
 .categories-next.swiper-button-disabled {
   cursor: default;
+  opacity: 0.35;
 }
 
 .categories__swiper {
@@ -63,9 +64,9 @@
   padding: 24px;
   overflow: hidden;
   background: #fff;
-  transition: box-shadow 0.25s ease, transform 0.25s ease;
+  box-sizing: border-box;
+  transition: box-shadow 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
   cursor: pointer;
-  transition: all 0.3s ease;
 }
 
 .category-card:hover {
@@ -106,17 +107,165 @@
 }
 
 .category-card__image img {
-
+  width: 100%;
+  height: 100%;
   object-fit: contain;
+  object-position: bottom center;
 }
 
-@media (max-width: 576px) {
+
+/* ===================== RESPONSIVE ===================== */
+
+/* Katta desktop / kichik desktop oralig'i */
+@media (max-width: 1300px) {
+  .categories {
+    padding: 50px 0;
+  }
+
   .categories__top h2 {
-    font-size: 24px;
+    font-size: 36px;
+  }
+}
+
+/* Kichik noutbuk / katta planshet (4 → 3 ustun) */
+@media (max-width: 1200px) {
+  .categories__top h2 {
+    font-size: 32px;
+  }
+
+  .category-card {
+    height: 320px;
+    padding: 20px;
+  }
+
+  .category-card__info h3 {
+    font-size: 18px;
+  }
+}
+
+/* Planshet (landscape, 3 ustun) */
+@media (max-width: 900px) {
+  .categories {
+    padding: 40px 0;
+  }
+
+  .categories__top {
+    margin-bottom: 18px;
+  }
+
+  .categories__top h2 {
+    font-size: 28px;
+  }
+
+  .categories-prev,
+  .categories-next {
+    width: 36px;
+    height: 36px;
   }
 
   .category-card {
     height: 300px;
     padding: 18px;
+  }
+
+  .category-card__image {
+    height: 160px;
+    right: 14px;
+    bottom: 14px;
+    left: 14px;
+  }
+}
+
+/* Planshet (portrait, 2 ustun) */
+@media (max-width: 768px) {
+  .categories__top h2 {
+    font-size: 26px;
+  }
+
+  .category-card {
+    height: 280px;
+  }
+
+  .category-card__info h3 {
+    font-size: 17px;
+  }
+
+  .category-card__info p {
+    font-size: 13px;
+  }
+
+  .category-card__image {
+    height: 150px;
+  }
+}
+
+/* Katta telefon / kichik planshet (2 ustun saqlanadi) */
+@media (max-width: 576px) {
+  .categories {
+    padding: 32px 0;
+  }
+
+  .categories__top {
+    margin-bottom: 14px;
+  }
+
+  .categories__top h2 {
+    font-size: 22px;
+  }
+
+  .categories__buttons {
+    gap: 8px;
+  }
+
+  .categories-prev,
+  .categories-next {
+    width: 32px;
+    height: 32px;
+  }
+
+  .categories-prev span,
+  .categories-next span {
+    font-size: 18px;
+  }
+
+  .category-card {
+    height: 260px;
+    padding: 16px;
+    border-radius: 10px;
+  }
+
+  .category-card__info h3 {
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+
+  .category-card__info p {
+    font-size: 12px;
+  }
+
+  .category-card__image {
+    height: 130px;
+    right: 12px;
+    bottom: 12px;
+    left: 12px;
+  }
+}
+
+@media (max-width: 420px) {
+  .categories__top h2 {
+    font-size: 19px;
+  }
+
+  .category-card {
+    height: 240px;
+    padding: 14px;
+  }
+
+  .category-card__info h3 {
+    font-size: 15px;
+  }
+
+  .category-card__image {
+    height: 115px;
   }
 }

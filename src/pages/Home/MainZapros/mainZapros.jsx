@@ -6,7 +6,7 @@ const MainZapros = () => {
 
     return (
         <section className="bg-[#F2F2F2] mt-[60px]">
-            <div className="flex justify-between py-15 px-15">
+            <div className="fun flex justify-between py-15 px-15">
                 <div className="container">
                     <div className="zapros">
                         <div className="zapros_text">

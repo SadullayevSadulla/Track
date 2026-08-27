@@ -15,7 +15,7 @@ const Categories = () => {
   return (
     <section className="categories container">
 
-        <div className="categories__top">
+        <div className="categories__top container">
           <h2>{t("categories_section_title")}</h2>
 
           <div className="categories__buttons">

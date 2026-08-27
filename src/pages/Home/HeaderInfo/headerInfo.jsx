@@ -23,9 +23,9 @@ const HeaderInfo = () => {
                         disableOnInteraction: false,
                     }}
                     loop={true}
+                    autoHeight={true}
                     modules={[Navigation, Pagination, Autoplay]}
                     className="mySwiper"
-
                 >
                     <SwiperSlide>
                         <div className="slide slide--bleed">

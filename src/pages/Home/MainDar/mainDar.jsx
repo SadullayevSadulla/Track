@@ -1,4 +1,5 @@
 import { useLanguage } from "../../../i18n/LanguageContext";
+import "./mainDar.css"
 
 const MainDar = () => {
     const { t } = useLanguage();
@@ -6,7 +7,7 @@ const MainDar = () => {
     return (
         <section className="bg-[#FEC80B] mt-[70px]">
             <div className="mainDar container">
-                <div className="card flex justify-between items-center">
+                <div className="card flex justify-between items-center py-[30px]">
                     <div className="cards">
                         <div className="text">
                             <h1 className="font-[500] text-[100px]">{t("stat1_number")}</h1>

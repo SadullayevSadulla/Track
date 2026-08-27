@@ -6,9 +6,13 @@ const Header = () => {
     const [openMenu, setOpenMenu] = useState(null);
     const [langMenuOpen, setLangMenuOpen] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-    const [mobileSubOpen, setMobileSubOpen] = useState(null); 
+    const [mobileSubOpen, setMobileSubOpen] = useState(null);
+    const [mobileSearchOpen, setMobileSearchOpen] = useState(false);
+    const [searchQuery, setSearchQuery] = useState("");
     const menuRef = useRef(null);
     const langRef = useRef(null);
+    const searchRef = useRef(null);
+    const searchInputRef = useRef(null);
     const { lang, setLang, t, supportedLangs, LANG_LABELS } = useLanguage();
     const labels = LANG_LABELS || { ru: "RU", uz: "UZ", en: "EN" };
     const langs = supportedLangs || ["ru", "uz", "en"];
@@ -30,6 +34,23 @@ const Header = () => {
         setMobileSubOpen((prev) => (prev === key ? null : key));
     };
 
+    const handleSearchSubmit = (e) => {
+        e?.preventDefault();
+        const q = searchQuery.trim();
+        if (!q) return;
+        window.location.href = `/search?q=${encodeURIComponent(q)}`;
+    };
+
+    const handleSearchIconClick = () => {
+        const isMobile = window.innerWidth <= 1024;
+        if (isMobile && !mobileSearchOpen) {
+            setMobileSearchOpen(true);
+            setTimeout(() => searchInputRef.current?.focus(), 0);
+            return;
+        }
+        handleSearchSubmit();
+    };
+
     useEffect(() => {
         document.body.style.overflow = mobileMenuOpen ? "hidden" : "";
         return () => { document.body.style.overflow = ""; };
@@ -42,6 +63,9 @@ const Header = () => {
             }
             if (langRef.current && !langRef.current.contains(event.target)) {
                 setLangMenuOpen(false);
+            }
+            if (searchRef.current && !searchRef.current.contains(event.target)) {
+                setMobileSearchOpen(false);
             }
         };
         document.addEventListener("mousedown", handleClickOutside);
@@ -121,6 +145,31 @@ const Header = () => {
     const MobileMenu = () => (
         <div className="mobile_menu">
             <ul className="mobile_menu_list">
+                <li>
+                    <button onClick={() => toggleMobileSub("lang")}>
+                        {labels[lang] || lang?.toUpperCase()}
+                        <ChevronIcon open={mobileSubOpen === "lang"} />
+                    </button>
+                    {mobileSubOpen === "lang" && (
+                        <ul className="mobile_submenu">
+                            {langs.map((code) => (
+                                <li key={code}>
+                                    <button
+                                        type="button"
+                                        className={`mobile_lang_btn ${lang === code ? "active" : ""}`}
+                                        onClick={() => {
+                                            setLang(code);
+                                            setMobileSubOpen(null);
+                                        }}
+                                    >
+                                        {labels[code] || code?.toUpperCase()}
+                                    </button>
+                                </li>
+                            ))}
+                        </ul>
+                    )}
+                </li>
+
                 <li>
                     <button onClick={() => toggleMobileSub("cat")}>
                         {t("menu_categories_title") || "Категории"}
@@ -304,14 +353,24 @@ const Header = () => {
                         </div>
 
                         <div className="header_actions flex items-center gap-5">
-                            <div className="search_box relative">
+                            <form
+                                className={`search_box relative ${mobileSearchOpen ? "mobile_open" : ""}`}
+                                ref={searchRef}
+                                onSubmit={handleSearchSubmit}
+                            >
                                 <input
+                                    ref={searchInputRef}
                                     type="text"
+                                    value={searchQuery}
+                                    onChange={(e) => setSearchQuery(e.target.value)}
                                     placeholder={t("search_placeholder")}
                                     className="w-70 h-11 rounded-[30px] border border-[#FEC80B] px-5 pr-12 text-[14px] font-['Fira_Sans'] outline-none"
                                 />
-                                <i className="fa-solid fa-magnifying-glass w-4.5 h-4.5 absolute right-4.5 top-1/2 -translate-y-1/2 cursor-pointer"></i>
-                            </div>
+                                <i
+                                    className="fa-solid fa-magnifying-glass w-4.5 h-4.5 absolute right-4.5 top-1/2 -translate-y-1/2 cursor-pointer"
+                                    onClick={handleSearchIconClick}
+                                ></i>
+                            </form>
 
                             <button className="cart_btn cursor-pointer">
                                 <i className="fa-solid fa-cart-shopping w-7.5 h-7.5"></i>

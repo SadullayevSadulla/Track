@@ -9,3 +9,45 @@
     background-color: #FEC80B;
     border-radius: 4px;
 }
+
+@media (max-width:1400px) {
+    .zapros_img img{
+        display: none;
+    }
+}
+
+@media (max-width:721px) {
+    .zapros_inputs{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .input{
+        width: 100%;
+    }
+
+    .button{
+        width: 100%;
+        text-align: center;
+    }
+
+    .zapros_text h1{
+        font-size: 32px;
+    }
+
+    .zapros_text p{
+        font-size: 16px;
+    }
+}
+
+@media (max-width:500px) {
+    .zapros_text h1 ,
+    .zapros_text p{
+        text-align: center;
+    }
+
+    .zapros_t p{
+        text-align: center;
+    }
+}

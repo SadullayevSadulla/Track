@@ -107,7 +107,7 @@
 
 .product-card__btn-main:hover {
   background: white;
-  border: 1px solid ;
+  border: 1px solid;
 }
 
 .product-card__btn-secondary {
@@ -166,4 +166,136 @@
 .products-prev.swiper-button-disabled,
 .products-next.swiper-button-disabled {
   cursor: pointer;
+}
+
+
+
+/* ===================== Kichik desktop (<=1200px) ===================== */
+@media (max-width: 1200px) {
+  .products {
+    padding: 48px 0;
+  }
+
+  .products__top h2 {
+    font-size: 34px;
+  }
+}
+
+/* ===================== Planshet (<=1024px) ===================== */
+@media (max-width: 1024px) {
+  section.products {
+    margin-top: 50px !important;
+  }
+
+  .products {
+    padding: 40px 0;
+  }
+
+  .products__top h2 {
+    font-size: 28px;
+  }
+
+  .product-card__image {
+    height: 190px;
+  }
+
+  .product-card__info {
+    padding: 16px;
+  }
+
+  .product-card__info h3 {
+    font-size: 16px !important;
+  }
+
+  .product-card__price {
+    font-size: 19px;
+    margin: 10px 0 14px;
+  }
+
+  .product-card__btn-main {
+    padding: 11px 22px;
+    font-size: 13px;
+  }
+}
+
+/* ===================== Kichik planshet (<=768px) ===================== */
+@media (max-width: 768px) {
+  .products {
+    padding: 32px 0;
+  }
+
+  .products__top {
+    margin-bottom: 18px;
+  }
+
+  .products__top h2 {
+    font-size: 28px !important;
+  }
+
+  .products-prev,
+  .products-next {
+    width: 36px;
+    height: 36px;
+  }
+
+  .product-card__image {
+    height: 170px;
+  }
+
+  .product-card__favorite {
+    width: 38px;
+    height: 38px;
+    top: 8px;
+    right: 8px;
+  }
+}
+
+/* ===================== Mobil (<=480px) ===================== */
+@media (max-width: 480px) {
+  .product-top {
+    display: flex;
+    flex-direction: column;
+  }
+
+  section.products {
+    margin-top: 36px !important;
+  }
+
+  .products {
+    padding: 24px 0;
+  }
+
+  .products__top h2 {
+    font-size: 20px;
+  }
+
+  .product-card__image {
+    height: 200px;
+  }
+
+  .product-card__info {
+    padding: 14px;
+  }
+
+  .product-card__info h3 {
+    font-size: 15px !important;
+  }
+
+  .product-card__price {
+    font-size: 17px;
+    margin: 8px 0 12px;
+  }
+
+  .product-card__actions {
+    gap: 10px;
+  }
+
+  .product-card__btn-main {
+    padding: 10px 18px;
+    font-size: 13px;
+  }
+
+  .product-card__btn-secondary {
+    font-size: 13px;
+  }
 }

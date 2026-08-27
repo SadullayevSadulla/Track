@@ -1,0 +1,15 @@
+@media (max-width:1024px) {
+    .rusSection{
+        display: flex;
+        flex-direction: column;
+    }
+    .section_left{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+    .section_left button{
+        display: none;
+    }
+}
