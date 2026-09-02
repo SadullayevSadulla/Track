@@ -1,0 +1,103 @@
+:root {
+    --font-fira: "Fira Sans", sans-serif;
+}
+.service {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    font-family: var(--font-fira);
+    color: #1a1a1a;
+}
+
+.service_top {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.service_top h1 {
+    font-size: 28px;
+    font-weight: 700;
+    font-family: var(--font-fira);
+    max-width: 700px;
+}
+
+.service_top p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+    font-family: var(--font-fira);
+    max-width: 800px;
+    color: #333;
+    margin: 0;
+}
+
+.service_main {
+  max-width: 900px;
+  font-family: var(--font-fira);
+}
+
+.service_main h1 {
+  font-size: 22px;
+  font-weight: 700;
+  font-family: var(--font-fira);
+  color: #1a1a1a;
+  margin: 0 0 24px 0;
+}
+
+.best {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.card {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.son {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #FFC107;
+  color: #1a1a1a;
+  font-weight: 700;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card p {
+  margin: 0;
+  padding-top: 4px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #1a1a1a;
+}
+
+.card p a {
+  color: #1a1a1a;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.card p a:hover {
+  color: #333;
+}
+
+.service > p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #1a1a1a;
+  max-width: 800px;
+  margin: 0;
+}
+
+.service > p a {
+  color: #1a1a1a;
+  text-decoration: underline;
+}

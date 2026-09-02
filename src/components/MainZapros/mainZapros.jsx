@@ -1,5 +1,5 @@
 import "./mainZapros.css"
-import { useLanguage } from "../../../i18n/LanguageContext";
+import { useLanguage } from "../../i18n/LanguageContext";
 
 const MainZapros = () => {
     const { t } = useLanguage();
@@ -35,7 +35,7 @@ const MainZapros = () => {
                     </div>
                 </div>
                     <div className="zapros_img">
-                        <img src="./feedback-truck_result.webp" alt="" />
+                        <img src="/feedback-truck_result.webp" alt="" />
                     </div>
             </div>
         </section>

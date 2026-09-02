@@ -242,7 +242,7 @@ const Header = () => {
                 <div className="header_top">
                     <div className="header_logo flex items-center">
                         <a className="logo" href="/">
-                            <img src="./logo (3).png" alt="" className="w-[160px] h-[45px]" />
+                            <img src="/logo (3).png" alt="" className="w-[160px] h-[45px]" />
                         </a>
                         <span className="divider"></span>
                         <div className="text max-w-[167px]">
@@ -260,7 +260,7 @@ const Header = () => {
                                 <p className="text-[15px] font-normal font-['Fira_Sans'] text-[#A1A1A1]">{t("phone_nn_label")} {t("phone_nn")}</p>
                             </div>
                             <div className="img">
-                                <img src="./icon_normal_call.png" alt="" />
+                                <img src="/icon_normal_call.png" alt="" />
                             </div>
                         </div>
 

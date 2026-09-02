@@ -4,7 +4,7 @@ import MainCard from "./MainCard/mainCard"
 import MainDar from "./MainDar/mainDar"
 import MainNews from "./MainNews/mainNews"
 import MainRus from "./MainRus/mainRus"
-import MainZapros from "./MainZapros/mainZapros"
+import MainZapros from "../../components/MainZapros/mainZapros"
 
 const Home = () => {
   return (

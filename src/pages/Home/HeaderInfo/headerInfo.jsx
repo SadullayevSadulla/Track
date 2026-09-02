@@ -31,7 +31,7 @@ const HeaderInfo = () => {
                         <div className="slide slide--bleed">
                             <img
                                 className="slide_bg"
-                                src="./of3bmzwmj5m8ikxz6p1x8rl82eywgs0h (1).jpg"
+                                src="/of3bmzwmj5m8ikxz6p1x8rl82eywgs0h (1).jpg"
                                 alt={t("alt_slide1")}
                             />
                             <div className="slide_overlay slide_overlay--left" />
@@ -59,7 +59,7 @@ const HeaderInfo = () => {
                         <div className="slide slide--bleed">
                             <img
                                 className="slide_bg"
-                                src="./ec4ce04icyymuqjzb5cb07lpnenco2s4.jpg"
+                                src="/ec4ce04icyymuqjzb5cb07lpnenco2s4.jpg"
                                 alt={t("alt_slide2")}
                             />
                             <div className="slide_overlay slide_overlay--left" />
@@ -83,7 +83,7 @@ const HeaderInfo = () => {
                         <div className="slide slide--bleed">
                             <img
                                 className="slide_bg"
-                                src="./5xwcouzc1uqntaf8r1g33v4tfzeg1x9o.jpg"
+                                src="/5xwcouzc1uqntaf8r1g33v4tfzeg1x9o.jpg"
                                 alt={t("alt_slide3")}
                             />
                             <div className="slide_overlay slide_overlay--left slide_overlay--black" />
@@ -106,7 +106,7 @@ const HeaderInfo = () => {
                         <div className="slide slide--bleed">
                             <img
                                 className="slide_bg"
-                                src="./fg49oplosx7l3yhqbxjmj7pxo2c4d8xs.jpg"
+                                src="/fg49oplosx7l3yhqbxjmj7pxo2c4d8xs.jpg"
                                 alt={t("alt_slide4")}
                             />
                             <div className="slide_overlay slide_overlay--left" />

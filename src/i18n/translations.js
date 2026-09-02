@@ -144,6 +144,17 @@ const translations = {
         footer_copyright: "2009 - 2021 © Rus - Trucks",
         footer_disclaimer: "Информация на сайте не является публичной офертой и носит исключительно информационный характер",
         footer_dev: "Разработка R-top",
+        service_title: "Сервис по гарантийному ремонту автоспецтехники РусТрак",
+        service_intro: "После приобретения продукции в ООО «Рустрак» Вы всегда можете обратиться за помощью по любым вопросам, связанными с гарантийным обслуживанием, настройкой и ремонтом транспорного средства, поставкой дополнительного обурудования, а также внесением доработок под задачи клиента. Вы можете обратиться за технической поддержкой и консультацией по эксплуатации в любое время и в любой срок после заключения контракта.",
+
+        service_support_title: "Как получить поддержку?",
+
+        service_step1_link: "Заполнить Рекламационный акт",
+        service_step1_text: "с внесением подписи ответственного лица и печати организации, подробно описать характер отказа. Приложить фото: шильды в пассажирской двери, шильды вышедшего из строя оборудования, первая страница ПТС.",
+        service_step2_text: "Сфотографировать неисправности, а также общий вид изделия в целом.",
+        service_step3_text: "Отправить заполненный акт, копию ПТС, фотографии неисправностей по электронной почте: kb1@rtrf.ru",
+
+        service_footer_text: "После этого специалисты гарантийной службы свяжутся с владельцем и предложат варианты организации ремонта. Любые вопросы относительно гарантийного обслуживания техники производства «РусТрак» можно задать по телефону 8 (831) 225-00-55 (доб 610) или по электронной почте: kb1@rtrf.ru",
     },
 
     uz: {
@@ -290,6 +301,17 @@ const translations = {
         footer_copyright: "2009 - 2021 © Rus - Trucks",
         footer_disclaimer: "Saytdagi ma'lumotlar ommaviy oferta emas va faqat axborot xarakteriga ega",
         footer_dev: "R-top tomonidan ishlab chiqildi",
+        service_title: "RusTrak avtomaxsus texnikasini kafolatli ta'mirlash xizmati",
+        service_intro: "«RusTrak» MChJdan mahsulot xarid qilgandan so'ng, siz har doim kafolatli xizmat ko'rsatish, transport vositasini sozlash va ta'mirlash, qo'shimcha uskunalar yetkazib berish, shuningdek mijoz vazifalariga moslashtirish bilan bog'liq har qanday masalalar bo'yicha yordam so'rashingiz mumkin. Shartnoma tuzilgandan so'ng istalgan vaqtda va istalgan muddatda texnik yordam va ekspluatatsiya bo'yicha maslahat olishingiz mumkin.",
+
+        service_support_title: "Qanday qilib yordam olish mumkin?",
+
+        service_step1_link: "Reklamatsiya aktini to'ldirish",
+        service_step1_text: "mas'ul shaxsning imzosi va tashkilot muhri bilan, nosozlik xarakterini batafsil tasvirlab bering. Rasmlarni ilova qiling: yo'lovchi eshigidagi shildik, ishdan chiqqan uskunaning shildigi, PTSning birinchi sahifasi.",
+        service_step2_text: "Nosozliklarni, shuningdek mahsulotning umumiy ko'rinishini suratga oling.",
+        service_step3_text: "To'ldirilgan aktni, PTS nusxasini, nosozliklar fotosuratlarini elektron pochta orqali yuboring: kb1@rtrf.ru",
+
+        service_footer_text: "Shundan so'ng kafolat xizmati mutaxassislari egasi bilan bog'lanib, ta'mirlashni tashkil qilish variantlarini taklif qiladi. «RusTrak» ishlab chiqargan texnikaning kafolat xizmati bo'yicha har qanday savollarni 8 (831) 225-00-55 (ichki 610) telefon raqami yoki kb1@rtrf.ru elektron pochtasi orqali berishingiz mumkin.",
     },
 
     en: {
@@ -436,6 +458,17 @@ const translations = {
         footer_copyright: "2009 - 2021 © Rus - Trucks",
         footer_disclaimer: "The information on the site is not a public offer and is for informational purposes only",
         footer_dev: "Developed by R-top",
+        service_title: "RusTrak special vehicle warranty repair service",
+        service_intro: "After purchasing products from RusTrak LLC, you can always reach out for help with any questions related to warranty service, vehicle setup and repair, supply of additional equipment, as well as modifications tailored to the client's needs. You can request technical support and operational advice at any time after the contract is concluded.",
+
+        service_support_title: "How to get support?",
+
+        service_step1_link: "Fill out the Claim Report",
+        service_step1_text: "with the signature of the responsible person and the organization's stamp, describing the nature of the failure in detail. Attach photos: the nameplate on the passenger door, the nameplate of the failed equipment, and the first page of the vehicle title.",
+        service_step2_text: "Take photos of the malfunctions, as well as the general appearance of the product.",
+        service_step3_text: "Send the completed report, a copy of the vehicle title, and photos of the malfunctions by email: kb1@rtrf.ru",
+
+        service_footer_text: "After that, warranty service specialists will contact the owner and offer repair arrangement options. Any questions regarding warranty service for RusTrak-manufactured equipment can be directed to 8 (831) 225-00-55 (ext. 610) or by email: kb1@rtrf.ru",
     },
 };
 
