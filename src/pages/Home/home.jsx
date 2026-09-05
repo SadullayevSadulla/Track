@@ -16,7 +16,6 @@ const Home = () => {
       {/* <Profits/> */}
       <MainCard />
       <MainNews />
-      <MainZapros />
     </div>
   )
 }

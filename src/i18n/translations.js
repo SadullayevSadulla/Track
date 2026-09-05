@@ -155,6 +155,28 @@ const translations = {
         service_step3_text: "Отправить заполненный акт, копию ПТС, фотографии неисправностей по электронной почте: kb1@rtrf.ru",
 
         service_footer_text: "После этого специалисты гарантийной службы свяжутся с владельцем и предложат варианты организации ремонта. Любые вопросы относительно гарантийного обслуживания техники производства «РусТрак» можно задать по телефону 8 (831) 225-00-55 (доб 610) или по электронной почте: kb1@rtrf.ru",
+        repair_title: "Ремонт шторных полуприцепов от компании «Рустрак» в Нижнем Новгороде",
+        repair_intro: "Логистическая сфера опирается на устойчивую работу прицепной техники. Ремонт шторных полуприцепов обеспечивает восстановление работоспособности конструкции после интенсивной эксплуатации. Наши мастера учитывают конструктивные особенности узлов и применяют проверенные методы обслуживания. Компания «Рустрак» в Нижнем Новгороде предлагает сервис, ориентированный на качество и долговечность оборудования. Своевременные технические мероприятия поддерживают стабильное состояние прицепов при интенсивных нагрузках. Надёжный подход к обслуживанию формирует уверенность в бесперебойной работе техники.",
+        repair_calc_btn: "Рассчитать стоимость ремонта",
+
+        repair_services_title: "Наши услуги",
+        repair_services_text: "Компания «Рустрак» выполняет полный ремонт полуприцепов в Нижнем Новгороде после повреждений или выхода из строя. Мы восстанавливаем конструкцию прицепа, исправляем каркас и боковые тенты, ремонтируем двери, замки и механизмы открывания, а также восстанавливаем пол и борта прицепа. Все работы выполняются с высокой точностью и соблюдением стандартов качества, что гарантирует долговечность восстановленных элементов.",
+        repair_services_important_label: "Важно:",
+        repair_services_important_text: "ремонт ходовой, двигателя, замена масел и плановое техническое обслуживание не производятся.",
+
+        repair_before: "До ремонта",
+        repair_after: "После ремонта",
+
+        repair_advantages_title: "Преимущества компании «Рустрак»",
+        repair_advantage1: "Большая производственная база – позволяет одновременно выполнять несколько крупных заказов и обслуживать большое количество техники.",
+        repair_advantage2: "Вместительные цеха – обеспечивают удобство работы с крупногабаритными полуприцепами и комфорт для сотрудников.",
+        repair_advantage3: "Профессиональные мастера – специалисты с опытом и знаниями гарантируют качественный и точный ремонт.",
+        repair_advantage4: "Полный цикл производства – все работы выполняются на месте, от диагностики до финальной сборки, без привлечения сторонних подрядчиков.",
+        repair_advantage5: "Опыт 17 лет – долгий срок работы на рынке подтверждает надёжность и компетентность компании.",
+        repair_advantage6: "Гарантия на ремонт – обеспечивает уверенность в долговечности и качестве выполненных работ.",
+
+        repair_bottom_title: "Качественный сервис для полуприцепов",
+        repair_bottom_text: "Ремонт шторных полуприцепов помогает продлить срок службы техники и сохранить её функциональность. Обратитесь к нашей команде, чтобы получить надежное и аккуратное обслуживание. Компания «Рустрак» в Нижнем Новгороде выполняет работы с вниманием к деталям и строгими стандартами качества. Доверьте нам технические задачи и получите результат, который оправдает ожидания. Запланируйте обслуживание заранее и убедитесь в удобстве нашего сервиса. Для начала сотрудничества свяжитесь с нами любым удобным способом, и мы поможем организовать все быстро и профессионально.",
     },
 
     uz: {
@@ -312,6 +334,28 @@ const translations = {
         service_step3_text: "To'ldirilgan aktni, PTS nusxasini, nosozliklar fotosuratlarini elektron pochta orqali yuboring: kb1@rtrf.ru",
 
         service_footer_text: "Shundan so'ng kafolat xizmati mutaxassislari egasi bilan bog'lanib, ta'mirlashni tashkil qilish variantlarini taklif qiladi. «RusTrak» ishlab chiqargan texnikaning kafolat xizmati bo'yicha har qanday savollarni 8 (831) 225-00-55 (ichki 610) telefon raqami yoki kb1@rtrf.ru elektron pochtasi orqali berishingiz mumkin.",
+        repair_title: "«RusTrak» kompaniyasidan Nijniy Novgorodda pardali yarim tirkamalarni ta'mirlash",
+        repair_intro: "Logistika sohasi tirkama texnikasining barqaror ishlashiga asoslanadi. Pardali yarim tirkamalarni ta'mirlash intensiv foydalanishdan so'ng konstruksiyaning ishlash qobiliyatini tiklashni ta'minlaydi. Ustalarimiz uzellarning konstruktiv xususiyatlarini hisobga oladi va sinovdan o'tgan xizmat ko'rsatish usullarini qo'llaydi. «RusTrak» kompaniyasi Nijniy Novgorodda uskunalarning sifati va uzoq muddat xizmat qilishiga qaratilgan xizmatni taklif qiladi. O'z vaqtida o'tkaziladigan texnik tadbirlar tirkamalarning intensiv yuklamalar ostida barqaror holatini saqlaydi. Xizmat ko'rsatishga ishonchli yondashuv texnikaning uzluksiz ishlashiga ishonch hosil qiladi.",
+        repair_calc_btn: "Ta'mirlash narxini hisoblash",
+
+        repair_services_title: "Bizning xizmatlarimiz",
+        repair_services_text: "«RusTrak» kompaniyasi Nijniy Novgorodda shikastlangan yoki ishdan chiqqan yarim tirkamalarni to'liq ta'mirlaydi. Biz tirkama konstruksiyasini tiklaymiz, karkas va yon tentlarni tuzatamiz, eshiklar, qulflar va ochish mexanizmlarini ta'mirlaymiz, shuningdek tirkamaning polini va bortlarini tiklaymiz. Barcha ishlar yuqori aniqlik va sifat standartlariga rioya qilgan holda bajariladi, bu tiklangan elementlarning uzoq muddat xizmat qilishini kafolatlaydi.",
+        repair_services_important_label: "Muhim:",
+        repair_services_important_text: "yurish qismi, dvigatel ta'mirlanmaydi, moy almashtirilmaydi va rejali texnik xizmat ko'rsatilmaydi.",
+
+        repair_before: "Ta'mirlashdan oldin",
+        repair_after: "Ta'mirlashdan keyin",
+
+        repair_advantages_title: "«RusTrak» kompaniyasining afzalliklari",
+        repair_advantage1: "Katta ishlab chiqarish bazasi – bir vaqtning o'zida bir nechta yirik buyurtmalarni bajarish va katta miqdordagi texnikaga xizmat ko'rsatish imkonini beradi.",
+        repair_advantage2: "Keng sexlar – yirik gabaritli yarim tirkamalar bilan ishlash qulayligini va xodimlar uchun qulaylikni ta'minlaydi.",
+        repair_advantage3: "Professional ustalar – tajribali va bilimli mutaxassislar sifatli va aniq ta'mirlashni kafolatlaydi.",
+        repair_advantage4: "To'liq ishlab chiqarish sikli – barcha ishlar diagnostikadan yakuniy yig'ishgacha joyida, tashqi pudratchilarni jalb qilmasdan bajariladi.",
+        repair_advantage5: "17 yillik tajriba – bozorda uzoq muddat ishlash kompaniyaning ishonchliligi va vakolatliligini tasdiqlaydi.",
+        repair_advantage6: "Ta'mirlashga kafolat – bajarilgan ishlarning uzoq muddat xizmat qilishi va sifatiga ishonch beradi.",
+
+        repair_bottom_title: "Yarim tirkamalar uchun sifatli xizmat",
+        repair_bottom_text: "Pardali yarim tirkamalarni ta'mirlash texnikaning xizmat muddatini uzaytirish va uning funksionalligini saqlashga yordam beradi. Ishonchli va puxta xizmat olish uchun jamoamizga murojaat qiling. «RusTrak» kompaniyasi Nijniy Novgorodda ishlarni tafsilotlarga e'tibor bilan va qat'iy sifat standartlariga rioya qilgan holda bajaradi. Texnik vazifalarni bizga ishoning va kutganlaringizni oqlaydigan natijaga erishing. Xizmat ko'rsatishni oldindan rejalashtiring va xizmatimizning qulayligiga ishonch hosil qiling. Hamkorlikni boshlash uchun biz bilan istalgan qulay usulda bog'laning, biz hamma narsani tez va professional tarzda tashkil qilishga yordam beramiz.",
     },
 
     en: {
@@ -469,6 +513,28 @@ const translations = {
         service_step3_text: "Send the completed report, a copy of the vehicle title, and photos of the malfunctions by email: kb1@rtrf.ru",
 
         service_footer_text: "After that, warranty service specialists will contact the owner and offer repair arrangement options. Any questions regarding warranty service for RusTrak-manufactured equipment can be directed to 8 (831) 225-00-55 (ext. 610) or by email: kb1@rtrf.ru",
+        repair_title: "Curtain-side semi-trailer repair by RusTrak in Nizhny Novgorod",
+        repair_intro: "The logistics industry relies on the steady operation of trailer equipment. Repairing curtain-side semi-trailers restores the structure's functionality after intensive use. Our technicians take into account the design features of each unit and apply proven maintenance methods. RusTrak in Nizhny Novgorod offers a service focused on the quality and durability of equipment. Timely technical measures keep trailers in stable condition under heavy loads. A reliable approach to maintenance builds confidence in the uninterrupted operation of the equipment.",
+        repair_calc_btn: "Calculate repair cost",
+
+        repair_services_title: "Our services",
+        repair_services_text: "RusTrak performs complete repair of semi-trailers in Nizhny Novgorod after damage or breakdown. We restore the trailer structure, repair the frame and side curtains, fix doors, locks and opening mechanisms, and restore the floor and sides of the trailer. All work is carried out with high precision and in compliance with quality standards, guaranteeing the durability of the restored components.",
+        repair_services_important_label: "Important:",
+        repair_services_important_text: "chassis and engine repair, oil changes, and scheduled maintenance are not performed.",
+
+        repair_before: "Before repair",
+        repair_after: "After repair",
+
+        repair_advantages_title: "Advantages of RusTrak",
+        repair_advantage1: "Large production base – allows several major orders to be handled simultaneously and a large amount of equipment to be serviced.",
+        repair_advantage2: "Spacious workshops – provide convenience when working with large semi-trailers and comfort for employees.",
+        repair_advantage3: "Professional technicians – experienced and knowledgeable specialists guarantee high-quality, precise repairs.",
+        repair_advantage4: "Full production cycle – all work is carried out on-site, from diagnostics to final assembly, without third-party contractors.",
+        repair_advantage5: "17 years of experience – a long track record on the market confirms the company's reliability and expertise.",
+        repair_advantage6: "Repair warranty – provides confidence in the durability and quality of the work performed.",
+
+        repair_bottom_title: "Quality service for semi-trailers",
+        repair_bottom_text: "Repairing curtain-side semi-trailers helps extend the service life of the equipment and preserve its functionality. Contact our team for reliable and careful service. RusTrak in Nizhny Novgorod carries out work with attention to detail and strict quality standards. Trust us with your technical tasks and get a result that will meet your expectations. Schedule maintenance in advance and see how convenient our service is. To start cooperation, contact us in any convenient way, and we will help organize everything quickly and professionally.",
     },
 };
 

@@ -10,9 +10,7 @@
     gap: 12px;
 }
 
-.header_logo {
-    flex-shrink: 0;
-}
+
 
 .divider {
     width: 2px;

@@ -1,0 +1,219 @@
+.top_text h1 {
+    font-size: 22px;
+    font-weight: 500;
+    font-family: "Fira Sans", sans-serif;
+}
+
+
+.top_text p {
+    font-size: 18px;
+    font-weight: 400;
+    font-family: var(--font-sans);
+    color: var(--text-color);
+}
+
+.top_img img {
+    width: 500px;
+    height: 337px;
+    border-radius: 5px;
+}
+
+.remont_button {
+    display: flex;
+    justify-content: center;
+}
+
+
+.remont_button button {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #fec80b;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.remont_button button:hover {
+    background-color: #f0c426;
+}
+
+.bot_img {
+    width: 800px;
+    height: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.bot_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.remont_button {
+    display: flex;
+    justify-content: center;
+}
+
+.remont_button button {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #fec80b;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.remont_button button:hover {
+    background-color: #f0c426;
+}
+
+.remont_bot {
+    margin-top: 30px;
+}
+
+.bot_text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.bot_text h1 {
+    font-size: 22px;
+    font-weight: 500;
+    font-family: "Fira Sans", sans-serif;
+}
+
+.bot_text p {
+    font-size: 18px;
+    font-weight: 400;
+    font-family: "Fira Sans", sans-serif;
+    max-width: 1350px;
+}
+
+.bot_text p span {
+    font-weight: bolder;
+}
+
+
+.text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.h1 h1 {
+    font-size: 22px;
+    font-weight: 500;
+    font-family: "Fira Sans", sans-serif;
+}
+
+.paragrf {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.paragrf p {
+    font-size: 18px;
+    font-weight: 400;
+    font-family: "Fira Sans", sans-serif;
+    max-width: 1350px;
+}
+
+.imgs {
+    margin-top: 20px;
+}
+
+.imgs img {
+    width: 444.5px;
+    height: 282px;
+}
+
+@media (max-width: 1150px) {
+    .imgs {
+        flex-wrap: wrap;
+    }
+}
+
+
+@media (max-width: 992px) {
+    .top_img {
+        justify-content: center;
+    }
+
+    .top_img img {
+        max-width: 45%;
+    }
+
+    .imgs img {
+        flex: 1 1 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 16px;
+    }
+
+    .top_img {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .top_img img {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .bot_img {
+        max-width: 100%;
+    }
+
+    .imgs {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .imgs img {
+        max-width: 100%;
+        flex: none;
+    }
+
+    .remont_button button {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .top_text h1,
+    .bot_text h1,
+    .h1 h1 {
+        font-size: 18px;
+    }
+
+    .top_text p,
+    .bot_text p,
+    .paragrf p {
+        font-size: 15px;
+    }
+
+    .remont_button button {
+        padding: 10px 18px;
+        font-size: 14px;
+    }
+}
