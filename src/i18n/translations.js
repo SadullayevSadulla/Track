@@ -177,6 +177,9 @@ const translations = {
 
         repair_bottom_title: "Качественный сервис для полуприцепов",
         repair_bottom_text: "Ремонт шторных полуприцепов помогает продлить срок службы техники и сохранить её функциональность. Обратитесь к нашей команде, чтобы получить надежное и аккуратное обслуживание. Компания «Рустрак» в Нижнем Новгороде выполняет работы с вниманием к деталям и строгими стандартами качества. Доверьте нам технические задачи и получите результат, который оправдает ожидания. Запланируйте обслуживание заранее и убедитесь в удобстве нашего сервиса. Для начала сотрудничества свяжитесь с нами любым удобным способом, и мы поможем организовать все быстро и профессионально.",
+        news_featured_date: "07.07.2026",
+        news_featured_title: "Первый в России контейнеровоз на шасси КАМАЗ‑65658 выпустил «Рустрак»",
+        news_common_text: "«Рустрак» подвёл итоги участия в выставке COMVEX 2026.",
     },
 
     uz: {
@@ -356,6 +359,9 @@ const translations = {
 
         repair_bottom_title: "Yarim tirkamalar uchun sifatli xizmat",
         repair_bottom_text: "Pardali yarim tirkamalarni ta'mirlash texnikaning xizmat muddatini uzaytirish va uning funksionalligini saqlashga yordam beradi. Ishonchli va puxta xizmat olish uchun jamoamizga murojaat qiling. «RusTrak» kompaniyasi Nijniy Novgorodda ishlarni tafsilotlarga e'tibor bilan va qat'iy sifat standartlariga rioya qilgan holda bajaradi. Texnik vazifalarni bizga ishoning va kutganlaringizni oqlaydigan natijaga erishing. Xizmat ko'rsatishni oldindan rejalashtiring va xizmatimizning qulayligiga ishonch hosil qiling. Hamkorlikni boshlash uchun biz bilan istalgan qulay usulda bog'laning, biz hamma narsani tez va professional tarzda tashkil qilishga yordam beramiz.",
+        news_featured_date: "07.07.2026",
+        news_featured_title: "«RusTrak» Rossiyada birinchi bo'lib KAMAZ‑65658 shassisidagi konteynervozni ishlab chiqardi",
+        news_common_text: "«RusTrak» COMVEX 2026 ko'rgazmasidagi ishtiroki yakunlarini chiqardi.",
     },
 
     en: {
@@ -535,6 +541,9 @@ const translations = {
 
         repair_bottom_title: "Quality service for semi-trailers",
         repair_bottom_text: "Repairing curtain-side semi-trailers helps extend the service life of the equipment and preserve its functionality. Contact our team for reliable and careful service. RusTrak in Nizhny Novgorod carries out work with attention to detail and strict quality standards. Trust us with your technical tasks and get a result that will meet your expectations. Schedule maintenance in advance and see how convenient our service is. To start cooperation, contact us in any convenient way, and we will help organize everything quickly and professionally.",
+        news_featured_date: "07.07.2026",
+        news_featured_title: "RusTrak released Russia's first container carrier on a KAMAZ‑65658 chassis",
+        news_common_text: "RusTrak summed up the results of participation in the COMVEX 2026 exhibition.",
     },
 };
 

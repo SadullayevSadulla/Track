@@ -295,7 +295,7 @@ const Header = () => {
                     </div>
                 </div>
             </div>
-
+        
             <div className="section border-t-[1px] border-[#FEC80B] mt-[30px] py-[30px]">
                 <div className="container">
                     <div className="header_bottom flex items-center justify-between py-[1px]">
