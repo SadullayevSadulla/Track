@@ -180,6 +180,18 @@ const translations = {
         news_featured_date: "07.07.2026",
         news_featured_title: "Первый в России контейнеровоз на шасси КАМАЗ‑65658 выпустил «Рустрак»",
         news_common_text: "«Рустрак» подвёл итоги участия в выставке COMVEX 2026.",
+        contacts_title: "Контакты производителя автоспецтехники РусТрак",
+contacts_address: "603035 г. Нижний Новгород, ул. Торфяная, д. 35",
+contacts_phone_nn: "Нижний Новгород: 8 (831) 235-25-51",
+contacts_phone_regions: "Для регионов: 8 (800)-511-05-25",
+contacts_email_label: "Электронная почта: info+8016@rtrf.ru",
+contacts_service_booking: "Запись на техническое обслуживание: 8 (831) 225-00-55",
+
+position_ceo: "Генеральный директор",
+position_commercial_director: "Коммерческий директор",
+position_gaz_head: "Руководитель направления ГАЗ, Partner коммерческой техники, коммунальная техника, сертификация",
+position_isuzu_head: "Руководитель направления ISUZU, FUSO, JAC",
+position_sales_manager: "Менеджер по продажам",
     },
 
     uz: {
@@ -362,6 +374,18 @@ const translations = {
         news_featured_date: "07.07.2026",
         news_featured_title: "«RusTrak» Rossiyada birinchi bo'lib KAMAZ‑65658 shassisidagi konteynervozni ishlab chiqardi",
         news_common_text: "«RusTrak» COMVEX 2026 ko'rgazmasidagi ishtiroki yakunlarini chiqardi.",
+        contacts_title: "RusTrak avtomaxsus texnika ishlab chiqaruvchisi kontaktlari",
+contacts_address: "603035 Nijniy Novgorod sh., Torfyanaya ko'chasi, 35-uy",
+contacts_phone_nn: "Nijniy Novgorod: 8 (831) 235-25-51",
+contacts_phone_regions: "Hududlar uchun: 8 (800)-511-05-25",
+contacts_email_label: "Elektron pochta: info+8016@rtrf.ru",
+contacts_service_booking: "Texnik xizmatga yozilish: 8 (831) 225-00-55",
+
+position_ceo: "Bosh direktor",
+position_commercial_director: "Kommersiya direktori",
+position_gaz_head: "GAZ yo'nalishi rahbari, tijorat texnikasi bo'yicha Partner, kommunal texnika, sertifikatlash",
+position_isuzu_head: "ISUZU, FUSO, JAC yo'nalishi rahbari",
+position_sales_manager: "Sotuv menejeri",
     },
 
     en: {
@@ -544,6 +568,18 @@ const translations = {
         news_featured_date: "07.07.2026",
         news_featured_title: "RusTrak released Russia's first container carrier on a KAMAZ‑65658 chassis",
         news_common_text: "RusTrak summed up the results of participation in the COMVEX 2026 exhibition.",
+        contacts_title: "RusTrak special vehicle manufacturer contacts",
+contacts_address: "603035 Nizhny Novgorod, 35 Torfyanaya St.",
+contacts_phone_nn: "Nizhny Novgorod: 8 (831) 235-25-51",
+contacts_phone_regions: "For regions: 8 (800)-511-05-25",
+contacts_email_label: "Email: info+8016@rtrf.ru",
+contacts_service_booking: "Book a service appointment: 8 (831) 225-00-55",
+
+position_ceo: "CEO",
+position_commercial_director: "Commercial Director",
+position_gaz_head: "Head of GAZ Division, Commercial Vehicle Partner, Municipal Equipment, Certification",
+position_isuzu_head: "Head of ISUZU, FUSO, JAC Division",
+position_sales_manager: "Sales Manager",
     },
 };
 

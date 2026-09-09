@@ -1,5 +1,6 @@
 import Contacts from "../pages/Contacts/contacts";
 import Home from "../pages/Home/home";
+import Katolg from "../pages/Katolg/katolg";
 import News from "../pages/News/news";
 import Repair from "../pages/Repair/repair";
 import Service from "../pages/Service/service";
@@ -30,4 +31,9 @@ export const router = [
         path: '/contacts',
         element: <Contacts />,
     },
+    {
+        id: 6,
+        path: '/katolg',
+        element: <Katolg />,
+    }
 ]

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 
@@ -64,22 +65,24 @@ const Categories = () => {
         >
           {mainData.map((category) => (
             <SwiperSlide key={category.id}>
-              <div className="category-card">
+              <Link to="/katolg">
+                <div className="category-card">
 
-                <div className="category-card__info">
-                  <h3>{t(category.titleKey)}</h3>
+                  <div className="category-card__info">
+                    <h3>{t(category.titleKey)}</h3>
 
-                  <p>{t(category.modelsKey)}</p>
+                    <p>{t(category.modelsKey)}</p>
+                  </div>
+
+                  <div className="category-card__image">
+                    <img
+                      src={category.image}
+                      alt={t(category.titleKey)}
+                    />
+                  </div>
+
                 </div>
-
-                <div className="category-card__image">
-                  <img
-                    src={category.image}
-                    alt={t(category.titleKey)}
-                  />
-                </div>
-
-              </div>
+              </Link>
             </SwiperSlide>
           ))}
         </Swiper>
