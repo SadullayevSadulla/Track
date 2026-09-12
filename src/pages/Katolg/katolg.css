@@ -1,0 +1,155 @@
+.katolg{
+    display: grid;
+    grid-template-columns: 240px minmax(0, 1fr);
+    gap: 40px 24px;
+}
+
+.katolg_top{
+    grid-column: 1 / -1;
+}
+
+.katolg_left{
+    position: sticky;
+    top: 30px;
+    align-self: start;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.katolg_data{
+    grid-column: 2;
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    align-items: start;
+}
+
+
+.katolg_description{
+    grid-column: 1 / -1;
+    max-width: 960px;
+    margin: 72px auto 0;
+    font-size: 18px;
+    line-height: 1.55;
+}
+.katolg_description p{
+    margin: 0 0 18px;
+}
+
+.katolg_description h2{
+    margin: 24px 0 14px;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.katolg_description ul{
+    display: grid;
+    gap: 10px;
+    margin: 0 0 18px;
+    padding-left: 24px;
+    list-style: none;
+}
+
+.katolg_description li::before{
+    content: "◆";
+    color: #FEC80B;
+    margin-right: 12px;
+}
+
+.top_text h1{
+    font-size: 32px;
+    font-weight: 500;
+    font-family: "Fira Sans", sans-serif;
+}
+
+.top_text p{
+    font-size: 16px;
+    font-weight: 400;
+    font-family: "Fira Sans", sans-serif;
+    color: #B3B3B3;
+}
+
+.top_button button{
+    cursor: pointer;
+}
+
+.marka_in{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.marka_in h1{
+    font-size: 18px;
+    font-weight: 500;
+    font-family: "Fira Sans", sans-serif;
+}
+
+.marka_in input{
+    padding: 10px 14px;
+    border: 1px solid #A1A1A1;
+    border-radius: 4px;
+}
+
+.mk{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.kj{
+    display: flex;
+    gap: 10px;
+}
+
+.btn9 button{
+    padding: 12px 37px;
+    background-color: #FEC80B;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: "Fira Sans", sans-serif;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+@media (max-width: 900px){
+    .katolg{
+        grid-template-columns: 1fr;
+    }
+
+    .katolg_top,
+    .katolg_left,
+    .katolg_data{
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    .katolg_data{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width:780px) {
+    .katolg_left{
+        position: static;
+    }
+}
+
+@media (max-width: 560px){
+    .katolg_data{
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width:500px) {
+    .katolg_top{
+        margin-top: 30px;
+    }
+    .top_button{
+        display: none;
+    }
+}

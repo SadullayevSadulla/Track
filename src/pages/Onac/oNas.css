@@ -1,0 +1,230 @@
+.about {
+    position: relative;
+    background-image: url('/about-company.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.about::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg,
+            rgba(0, 0, 0, 0.9) 0%,
+            rgba(0, 0, 0, 0.75) 30%,
+            rgba(0, 0, 0, 0.25) 55%,
+            rgba(0, 0, 0, 0) 75%);
+}
+
+.about_i {
+    position: relative;
+    z-index: 1;
+    padding: 60px 60px 40px;
+    display: flex;
+    flex-direction: column;
+    min-height: 480px;
+}
+
+.about_i_text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.about_i h1 {
+    font-size: 32px;
+    font-weight: 500;
+    font-family: "Fira Sans", sans-serif;
+    max-width: 674px;
+    color: white;
+    line-height: 1.3;
+    margin-top: 40px;
+}
+
+.about_badge {
+    margin-top: auto;
+}
+
+.about_badge_shape {
+    width: 110px;
+    height: 110px;
+    background: #F2C60F;
+    clip-path: polygon(0% 35%,
+            50% 0%,
+            100% 35%,
+            100% 100%,
+            0% 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding-bottom: 14px;
+    position: absolute;
+    top: 400px;
+}
+
+.about_badge_number {
+    font-size: 30px;
+    font-weight: 800;
+    color: #1a1a1a;
+    line-height: 1;
+    font-family: "Fira Sans", sans-serif;
+}
+
+.about_badge_text {
+    font-size: 11px;
+    font-weight: 600;
+    color: #1a1a1a;
+    text-transform: lowercase;
+    margin-top: 2px;
+}
+
+.about_tt {
+    font-size: 22px;
+    font-family: "Fira Sans", sans-serif;
+    max-width: 649px;
+}
+
+.about_sw {
+    border: 1px solid #ebebeb;
+    border-radius: 8px;
+    padding: 45px 18px;
+}
+
+.about_text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.about_text .ttt {
+    font-size: 24px;
+    font-weight: 500;
+    font-family: "Fira Sans", sans-serif;
+    max-width: 271px;
+}
+
+.about_text .ppp {
+    font-size: 16px;
+    font-weight: 400;
+    font-family: "Fira Sans", sans-serif;
+    max-width: 271px;
+}
+
+.seb_p {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.pppp {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 20px;
+}
+
+.seg_text h1 {
+    font-size: 32px;
+    font-weight: 500;
+    font-family: "Fira Sans", sans-serif;
+}
+
+.lot {
+    background-color: #F2C60F;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+}
+
+.section_cat_right {
+    background-color: #fec80b;
+    border-radius: 8px;
+    padding: 3.2rem 0.8rem;
+}
+
+.cat_right_top_text {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cat_right_top_text h1 {
+    font-size: 32px;
+    font-weight: 500;
+    font-family: "Fira Sans", sans-serif;
+    max-width: 383px;
+}
+
+.cat_right_top_text p {
+    font-size: 18px;
+    font-weight: 400;
+    font-family: "Fira Sans", sans-serif;
+    max-width: 383px;
+
+}
+
+.section_cat_right {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.section_cat_left {
+    display: flex;
+    gap: 10px;
+}
+
+.section_cat_left img {
+    border-radius: 10px;
+}
+
+.section_cat_button p {
+    font-size: 18px;
+    font-weight: 400;
+    font-family: "Fira Sans", sans-serif;
+}
+
+@media (max-width:1300px) {
+    .section_cat{
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    .section_cat_right{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-inline: auto;
+        width: 100%;
+    }
+    .section_cat_left{
+        margin-inline: auto;
+    }
+}
+
+@media (max-width:950px) {
+    .section_cat_left{
+        display: none;
+    }
+    .section_seg{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width:750px) {
+    .swiper__top {
+        display: none;
+    }
+    .about_sw{
+        display: flex;
+        flex-direction: column;
+        margin-top: 70px;
+    }
+}

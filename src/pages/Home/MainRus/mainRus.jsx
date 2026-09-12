@@ -1,8 +1,10 @@
 import "./mainRus.css"
 import { useLanguage } from "../../../i18n/LanguageContext";
+import { useNavigate } from "react-router-dom";
 
 const MainRus = () => {
     const { t } = useLanguage();
+    const navigate = useNavigate();
 
     return (
         <section className="container">
@@ -20,7 +22,7 @@ const MainRus = () => {
                             </span>
                         ))}
                     </p>
-                    <button className="bg-[#FEC80B] text-white px-[30px] py-[13px] rounded-[4px] cursor-pointer hover:bg-white hover:text-[#FEC80B] hover:border border-1px yellow hover:shadow-lg">
+                    <button onClick={() => navigate("/onac")} className="bg-[#FEC80B]  text-white px-[30px] py-[13px] rounded-[4px] cursor-pointer hover:bg-white hover:text-[#FEC80B] hover:border border-1px yellow hover:shadow-lg">
                         {t("about_company_btn")} <i className="fa-solid fa-arrow-right-long"></i>
                     </button>
                 </div>
