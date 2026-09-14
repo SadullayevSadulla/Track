@@ -8,23 +8,24 @@ import "swiper/css/navigation";
 
 import "./oNas.css";
 import OnacData from "./oNasData";
+import { useLanguage } from "../../i18n/LanguageContext";
 
 const Onac = () => {
+  const { t } = useLanguage();
+
+  const todayPoints = Array.from({ length: 7 });
+
   return (
     <section>
       <div className="about mt-10">
         <div className="about_i container">
           <div className="about_i_text">
-            <h1>
-              Автомобильный завод «РусТрак» - ведущий производитель
-              коммерческого транспорта и специализированной техники
-              в Нижнем Новгороде.
-            </h1>
+            <h1>{t("onac_hero_title")}</h1>
 
             <div className="about_badge">
               <div className="about_badge_shape">
-                <span className="about_badge_number">17+</span>
-                <span className="about_badge_text">лет опыта</span>
+                <span className="about_badge_number">{t("onac_badge_number")}</span>
+                <span className="about_badge_text">{t("onac_badge_text")}</span>
               </div>
             </div>
           </div>
@@ -33,7 +34,7 @@ const Onac = () => {
       <section className="swiper container">
 
         <div className="swiper__top flex py-20 justify-between">
-          <h2 className="about_tt">Автомобильный завод «РусТрак» является предприятием полного цикла: от конструкторско-технологических разработок до готового изделия.</h2>
+          <h2 className="about_tt">{t("onac_swiper_title")}</h2>
 
           <div className="swiper__buttonsss flex gap-4">
             <button className="categories-prev">
@@ -79,22 +80,23 @@ const Onac = () => {
           }}
           className="categories__swiper"
         >
-          {OnacData.map((OnacData) => (
-            <SwiperSlide key={OnacData.id}>
+          {OnacData.map((item) => (
+            <SwiperSlide key={item.id}>
               <Link to="/">
                 <div className="about_sw">
                   <div className="about_img">
                     <img
-                      src={OnacData.image}
+                      src={item.image}
                       className="about_img_icon"
+                      alt={t(item.titleKey)}
                     />
                   </div>
                   <div className="about_text">
                     <div className="ttt">
-                      {OnacData.title}
+                      {t(item.titleKey)}
                     </div>
                     <div className="ppp">
-                      {OnacData.cardTitle}
+                      {t(item.cardTitleKey)}
                     </div>
                   </div>
                 </div>
@@ -106,50 +108,16 @@ const Onac = () => {
       <div className="container">
         <div className="section_seg mt-20 flex justify-between">
           <div className="seg_text">
-            <h1>Сегодня ООО «Рустрак» - это:</h1>
+            <h1>{t("onac_today_title")}</h1>
             <div className="seb_p">
-              <div className="pppp">
-                <div className="lot">
-                  <i className="fa-solid fa-check"></i>
+              {todayPoints.map((_, index) => (
+                <div className="pppp" key={index}>
+                  <div className="lot">
+                    <i className="fa-solid fa-check"></i>
+                  </div>
+                  <p>{t("onac_today_point")}</p>
                 </div>
-                <p>3 производственных корпуса, общей площадью более 7000 м2;</p>
-              </div>
-              <div className="pppp">
-                <div className="lot">
-                  <i className="fa-solid fa-check"></i>
-                </div>
-                <p>3 производственных корпуса, общей площадью более 7000 м2;</p>
-              </div>
-              <div className="pppp">
-                <div className="lot">
-                  <i className="fa-solid fa-check"></i>
-                </div>
-                <p>3 производственных корпуса, общей площадью более 7000 м2;</p>
-              </div>
-              <div className="pppp">
-                <div className="lot">
-                  <i className="fa-solid fa-check"></i>
-                </div>
-                <p>3 производственных корпуса, общей площадью более 7000 м2;</p>
-              </div>
-              <div className="pppp">
-                <div className="lot">
-                  <i className="fa-solid fa-check"></i>
-                </div>
-                <p>3 производственных корпуса, общей площадью более 7000 м2;</p>
-              </div>
-              <div className="pppp">
-                <div className="lot">
-                  <i className="fa-solid fa-check"></i>
-                </div>
-                <p>3 производственных корпуса, общей площадью более 7000 м2;</p>
-              </div>
-              <div className="pppp">
-                <div className="lot">
-                  <i className="fa-solid fa-check"></i>
-                </div>
-                <p>3 производственных корпуса, общей площадью более 7000 м2;</p>
-              </div>
+              ))}
             </div>
           </div>
           <div className="seg_img">
@@ -161,12 +129,12 @@ const Onac = () => {
         <div className="section_cat flex justify-between mt-20">
           <div className="section_cat_right">
             <div className="cat_right_top_text">
-              <h1>Отрасли применения выпускаемой техники:</h1>
-              <p>Cтроительная, телекоммуникационная, коммунальная, дорожное хозяйство, логистика, сельское хозяйство.</p>
+              <h1>{t("onac_industries_title")}</h1>
+              <p>{t("onac_industries_text")}</p>
             </div>
             <div className="cat_right_top_text">
-              <h1>Выпускаемая техника:</h1>
-              <p>Краны-манипуляторы, автотопливозаправщики, автовышки, фургоны, самосвалы, бортовые платформы, эвакуаторы, крюковые погрузчики, мастерские, пищевые цистерны, вакуумные машины, автогидроподъёмники.</p>
+              <h1>{t("onac_equipment_title")}</h1>
+              <p>{t("onac_equipment_text")}</p>
             </div>
           </div>
           <div className="section_cat_left">
@@ -178,9 +146,9 @@ const Onac = () => {
 
       <div className="container">
         <div className="section_cat_button flex flex-col gap-10 mt-20">
-          <p>ООО «РусТрак» является официальным дилером на территории РФ следующих марок: Palfinger, ИНМАН, HKTC, UNIC, DongYang, FASSI, Hangil, XCMG, HIAB.</p>
-          <p>За 16 лет деятельности компания заслужила высокий уровень доверия дистрибьютеров и автопроизводителей: ИСУЗУ РУС, КАМАЗ, ГАЗ, DAEWOO, FAW, JAC, ТРАКС ВОСТОК РУС (КОМПАС), МАЗ РУС, ДАЙМЛЕР КАМАЗ РУС (FUSO), ХИНО МОТОРС, FOTON, DONG FENG, SHACHMAN, НЕФАЗ, ЗАВОД СТАРТ</p>
-          <p>Наши клиенты: Газпром, Росатом, Россети, РСК «МИГ», Роснефть и др.</p>
+          <p>{t("onac_dealer_text")}</p>
+          <p>{t("onac_trust_text")}</p>
+          <p>{t("onac_clients_text")}</p>
         </div>
       </div>
     </section>

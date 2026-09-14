@@ -8,10 +8,12 @@ import "swiper/css/navigation";
 import "./mainNews.css";
 import newsData from "./newsData";
 import { useLanguage } from "../../../i18n/LanguageContext";
+import { useNavigate } from "react-router-dom";
 
 const MainNews = () => {
     const [favorites, setFavorites] = useState([]);
     const { t } = useLanguage();
+    const navigate = useNavigate();
 
     const toggleFavorite = (id) => {
         setFavorites((prev) =>
@@ -85,7 +87,7 @@ const MainNews = () => {
 
                                     <div className="product-card__actions">
 
-                                        <button className="product-card__btn-secondary text-[18px]">
+                                        <button className="product-card__btn-secondary text-[18px]" onClick={() => navigate("/mainNewsCard")}>
                                             {t("btn_more")}
                                             <i className="fa-solid fa-arrow-right-long"></i>
                                         </button>

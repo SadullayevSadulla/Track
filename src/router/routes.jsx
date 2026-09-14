@@ -1,6 +1,8 @@
 import Contacts from "../pages/Contacts/contacts";
 import Home from "../pages/Home/home";
+import Information from "../pages/Information/information";
 import Katolg from "../pages/Katolg/katolg";
+import MainNewsCard from "../pages/mainNewsCard/mainNewsCard";
 import News from "../pages/News/news";
 import Onac from "../pages/Onac/oNac";
 import Repair from "../pages/Repair/repair";
@@ -41,5 +43,15 @@ export const router = [
         id:7,
         path:'/onac',
         element:<Onac/>
+    },
+    {
+        id:8,
+        path:'/information',
+        element:<Information/>
+    },
+    {
+        id:9,
+        path:'/mainNewsCard',
+        element:<MainNewsCard/>
     }
 ]

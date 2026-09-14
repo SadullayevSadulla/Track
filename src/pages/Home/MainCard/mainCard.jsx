@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation} from "swiper/modules";
 
@@ -12,6 +13,7 @@ import { useLanguage } from "../../../i18n/LanguageContext";
 const MainCard = () => {
     const [favorites, setFavorites] = useState([]);
     const { t } = useLanguage();
+    const navigate = useNavigate();
 
 
     const toggleFavorite = (id) => {
@@ -101,7 +103,7 @@ const MainCard = () => {
                                     </p>
 
                                     <div className="product-card__actions">
-                                        <button className="product-card__btn-main font-[400] text-[16px] text-[#000000]">
+                                        <button className="product-card__btn-main font-[400] text-[16px] text-[#000000]" onClick={() => navigate("/information")}>
                                             {t("btn_more")}
                                         </button>
 

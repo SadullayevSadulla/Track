@@ -1,0 +1,80 @@
+.information {
+	background: #fff;
+	color: #111;
+}
+
+
+.information__title {
+	margin: 0 0 36px;
+	font-size: 30px;
+	font-weight: 700;
+}
+
+.information__layout {
+	display: grid;
+	grid-template-columns: minmax(0, 2.05fr) minmax(320px, 0.95fr);
+	gap: 22px;
+	align-items: start;
+}
+
+.information__photo {
+	height: 548px;
+	overflow: hidden;
+	border-radius: 14px;
+}
+
+.information__photo img {
+	width: 100%;
+	height: 100%;
+	display: block;
+	object-fit: cover;
+}
+
+.information__details h2 {
+	margin: -16px 0 18px;
+	font-size: 30px;
+	font-weight: 700;
+}
+
+.information__actions {
+	display: flex;
+	gap: 14px;
+	margin-bottom: 31px;
+}
+
+.information__actions button {
+	min-height: 50px;
+	padding: 0 22px;
+	border-radius: 4px;
+	font: inherit;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+.information__cart {
+	border: 1px solid #ffc400;
+	background: #ffc400;
+}
+
+.information__offer {
+	border: 1px solid #e0a900;
+	background: #fff;
+}
+
+.information__specifications {
+	display: flex;
+	flex-direction: column;
+	gap: 0;
+}
+
+.information__specification {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) max-content;
+	align-items: baseline;
+	gap: 18px;
+	margin: 0 0 13px;
+	font-size: 16px;
+	line-height: 1.2;
+}
+
+
