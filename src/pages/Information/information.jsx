@@ -4,19 +4,66 @@ import "./information.css"
 const productImage = "/000.webp"
 
 const specifications = [
-  ["Базовое шасси", "SOLLERS TR80-47"],
-  ["Двигатель", "Cummins D4.0EVID170, 163 л. с."],
-  ["КПП", "Механическая, 6-ти ступенчатая"],
-  ["Длина автомобиля, мм", "8990"],
-  ["Ширина автомобиля, мм", "2400"],
-  ["Высота автомобиля, мм", "3330"],
-  ["Колесная база, мм", "5200"],
-  ["Длина платформы, м", "6200"],
-  ["Полная масса, кг", "8000"],
-  ["Снаряженная масса, кг", "6420"],
-  ["Грузоподъёмность, кг", "1580"],
-  ["Грузоподъёмность КМУ, тонн", "3,2"],
-  ["Вылет стрелы, м", "9,8"],
+  [
+    "Базовое шасси",
+    "SOLLERS TR80-47"
+  ],
+  [
+    "Двигатель",
+    "Cummins D4.0EVID170, 163 л. с."
+
+  ],
+  [
+    "КПП",
+    "Механическая, 6-ти ступенчатая"
+
+  ],
+  [
+    "Длина автомобиля, мм",
+    "8990"
+  ],
+  [
+    "Ширина автомобиля, мм",
+    "2400"
+  ],
+  [
+    "Высота автомобиля",
+    "3330"
+
+  ],
+  [
+    "Колесная база, мм",
+    "5200"]
+  ,
+  [
+    "Длина платформы, м",
+    "6200"
+
+  ],
+  [
+    "Полная масса, кг",
+    "8000"
+
+  ],
+  [
+    "Снаряженная масса, кг",
+    "6420"
+  ],
+  [
+    "Грузоподъёмность, кг",
+    "1580"
+
+  ],
+  [
+    "Грузоподъёмность КМУ",
+    "32"
+
+  ],
+  [
+    "Вылет стрелы, м",
+    "9,8"
+
+  ],
 ]
 
 const Information = () => {
@@ -55,8 +102,41 @@ const Information = () => {
           <img src="/tr80_3014.png" alt="" />
         </div>
       </div>
+
+      <div className="infarmation_cataolg" id="specifications">
+        <div className="w-full p-6 font-sans">
+          <h1 className="text-3xl font-bold text-neutral-900 mb-6">
+            Характеристики
+          </h1>
+
+          <div className="rounded-md overflow-hidden border border-neutral-200">
+            <div className="bg-amber-400 px-6 py-4">
+              <span className="font-bold text-neutral-900">
+                Кран-манипулятор SOLLERS TR80-47 с КМУ НКТС 3014 (модель 4389А8)
+              </span>
+            </div>
+
+            <div>
+              {specifications.map(([label, value], i) => (
+                <div
+                  key={label}
+                  className={`grid grid-cols-1 sm:grid-cols-2 ${i !== specifications.length - 1 ? "border-b border-neutral-200" : ""
+                    } ${i % 2 === 1 ? "bg-neutral-50" : "bg-white"}`}
+                >
+                  <div className="px-6 py-4 text-neutral-800 sm:border-r border-neutral-200">
+                    {label}
+                  </div>
+                  <div className="px-6 py-4 text-neutral-700 text-center flex items-center justify-center">
+                    {value}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   )
 }
 
-export default Information
+export default Information;

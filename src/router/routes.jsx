@@ -1,4 +1,5 @@
 import Contacts from "../pages/Contacts/contacts";
+import Foto from "../pages/Foto/foto";
 import Home from "../pages/Home/home";
 import Information from "../pages/Information/information";
 import Katolg from "../pages/Katolg/katolg";
@@ -53,5 +54,10 @@ export const router = [
         id:9,
         path:'/mainNewsCard',
         element:<MainNewsCard/>
+    },
+    {
+        id:10,
+        path:'/foto',
+        element:<Foto/>
     }
 ]

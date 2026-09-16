@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import "./header.css"
 import { useLanguage } from "../../i18n/LanguageContext";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
     const [openMenu, setOpenMenu] = useState(null);
@@ -14,6 +15,7 @@ const Header = () => {
     const searchRef = useRef(null);
     const searchInputRef = useRef(null);
     const { lang, setLang, t, supportedLangs, LANG_LABELS } = useLanguage();
+    const navigate = useNavigate();
     const labels = LANG_LABELS || { ru: "RU", uz: "UZ", en: "EN" };
     const langs = supportedLangs || ["ru", "uz", "en"];
 
@@ -123,7 +125,7 @@ const Header = () => {
                     <div>
                         <h3 className="text-[20px] font-[700] font-['Fira_Sans'] mb-[20px]">{t("menu_media_title")}</h3>
                         <ul className="flex flex-col gap-[16px]">
-                            <li><a href="#" className="text-sm-base font-['Fira_Sans']">{t("menu_media_gallery")}</a></li>
+                            <li><a href="#" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigate("/foto"); }}>{t("menu_media_gallery")}</a></li>
                             <li><a href="#" className="text-sm-base font-['Fira_Sans']">{t("menu_media_video")}</a></li>
                             <li><a href="#" className="text-sm-base font-['Fira_Sans']">{t("menu_media_ads")}</a></li>
                             <li><a href="#" className="text-sm-base font-['Fira_Sans']">{t("menu_media_info")}</a></li>
@@ -220,7 +222,7 @@ const Header = () => {
                     </button>
                     {mobileSubOpen === "media" && (
                         <ul className="mobile_submenu">
-                            <li><a href="#">{t("menu_media_gallery")}</a></li>
+                            <li><a href="#">{t("menu_media_gallery")} onClick={(event) => { event.preventDefault(); navigate("/foto"); }}</a></li>
                             <li><a href="#">{t("menu_media_video")}</a></li>
                             <li><a href="#">{t("menu_media_ads")}</a></li>
                             <li><a href="#">{t("menu_media_info")}</a></li>

@@ -1,0 +1,19 @@
+.mianNews_top_text h1{
+    font-size: 32px;
+    font-weight: 500;
+    font-family: "Fira Sans", sans-serif;
+}
+
+.mianNews_top_text p{
+    font-size: 18px;
+    font-weight: 400;
+    font-family: "Fira Sans", sans-serif;
+}
+
+.mainNews_left_text h3{
+    font-size: 18px;
+    font-weight: bold;
+    font-family: "Fira Sans", sans-serif;
+    color: black;
+    margin-block: 15px;
+}
