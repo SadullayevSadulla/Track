@@ -14,6 +14,7 @@ const Header = (props) => {
     const [callModalOpen, setCallModalOpen] = useState(false);
     const [callForm, setCallForm] = useState({ name: "", phone: "", consent: true });
     const [searchQuery, setSearchQuery] = useState("");
+    const [isMobileLayout, setIsMobileLayout] = useState(() => window.innerWidth <= 850);
     const menuRef = useRef(null);
     const langRef = useRef(null);
     const searchRef = useRef(null);
@@ -28,10 +29,18 @@ const Header = (props) => {
         setOpenMenu((prev) => (prev === menu ? null : menu));
     };
 
-    const handleCatalogClick = () => {
-        const isMobile = window.innerWidth <= 850;
+    const isCatalogMenuOpen = isMobileLayout ? mobileMenuOpen : openMenu === "catalog";
 
-        if (isMobile) {
+    useEffect(() => {
+        const handleResize = () => setIsMobileLayout(window.innerWidth <= 850);
+
+        handleResize();
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
+    const handleCatalogClick = () => {
+        if (isMobileLayout) {
             setMobileMenuOpen((prev) => !prev);
             setMobileSubOpen(null);
             return;
@@ -130,6 +139,20 @@ const Header = (props) => {
         </svg>
     );
 
+    const CatalogToggleIcon = ({ open }) => (
+        <span className="catalog_toggle_icon" aria-hidden="true">
+            {open ? (
+                <svg viewBox="0 0 24 24" className="catalog_close_icon">
+                    <path fill="currentColor" d="M18.3 5.71 12 12l6.3 6.29-1.41 1.42L10.59 13.4 4.29 19.7 2.88 18.29 9.18 12 2.88 5.71 4.29 4.29l6.3 6.3 6.3-6.3z" />
+                </svg>
+            ) : (
+                <svg viewBox="0 0 24 24" className="catalog_hamburger_icon">
+                    <path fill="currentColor" d="M3 18v-2h18v2zm0-5v-2h18v2zm0-5V6h18v2z" />
+                </svg>
+            )}
+        </span>
+    );
+
     const MegaMenuContent = () => (
         <div
             className="mega_menu"
@@ -181,10 +204,10 @@ const Header = (props) => {
                     </div>
 
                     <div className="flex flex-col gap-[20px]">
-                        <a href="#" className="text-[20px] font-[700] font-['Fira_Sans']">{t("menu_service")}</a>
-                        <a href="#" className="text-[20px] font-[700] font-['Fira_Sans']">{t("menu_repair")}</a>
-                        <a href="#" className="text-[20px] font-[700] font-['Fira_Sans']">{t("menu_news")}</a>
-                        <a href="#" className="text-[20px] font-[700] font-['Fira_Sans']">{t("menu_contacts")}</a>
+                        <a href="/service" onClick={(event) => { event.preventDefault(); navigateAndClose("/service"); }} className="text-[20px] font-[700] font-['Fira_Sans']">{t("menu_service")}</a>
+                        <a href="/repair" onClick={(event) => { event.preventDefault(); navigateAndClose("/repair"); }} className="text-[20px] font-[700] font-['Fira_Sans']">{t("menu_repair")}</a>
+                        <a href="/news" onClick={(event) => { event.preventDefault(); navigateAndClose("/news"); }} className="text-[20px] font-[700] font-['Fira_Sans']">{t("menu_news")}</a>
+                        <a href="/contacts" onClick={(event) => { event.preventDefault(); navigateAndClose("/contacts"); }} className="text-[20px] font-[700] font-['Fira_Sans']">{t("menu_contacts")}</a>
                     </div>
 
                 </div>
@@ -428,15 +451,12 @@ const Header = (props) => {
                             <div className="relative">
                                 <button
                                     type="button"
-                                    className="catalog_btn flex items-center gap-[8px] bg-[#FEC80B] rounded-[4px] w-[132px] h-[42px] shrink-0 font-normal text-[18px] font-['Fira_Sans'] text-[#000000] cursor-pointer"
+                                    className={`catalog_btn flex items-center gap-[8px] bg-[#FEC80B] rounded-[4px] w-[132px] h-[42px] shrink-0 font-normal text-[18px] font-['Fira_Sans'] text-[#000000] cursor-pointer ${isCatalogMenuOpen ? "is-open" : ""}`}
                                     onClick={handleCatalogClick}
                                     aria-label={t("catalog")}
-                                    aria-expanded={window.innerWidth <= 850 ? mobileMenuOpen && mobileSubOpen === "cat" : openMenu === "catalog"}
+                                    aria-expanded={isCatalogMenuOpen}
                                 >
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
-                                        <path d="M0 0h24v24H0z" fill="none" />
-                                        <path fill="currentColor" d="M3 18v-2h18v2zm0-5v-2h18v2zm0-5V6h18v2z" />
-                                    </svg>
+                                    <CatalogToggleIcon open={isCatalogMenuOpen} />
                                     <span className="catalog_label">{t("catalog")}</span>
                                 </button>
 
