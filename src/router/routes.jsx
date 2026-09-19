@@ -5,6 +5,7 @@ import Hamkor from "../pages/Hamkor/hamkor";
 import Home from "../pages/Home/home";
 import Information from "../pages/Information/information";
 import Katolg from "../pages/Katolg/katolg";
+import Kredit from "../pages/Kredit/kredit";
 import MainNewsCard from "../pages/mainNewsCard/mainNewsCard";
 import News from "../pages/News/news";
 import Onac from "../pages/Onac/oNac";
@@ -89,5 +90,10 @@ export const router = [
         id: 15,
         path: '/vaqansiya',
         element: <Vaqansiva />
+    },
+    {
+        id: 16,
+        path: '/kredit',
+        element: <Kredit />
     }
 ]

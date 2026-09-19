@@ -1,0 +1,99 @@
+.kredit_t h1 {
+    font-size: 32px;
+    font-weight: 500;
+    font-family: "Fira Sans", sans-serif;
+}
+
+.kredit_t p {
+    font-size: 18px;
+    font-weight: 400;
+    font-family: "Fira Sans", sans-serif;
+    max-width: 990px;
+}
+
+.kredit_text h1 {
+    font-size: 24px;
+    font-weight: 500;
+    font-family: "Fira Sans", sans-serif;
+}
+
+.kredit_text p {
+    font-size: 18px;
+    font-weight: 400;
+    font-family: "Fira Sans", sans-serif;
+    max-width: 990px;
+}
+
+.kredit_text{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.leasing_types {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    max-width: 990px;
+    padding-bottom: 40px;
+}
+
+.leasing_types > h1 {
+    font-size: 24px;
+    font-weight: 500;
+    font-family: "Fira Sans", sans-serif;
+}
+
+.leasing_type {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: 18px;
+    align-items: start;
+}
+
+.leasing_type_number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ffc400;
+    color: #111;
+    font-size: 22px;
+    font-weight: 500;
+    font-family: "Fira Sans", sans-serif;
+}
+
+.leasing_type h2 {
+    margin: 0 0 4px;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: "Fira Sans", sans-serif;
+}
+
+.leasing_type p {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: 400;
+    font-family: "Fira Sans", sans-serif;
+}
+
+@media (max-width: 600px) {
+    .leasing_type {
+        grid-template-columns: 34px 1fr;
+        gap: 12px;
+    }
+
+    .leasing_type_number {
+        width: 34px;
+        height: 34px;
+        font-size: 18px;
+    }
+
+    .leasing_type p,
+    .leasing_type h2 {
+        font-size: 16px;
+    }
+}

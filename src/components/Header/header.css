@@ -223,7 +223,7 @@
 .header_wrap {
     position: relative;
     z-index: 30;
-    height: 190px;
+    height: 220px;
 }
 
 .header_fixed {
@@ -607,10 +607,12 @@
     .mobile_menu {
         display: block;
         position: fixed;
-        inset: 0;
-        top: 160px; 
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 160px;
         background: #fff;
-        z-index: 999;
+        z-index: 1001;
         overflow-y: auto;
     }
 
@@ -618,7 +620,6 @@
         display: flex;
         flex-direction: column;
     }
-
 
     .mobile_menu_list > li > button,
     .mobile_menu_list > li > a {
@@ -645,15 +646,27 @@
         display: flex;
         flex-direction: column;
         padding: 0 16px 14px 16px;
+        list-style: none;
+        margin: 0;
     }
 
-    .mobile_submenu li a {
+    .mobile_submenu li {
+        width: 100%;
+    }
+
+    .mobile_submenu li a,
+    .mobile_submenu li button {
         display: block;
+        width: 100%;
         padding: 10px 0;
         font-size: 14px;
         font-family: var(--font-fira);
         color: #333;
         text-decoration: none;
+        background: transparent;
+        border: none;
+        text-align: left;
+        cursor: pointer;
     }
 }
 
@@ -671,4 +684,3 @@
         display: none;
     }
 }
-

@@ -20,7 +20,14 @@ function App() {
             offset: 40,
             easing: "ease-out-cubic",
         });
-        AOS.refresh();
+    }, []);
+
+    useEffect(() => {
+        const frame = requestAnimationFrame(() => {
+            AOS.refreshHard();
+        });
+
+        return () => cancelAnimationFrame(frame);
     }, [location.pathname]);
 
     return (

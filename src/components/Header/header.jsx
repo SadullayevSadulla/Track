@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import { createPortal } from "react-dom";
 import "./header.css"
 import { useLanguage } from "../../i18n/LanguageContext";
 import { useNavigate } from "react-router-dom";
@@ -28,12 +29,15 @@ const Header = (props) => {
     };
 
     const handleCatalogClick = () => {
-        if (window.innerWidth <= 850) {
+        const isMobile = window.innerWidth <= 850;
+
+        if (isMobile) {
             setMobileMenuOpen((prev) => !prev);
             setMobileSubOpen(null);
-        } else {
-            toggleMenu("catalog");
+            return;
         }
+
+        toggleMenu("catalog");
     };
 
     const toggleMobileSub = (key) => {
@@ -139,18 +143,18 @@ const Header = (props) => {
                     <div>
                         <h3 className="text-[20px] font-[700] font-['Fira_Sans'] mb-[20px]">{t("menu_categories_title")}</h3>
                         <ul className="flex flex-col gap-[16px]">
-                            <li><a href="#" className="text-sm-base font-['Fira_Sans']">{t("menu_cat_curtain")}</a></li>
-                            <li><a href="#" className="text-sm-base font-['Fira_Sans']">{t("menu_cat_crane")}</a></li>
-                            <li><a href="#" className="text-sm-base font-['Fira_Sans']">{t("menu_cat_fuel_truck")}</a></li>
-                            <li><a href="#" className="text-sm-base font-['Fira_Sans']">{t("menu_cat_lift")}</a></li>
-                            <li><a href="#" className="text-sm-base font-['Fira_Sans']">{t("menu_cat_tank")}</a></li>
-                            <li><a href="#" className="text-sm-base font-['Fira_Sans']">{t("menu_cat_tow")}</a></li>
-                            <li><a href="#" className="text-sm-base font-['Fira_Sans']">{t("menu_cat_flatbed")}</a></li>
-                            <li><a href="#" className="text-sm-base font-['Fira_Sans']">{t("menu_cat_isotherm")}</a></li>
-                            <li><a href="#" className="text-sm-base font-['Fira_Sans']">{t("menu_cat_container")}</a></li>
-                            <li><a href="#" className="text-sm-base font-['Fira_Sans']">{t("menu_cat_hook_loader")}</a></li>
-                            <li><a href="#" className="text-sm-base font-['Fira_Sans']">{t("menu_cat_dump")}</a></li>
-                            <li><a href="#" className="text-sm-base font-['Fira_Sans']">{t("menu_cat_adr")}</a></li>
+                            <li><a href="/katolg" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/katolg"); }}>{t("menu_cat_curtain")}</a></li>
+                            <li><a href="/katolg" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/katolg"); }}>{t("menu_cat_crane")}</a></li>
+                            <li><a href="/katolg" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/katolg"); }}>{t("menu_cat_fuel_truck")}</a></li>
+                            <li><a href="/katolg" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/katolg"); }}>{t("menu_cat_lift")}</a></li>
+                            <li><a href="/katolg" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/katolg"); }}>{t("menu_cat_tank")}</a></li>
+                            <li><a href="/katolg" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/katolg"); }}>{t("menu_cat_tow")}</a></li>
+                            <li><a href="/katolg" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/katolg"); }}>{t("menu_cat_flatbed")}</a></li>
+                            <li><a href="/katolg" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/katolg"); }}>{t("menu_cat_isotherm")}</a></li>
+                            <li><a href="/katolg" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/katolg"); }}>{t("menu_cat_container")}</a></li>
+                            <li><a href="/katolg" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/katolg"); }}>{t("menu_cat_hook_loader")}</a></li>
+                            <li><a href="/katolg" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/katolg"); }}>{t("menu_cat_dump")}</a></li>
+                            <li><a href="/katolg" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/katolg"); }}>{t("menu_cat_adr")}</a></li>
                         </ul>
                     </div>
 
@@ -162,7 +166,7 @@ const Header = (props) => {
                             <li><a href="#" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/hamkor"); }}>{t("menu_about_partners")}</a></li>
                             <li><a href="#" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/certeficat"); }}>{t("menu_about_certificates")}</a></li>
                             <li><a href="#" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/vaqansiya"); }}>{t("menu_about_vacancies")}</a></li>
-                            <li><a href="#" className="text-sm-base font-['Fira_Sans']">{t("menu_about_leasing")}</a></li>
+                            <li><a href="#" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/kredit"); }}>{t("menu_about_leasing")}</a></li>
                         </ul>
                     </div>
 
@@ -188,7 +192,7 @@ const Header = (props) => {
         </div>
     );
 
-    const MobileMenu = () => (
+    const MobileMenu = () => createPortal(
         <div className="mobile_menu">
             <ul className="mobile_menu_list">
                 <li>
@@ -217,24 +221,24 @@ const Header = (props) => {
                 </li>
 
                 <li>
-                    <button onClick={() => toggleMobileSub("cat")}>
+                    <button type="button" onClick={() => toggleMobileSub("cat")}>
                         {t("menu_categories_title") || "Категории"}
                         <ChevronIcon open={mobileSubOpen === "cat"} />
                     </button>
                     {mobileSubOpen === "cat" && (
                         <ul className="mobile_submenu">
-                            <li><a href="#">{t("menu_cat_curtain")}</a></li>
-                            <li><a href="#">{t("menu_cat_crane")}</a></li>
-                            <li><a href="#">{t("menu_cat_fuel_truck")}</a></li>
-                            <li><a href="#">{t("menu_cat_lift")}</a></li>
-                            <li><a href="#">{t("menu_cat_tank")}</a></li>
-                            <li><a href="#">{t("menu_cat_tow")}</a></li>
-                            <li><a href="#">{t("menu_cat_flatbed")}</a></li>
-                            <li><a href="#">{t("menu_cat_isotherm")}</a></li>
-                            <li><a href="#">{t("menu_cat_container")}</a></li>
-                            <li><a href="#">{t("menu_cat_hook_loader")}</a></li>
-                            <li><a href="#">{t("menu_cat_dump")}</a></li>
-                            <li><a href="#">{t("menu_cat_adr")}</a></li>
+                            <li><button type="button" onClick={() => navigateAndClose("/katolg")}>{t("menu_cat_curtain")}</button></li>
+                            <li><button type="button" onClick={() => navigateAndClose("/katolg")}>{t("menu_cat_crane")}</button></li>
+                            <li><button type="button" onClick={() => navigateAndClose("/katolg")}>{t("menu_cat_fuel_truck")}</button></li>
+                            <li><button type="button" onClick={() => navigateAndClose("/katolg")}>{t("menu_cat_lift")}</button></li>
+                            <li><button type="button" onClick={() => navigateAndClose("/katolg")}>{t("menu_cat_tank")}</button></li>
+                            <li><button type="button" onClick={() => navigateAndClose("/katolg")}>{t("menu_cat_tow")}</button></li>
+                            <li><button type="button" onClick={() => navigateAndClose("/katolg")}>{t("menu_cat_flatbed")}</button></li>
+                            <li><button type="button" onClick={() => navigateAndClose("/katolg")}>{t("menu_cat_isotherm")}</button></li>
+                            <li><button type="button" onClick={() => navigateAndClose("/katolg")}>{t("menu_cat_container")}</button></li>
+                            <li><button type="button" onClick={() => navigateAndClose("/katolg")}>{t("menu_cat_hook_loader")}</button></li>
+                            <li><button type="button" onClick={() => navigateAndClose("/katolg")}>{t("menu_cat_dump")}</button></li>
+                            <li><button type="button" onClick={() => navigateAndClose("/katolg")}>{t("menu_cat_adr")}</button></li>
                         </ul>
                     )}
                 </li>
@@ -248,9 +252,9 @@ const Header = (props) => {
                         <ul className="mobile_submenu">
                             <li><a href="#" onClick={(event) => { event.preventDefault(); navigate("/onac"); }}>{t("menu_about_company")}</a></li>
                             <li><a href="#" onClick={(event) => { event.preventDefault(); navigate("/news"); }}>{t("menu_about_news")}</a></li>
-                            <li><a href="#">{t("menu_about_certificates")}</a></li>
-                            <li><a href="#">{t("menu_about_vacancies")}</a></li>
-                            <li><a href="#">{t("menu_about_leasing")}</a></li>
+                            <li><a href="#" onClick={(event) => { event.preventDefault(); navigateAndClose("/certeficat"); }}>{t("menu_about_certificates")}</a></li>
+                            <li><a href="#" onClick={(event) => { event.preventDefault(); navigateAndClose("/vaqansiya"); }}>{t("menu_about_vacancies")}</a></li>
+                            <li><a href="#" onClick={(event) => { event.preventDefault(); navigateAndClose("/kredit"); }}>{t("menu_about_leasing")}</a></li>
                         </ul>
                     )}
                 </li>
@@ -275,11 +279,12 @@ const Header = (props) => {
                 <li><a href="/news">{t("news")}</a></li>
                 <li><a href="/contacts">{t("contacts")}</a></li>
             </ul>
-        </div>
+        </div>,
+        document.body
     );
 
     return (
-        <header className="header_wrap">
+        <header {...props} className={`header_wrap ${props.className || ""}`}>
             <div ref={headerRef} className={`header_fixed ${isCompact ? "is-compact" : ""}`}>
                 <div className="header_top_wrap">
                     <div className="header_top_inner">
@@ -354,7 +359,7 @@ const Header = (props) => {
                     </div>
                 </div>
 
-            {callModalOpen && (
+            {callModalOpen && createPortal(
                 <div className="call_modal_overlay" onClick={() => setCallModalOpen(false)}>
                     <div className="call_modal" onClick={(event) => event.stopPropagation()}>
                         <button
@@ -410,7 +415,8 @@ const Header = (props) => {
                             <span>Нижний Новгород: 8 (831) 235-26-16</span>
                         </div>
                     </div>
-                </div>
+                </div>,
+                document.body
             )}
 
             <div className="section header_nav_section border-t-[1px] border-[#FEC80B]">
@@ -421,9 +427,11 @@ const Header = (props) => {
 
                             <div className="relative">
                                 <button
+                                    type="button"
                                     className="catalog_btn flex items-center gap-[8px] bg-[#FEC80B] rounded-[4px] w-[132px] h-[42px] shrink-0 font-normal text-[18px] font-['Fira_Sans'] text-[#000000] cursor-pointer"
-                                        onClick={handleCatalogClick}
-                                        aria-label={t("catalog")}
+                                    onClick={handleCatalogClick}
+                                    aria-label={t("catalog")}
+                                    aria-expanded={window.innerWidth <= 850 ? mobileMenuOpen && mobileSubOpen === "cat" : openMenu === "catalog"}
                                 >
                                     <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
                                         <path d="M0 0h24v24H0z" fill="none" />

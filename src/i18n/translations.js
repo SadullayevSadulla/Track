@@ -358,6 +358,28 @@ vacancy_cond2: "полный социальный пакет",
 vacancy_cond3: "отапливаемый цех, хорошие условия труда",
 
 vacancy_apply_btn: "Откликнуться",
+kredit_title: "Кредит и лизинг на автоспецтехнику компании РусТрак",
+kredit_intro: "Компания Рустрак предоставляет возможность покупки автоспецтехники в кредит и в лизинг. Мы работаем со всеми банками и лизинговыми компаниями. Помните, Вы можете выбрать любую лизинговую компанию, которая Вас устроит.",
+
+kredit_terms_title: "Основные условия лизинга",
+kredit_terms_text: "Сумма аванса 5-30% от стоимости техники. Удорожание объекта лизинга в год на 8-9% Срок выплаты лизинговых платежей от 6-ти месяцев до 5-ти лет. После полного расчёта по лизингу техника переходит в собственность Вашей фирмы.",
+
+kredit_advantages_title: "Преимущества лизинговых схем:",
+kredit_advantages_text: "Максимальная отсрочка платежа. Ускоренная амортизация: участники лизинговой сделки имеют право применять механизм ускоренной амортизации предмета лизинга с коэффициентом ускорения до 3, что позволяет быстрее окупить технику, варьировать длительность лизингового договора. Налоговая оптимизация: все платежи, производимые по договору лизинга, относятся на себестоимость продукции, тем самым, уменьшая налогооблагаемую базу по налогу на прибыль. Экономия средств лизингополучателя в результате отсутствия необходимости уплаты налога на имущество, т.к. предмет лизинга в большинстве случаев находится на балансе лизинговой компании. Возможность приобрести и использовать имущество, не отвлекая при этом собственные средства предприятия единовременно и в полном объёме. Возможность приобретения в собственность предмета лизинга, полностью освобожденного от налоговой нагрузки, по истечению срока договора лизинга. Самостоятельный выбор предмета лизинга и его продавца лизингополучателем.",
+
+kredit_types_title: "Три основных вида лизинга:",
+
+kredit_type1_title: "Финансовый лизинг",
+kredit_type1_text: "Лизингодатель (лизинговая компания) приобретает в собственность указанное лизингополучателем имущество у определённого продавца и передаёт лизингополучателю это имущество в качестве предмета лизинга на определённых условиях во временное владение и пользование. Имущество (предмет лизинга) переходит в собственность лизингополучателя при условии выплаты лизингополучателем всех лизинговых платежей.",
+
+kredit_type2_title: "Оперативный лизинг",
+kredit_type2_text: "Имущество не выкупается лизингополучателем, а остаётся в собственности лизинговой компании и после окончания срока действия договора лизинга ещё раз передаётся в лизинг или аренду.",
+
+kredit_type3_title: "Возвратный лизинг",
+kredit_type3_text: "Предприятие покупает имущество на собственные средства, а затем обращается в лизинговую компанию. Это один из способов достаточно быстро вернуть оборотные средства. Лизинговая компания рассматривает имущество как предмет лизинга и приобретает его по договору купли-продажи у предприятия. Это же имущество передается в лизинг этому же предприятию.",
+
+kredit_partner_title: "Информация о партнёре - компания \"CARCADE\"",
+kredit_partner_text: "Компания CARCADE – это универсальный лизинговый партнёр. CARCADE финансирует покупку как легковых автомобилей, так и коммерческого транспорта. Оформить коммерческие автомобили или спецтехнику в лизинг можно без предоставления финансовой отчётности по 2 документам. Условия оформления сделки: аванс от 4% до 50%, срок лизинга от 12 до 60 месяцев, последний платёж от 1% до 15%. Дополнительная выгода клиентов CARCADE: каско в рассрочку, бесплатная цессия, электронный документооборот. За получением более подробной информации по спецтехники и приобретению в лизинг обращайтесь по телефону: 8 (831) 225-00-55",
     },
 
     uz: {
@@ -718,6 +740,28 @@ vacancy_cond2: "to'liq ijtimoiy paket",
 vacancy_cond3: "isitiladigan sex, yaxshi mehnat sharoitlari",
 
 vacancy_apply_btn: "Ariza berish",
+kredit_title: "«RusTrak» kompaniyasi avtomaxsus texnikasi uchun kredit va lizing",
+kredit_intro: "«RusTrak» kompaniyasi avtomaxsus texnikani kredit va lizing asosida sotib olish imkoniyatini taqdim etadi. Biz barcha banklar va lizing kompaniyalari bilan ishlaymiz. Sizga mos keladigan istalgan lizing kompaniyasini tanlashingiz mumkinligini yodda tuting.",
+
+kredit_terms_title: "Lizingning asosiy shartlari",
+kredit_terms_text: "Avans miqdori texnika qiymatining 5-30% ni tashkil qiladi. Lizing obyektining qimmatlashishi yiliga 8-9%. Lizing to'lovlarini to'lash muddati 6 oydan 5 yilgacha. Lizing bo'yicha to'liq hisob-kitob qilingandan so'ng, texnika sizning firmangiz mulkiga o'tadi.",
+
+kredit_advantages_title: "Lizing sxemalarining afzalliklari:",
+kredit_advantages_text: "Maksimal to'lov muddatini uzaytirish. Tezlashtirilgan amortizatsiya: lizing bitimi ishtirokchilari lizing predmetiga nisbatan tezlashtirilgan amortizatsiya mexanizmini 3 tagacha bo'lgan tezlashtirish koeffitsienti bilan qo'llash huquqiga ega, bu texnikani tezroq qoplash, lizing shartnomasi muddatini o'zgartirish imkonini beradi. Soliq optimallashtirish: lizing shartnomasi bo'yicha amalga oshiriladigan barcha to'lovlar mahsulot tannarxiga kiritiladi, shu bilan foyda solig'i uchun soliq solinadigan bazani kamaytiradi. Lizingoluvchi mablag'larini tejash, chunki mulk solig'ini to'lash zarurati yo'q, chunki lizing predmeti ko'p hollarda lizing kompaniyasi balansida turadi. Korxonaning o'z mablag'larini bir vaqtning o'zida va to'liq hajmda jalb qilmasdan mulkni sotib olish va foydalanish imkoniyati. Lizing shartnomasi muddati tugagach, soliq yukidan to'liq ozod qilingan lizing predmetini mulk qilib olish imkoniyati. Lizingoluvchi tomonidan lizing predmeti va uning sotuvchisini mustaqil tanlash.",
+
+kredit_types_title: "Lizingning uchta asosiy turi:",
+
+kredit_type1_title: "Moliyaviy lizing",
+kredit_type1_text: "Lizing beruvchi (lizing kompaniyasi) lizingoluvchi ko'rsatgan mulkni ma'lum sotuvchidan mulk qilib sotib oladi va bu mulkni lizing predmeti sifatida belgilangan shartlarda vaqtinchalik egalik qilish va foydalanish uchun lizingoluvchiga topshiradi. Mulk (lizing predmeti) lizingoluvchi barcha lizing to'lovlarini to'lash sharti bilan uning mulkiga o'tadi.",
+
+kredit_type2_title: "Operativ lizing",
+kredit_type2_text: "Mulk lizingoluvchi tomonidan sotib olinmaydi, balki lizing kompaniyasi mulkida qoladi va lizing shartnomasi muddati tugagach yana lizingga yoki ijaraga topshiriladi.",
+
+kredit_type3_title: "Qaytariladigan lizing",
+kredit_type3_text: "Korxona mulkni o'z mablag'lari hisobidan sotib oladi, so'ngra lizing kompaniyasiga murojaat qiladi. Bu aylanma mablag'larni yetarlicha tez qaytarish usullaridan biridir. Lizing kompaniyasi mulkni lizing predmeti sifatida ko'rib chiqadi va uni korxonadan oldi-sotdi shartnomasi bo'yicha sotib oladi. Xuddi shu mulk shu korxonaga lizingga topshiriladi.",
+
+kredit_partner_title: "Hamkor haqida ma'lumot - \"CARCADE\" kompaniyasi",
+kredit_partner_text: "CARCADE kompaniyasi – universal lizing hamkoridir. CARCADE ham yengil avtomobillar, ham tijorat transportini sotib olishni moliyalashtiradi. Tijorat avtomobillari yoki maxsus texnikani lizingga rasmiylashtirish moliyaviy hisobotni taqdim etmasdan, 2 hujjat bo'yicha amalga oshirilishi mumkin. Bitimni rasmiylashtirish shartlari: avans 4% dan 50% gacha, lizing muddati 12 dan 60 oygacha, oxirgi to'lov 1% dan 15% gacha. CARCADE mijozlarining qo'shimcha foydasi: KASKO bo'lib-bo'lib to'lash, bepul sessiya, elektron hujjat aylanishi. Maxsus texnika va lizingga sotib olish bo'yicha batafsil ma'lumot olish uchun telefon orqali murojaat qiling: 8 (831) 225-00-55",
     },
 
     en: {
@@ -1078,6 +1122,28 @@ vacancy_cond2: "full social package",
 vacancy_cond3: "heated workshop, good living conditions",
 
 vacancy_apply_btn: "Apply",
+kredit_title: "Credit and leasing for RusTrak special vehicles",
+kredit_intro: "RusTrak offers the option to purchase special vehicles on credit or through leasing. We work with all banks and leasing companies. Remember, you can choose any leasing company that suits you.",
+
+kredit_terms_title: "Main leasing terms",
+kredit_terms_text: "The down payment is 5-30% of the equipment's value. The leased asset's value increases by 8-9% per year. The leasing payment period ranges from 6 months to 5 years. Once the lease is fully paid off, the equipment becomes the property of your company.",
+
+kredit_advantages_title: "Advantages of leasing schemes:",
+kredit_advantages_text: "Maximum payment deferral. Accelerated depreciation: parties to a leasing transaction have the right to apply an accelerated depreciation mechanism for the leased asset with an acceleration factor of up to 3, allowing the equipment to pay for itself faster and the lease term to be varied. Tax optimization: all payments made under the leasing agreement are attributed to the cost of production, thereby reducing the taxable base for income tax. Savings for the lessee due to the absence of property tax liability, since the leased asset is, in most cases, on the balance sheet of the leasing company. The ability to acquire and use property without diverting the company's own funds all at once and in full. The ability to acquire ownership of the leased asset, fully exempt from tax burden, once the lease agreement expires. The lessee independently chooses the leased asset and its seller.",
+
+kredit_types_title: "Three main types of leasing:",
+
+kredit_type1_title: "Financial leasing",
+kredit_type1_text: "The lessor (leasing company) purchases the property specified by the lessee from a designated seller and transfers this property to the lessee as the leased asset under certain conditions for temporary possession and use. The property (leased asset) becomes the lessee's property once the lessee has made all lease payments.",
+
+kredit_type2_title: "Operating leasing",
+kredit_type2_text: "The property is not purchased by the lessee, but remains the property of the leasing company, and after the lease agreement expires, it is leased or rented out again.",
+
+kredit_type3_title: "Leaseback (sale and leaseback)",
+kredit_type3_text: "A company purchases property using its own funds and then approaches a leasing company. This is one way to quickly recover working capital. The leasing company treats the property as a leased asset and acquires it from the company under a purchase agreement. The same property is then leased back to that same company.",
+
+kredit_partner_title: "Partner information - CARCADE company",
+kredit_partner_text: "CARCADE is a universal leasing partner. CARCADE finances the purchase of both passenger cars and commercial vehicles. Commercial vehicles or special equipment can be leased without providing financial statements, using just 2 documents. Terms of the deal: down payment from 4% to 50%, lease term from 12 to 60 months, final payment from 1% to 15%. Additional benefits for CARCADE clients: installment casco insurance, free assignment, electronic document management. For more detailed information on special equipment and leasing purchases, please call: 8 (831) 225-00-55",
     },
 };
 
