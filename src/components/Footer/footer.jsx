@@ -1,7 +1,7 @@
 import "./footer.css"
 import { useLanguage } from "../../i18n/LanguageContext";
 
-const Footer = () => {
+const Footer = (props) => {
     const { t } = useLanguage();
 
     const navLinks = [
@@ -13,7 +13,7 @@ const Footer = () => {
     ];
 
     return (
-        <footer className="bg-[#000000]">
+        <footer {...props} className={`bg-[#000000] ${props.className || ""}`}>
             <div className="footer container">
                 <div className="footer_top py-16">
 

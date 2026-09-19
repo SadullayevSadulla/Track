@@ -1,13 +1,18 @@
+import { Certeficat } from "../pages/certeficat/certeficat";
 import Contacts from "../pages/Contacts/contacts";
 import Foto from "../pages/Foto/foto";
+import Hamkor from "../pages/Hamkor/hamkor";
 import Home from "../pages/Home/home";
 import Information from "../pages/Information/information";
 import Katolg from "../pages/Katolg/katolg";
 import MainNewsCard from "../pages/mainNewsCard/mainNewsCard";
 import News from "../pages/News/news";
 import Onac from "../pages/Onac/oNac";
+import Reklama from "../pages/Reklama/reklama";
 import Repair from "../pages/Repair/repair";
 import Service from "../pages/Service/service";
+import Vaqansiva from "../pages/vaqansiva/vaqansiva";
+import Vido from "../pages/Video/vido";
 
 export const router = [
     {
@@ -25,11 +30,11 @@ export const router = [
         path: '/repair',
         element: <Repair />,
     },
-    { 
+    {
         id: 4,
         path: '/news',
         element: <News />,
-    }, 
+    },
     {
         id: 5,
         path: '/contacts',
@@ -41,23 +46,48 @@ export const router = [
         element: <Katolg />,
     },
     {
-        id:7,
-        path:'/onac',
-        element:<Onac/>
+        id: 7,
+        path: '/onac',
+        element: <Onac />
     },
     {
-        id:8,
-        path:'/information',
-        element:<Information/>
+        id: 8,
+        path: '/information',
+        element: <Information />
     },
     {
-        id:9,
-        path:'/mainNewsCard',
-        element:<MainNewsCard/>
+        id: 9,
+        path: '/mainNewsCard',
+        element: <MainNewsCard />
     },
     {
-        id:10,
-        path:'/foto',
-        element:<Foto/>
+        id: 10,
+        path: '/foto',
+        element: <Foto />
+    },
+    {
+        id: 11,
+        path: '/vido',
+        element: <Vido />
+    },
+    {
+        id: 12,
+        path: '/reklama',
+        element: <Reklama />
+    },
+    {
+        id: 13,
+        path: '/hamkor',
+        element: <Hamkor />
+    },
+    {
+        id: 14,
+        path: '/certeficat',
+        element: <Certeficat />
+    },
+    {
+        id: 15,
+        path: '/vaqansiya',
+        element: <Vaqansiva />
     }
 ]

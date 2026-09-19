@@ -5,6 +5,7 @@ import MainDar from "./MainDar/mainDar"
 import MainNews from "./MainNews/mainNews"
 import MainRus from "./MainRus/mainRus"
 import MainZapros from "../../components/MainZapros/mainZapros"
+import ArcNavigation from "./Profits/profits.jsx"
 
 const Home = () => {
   return (
@@ -13,7 +14,7 @@ const Home = () => {
       <Categories />
       <MainRus />
       <MainDar />
-      {/* <Profits/> */}
+      <ArcNavigation/>
       <MainCard />
       <MainNews />
     </div>

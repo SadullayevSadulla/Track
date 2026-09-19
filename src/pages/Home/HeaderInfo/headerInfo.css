@@ -9,8 +9,15 @@
 }
 
 .mySwiper {
+    position: relative;
+    z-index: 1;
     border-radius: 16px;
     overflow: hidden;
+}
+
+.mySwiper .swiper-button-prev,
+.mySwiper .swiper-button-next {
+    z-index: 5;
 }
 
 

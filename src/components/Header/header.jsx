@@ -3,17 +3,21 @@ import "./header.css"
 import { useLanguage } from "../../i18n/LanguageContext";
 import { useNavigate } from "react-router-dom";
 
-const Header = () => {
+const Header = (props) => {
     const [openMenu, setOpenMenu] = useState(null);
+    const [isCompact, setIsCompact] = useState(false);
     const [langMenuOpen, setLangMenuOpen] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [mobileSubOpen, setMobileSubOpen] = useState(null);
     const [mobileSearchOpen, setMobileSearchOpen] = useState(false);
+    const [callModalOpen, setCallModalOpen] = useState(false);
+    const [callForm, setCallForm] = useState({ name: "", phone: "", consent: true });
     const [searchQuery, setSearchQuery] = useState("");
     const menuRef = useRef(null);
     const langRef = useRef(null);
     const searchRef = useRef(null);
     const searchInputRef = useRef(null);
+    const headerRef = useRef(null);
     const { lang, setLang, t, supportedLangs, LANG_LABELS } = useLanguage();
     const navigate = useNavigate();
     const labels = LANG_LABELS || { ru: "RU", uz: "UZ", en: "EN" };
@@ -36,6 +40,13 @@ const Header = () => {
         setMobileSubOpen((prev) => (prev === key ? null : key));
     };
 
+    const navigateAndClose = (path) => {
+        setOpenMenu(null);
+        setMobileMenuOpen(false);
+        setMobileSubOpen(null);
+        navigate(path);
+    };
+
     const handleSearchSubmit = (e) => {
         e?.preventDefault();
         const q = searchQuery.trim();
@@ -53,10 +64,40 @@ const Header = () => {
         handleSearchSubmit();
     };
 
+    const handleCallChange = (event) => {
+        const { name, value, type, checked } = event.target;
+        setCallForm((prev) => ({
+            ...prev,
+            [name]: type === "checkbox" ? checked : value,
+        }));
+    };
+
+    const handleCallSubmit = (event) => {
+        event.preventDefault();
+        if (!callForm.name.trim() || !callForm.phone.trim()) return;
+        setCallModalOpen(false);
+        setCallForm({ name: "", phone: "", consent: true });
+    };
+
     useEffect(() => {
-        document.body.style.overflow = mobileMenuOpen ? "hidden" : "";
+        document.body.style.overflow = mobileMenuOpen || callModalOpen ? "hidden" : "";
         return () => { document.body.style.overflow = ""; };
-    }, [mobileMenuOpen]);
+    }, [mobileMenuOpen, callModalOpen]);
+
+    useEffect(() => {
+        const onScroll = () => {
+            const y = window.scrollY;
+            setIsCompact((prev) => (y > 80 ? true : y < 10 ? false : prev));
+        };
+
+        onScroll();
+        window.addEventListener("scroll", onScroll, { passive: true });
+        return () => window.removeEventListener("scroll", onScroll);
+    }, []);
+
+    useEffect(() => {
+        setOpenMenu(null);
+    }, [isCompact]);
 
     useEffect(() => {
         const handleClickOutside = (event) => {
@@ -86,7 +127,13 @@ const Header = () => {
     );
 
     const MegaMenuContent = () => (
-        <div className="fixed left-0 top-[200px] w-full h-full bg-white z-50 shadow-lg ">
+        <div
+            className="mega_menu"
+            style={{
+                top: headerRef.current?.getBoundingClientRect().bottom ?? 200,
+                height: "min(800px, calc(100vh - (var(--header-offset, 0px))))",
+            }}
+        >
             <div className="container py-[40px]">
                 <div className="grid grid-cols-4 gap-[40px]">
                     <div>
@@ -110,14 +157,11 @@ const Header = () => {
                     <div>
                         <h3 className="text-[20px] font-[700] font-['Fira_Sans'] mb-[20px]">{t("menu_about_title")}</h3>
                         <ul className="flex flex-col gap-[16px]">
-                            <li><a href="#" className="text-sm-base font-['Fira_Sans']">{t("menu_about_company")}</a></li>
-                            <li><a href="#" className="text-sm-base font-['Fira_Sans']">{t("menu_about_news")}</a></li>
-                            <li><a href="#" className="text-sm-base font-['Fira_Sans']">{t("menu_about_partners")}</a></li>
-                            <li><a href="#" className="text-sm-base font-['Fira_Sans']">{t("menu_about_production")}</a></li>
-                            <li><a href="#" className="text-sm-base font-['Fira_Sans']">{t("menu_about_suppliers")}</a></li>
-                            <li><a href="#" className="text-sm-base font-['Fira_Sans']">{t("menu_about_reviews")}</a></li>
-                            <li><a href="#" className="text-sm-base font-['Fira_Sans']">{t("menu_about_certificates")}</a></li>
-                            <li><a href="#" className="text-sm-base font-['Fira_Sans']">{t("menu_about_vacancies")}</a></li>
+                            <li><a href="#" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/onac"); }}>{t("menu_about_company")}</a></li>
+                            <li><a href="#" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/news"); }}>{t("menu_about_news")}</a></li>
+                            <li><a href="#" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/hamkor"); }}>{t("menu_about_partners")}</a></li>
+                            <li><a href="#" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/certeficat"); }}>{t("menu_about_certificates")}</a></li>
+                            <li><a href="#" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/vaqansiya"); }}>{t("menu_about_vacancies")}</a></li>
                             <li><a href="#" className="text-sm-base font-['Fira_Sans']">{t("menu_about_leasing")}</a></li>
                         </ul>
                     </div>
@@ -125,10 +169,10 @@ const Header = () => {
                     <div>
                         <h3 className="text-[20px] font-[700] font-['Fira_Sans'] mb-[20px]">{t("menu_media_title")}</h3>
                         <ul className="flex flex-col gap-[16px]">
-                            <li><a href="#" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigate("/foto"); }}>{t("menu_media_gallery")}</a></li>
-                            <li><a href="#" className="text-sm-base font-['Fira_Sans']">{t("menu_media_video")}</a></li>
-                            <li><a href="#" className="text-sm-base font-['Fira_Sans']">{t("menu_media_ads")}</a></li>
-                            <li><a href="#" className="text-sm-base font-['Fira_Sans']">{t("menu_media_info")}</a></li>
+                            <li><a href="#" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/foto"); }}>{t("menu_media_gallery")}</a></li>
+                            <li><a href="#" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/vido"); }}>{t("menu_media_video")}</a></li>
+                            <li><a href="#" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/reklama"); }}>{t("menu_media_ads")}</a></li>
+                            <li><a href="#" className="text-sm-base font-['Fira_Sans']" >{t("menu_media_info")}</a></li>
                         </ul>
                     </div>
 
@@ -149,7 +193,7 @@ const Header = () => {
             <ul className="mobile_menu_list">
                 <li>
                     <button onClick={() => toggleMobileSub("lang")}>
-                        {labels[lang] || lang?.toUpperCase()}
+                        {labels[lang] || lang?.toUpperCase()}   
                         <ChevronIcon open={mobileSubOpen === "lang"} />
                     </button>
                     {mobileSubOpen === "lang" && (
@@ -202,12 +246,8 @@ const Header = () => {
                     </button>
                     {mobileSubOpen === "about" && (
                         <ul className="mobile_submenu">
-                            <li><a href="#">{t("menu_about_company")}</a></li>
-                            <li><a href="#">{t("menu_about_news")}</a></li>
-                            <li><a href="#">{t("menu_about_partners")}</a></li>
-                            <li><a href="#">{t("menu_about_production")}</a></li>
-                            <li><a href="#">{t("menu_about_suppliers")}</a></li>
-                            <li><a href="#">{t("menu_about_reviews")}</a></li>
+                            <li><a href="#" onClick={(event) => { event.preventDefault(); navigate("/onac"); }}>{t("menu_about_company")}</a></li>
+                            <li><a href="#" onClick={(event) => { event.preventDefault(); navigate("/news"); }}>{t("menu_about_news")}</a></li>
                             <li><a href="#">{t("menu_about_certificates")}</a></li>
                             <li><a href="#">{t("menu_about_vacancies")}</a></li>
                             <li><a href="#">{t("menu_about_leasing")}</a></li>
@@ -222,9 +262,9 @@ const Header = () => {
                     </button>
                     {mobileSubOpen === "media" && (
                         <ul className="mobile_submenu">
-                            <li><a href="#">{t("menu_media_gallery")} onClick={(event) => { event.preventDefault(); navigate("/foto"); }}</a></li>
-                            <li><a href="#">{t("menu_media_video")}</a></li>
-                            <li><a href="#">{t("menu_media_ads")}</a></li>
+                            <li><a href="#" onClick={(event) => { event.preventDefault(); navigate("/foto"); }}>{t("menu_media_gallery")}</a></li>
+                            <li><a href="#" onClick={(event) => { event.preventDefault(); navigate("/vido"); }}>{t("menu_media_video")}</a></li>
+                            <li><a href="#" onClick={(event) => { event.preventDefault(); navigate("/reklama"); }}>{t("menu_media_ads")}</a></li>
                             <li><a href="#">{t("menu_media_info")}</a></li>
                         </ul>
                     )}
@@ -239,15 +279,18 @@ const Header = () => {
     );
 
     return (
-        <header className="relative mt-[10px]">
-            <div className="container">
-                <div className="header_top">
+        <header className="header_wrap">
+            <div ref={headerRef} className={`header_fixed ${isCompact ? "is-compact" : ""}`}>
+                <div className="header_top_wrap">
+                    <div className="header_top_inner">
+                        <div className="container">
+                            <div className="header_top">
                     <div className="header_logo flex items-center">
                         <a className="logo" href="/">
-                            <img src="/logo (3).png" alt="" className="w-[160px] h-[45px]" />
+                            <img src="./logo (3).png" alt=""  className="w-[160px] h-[45px]" />
                         </a>
                         <span className="divider"></span>
-                        <div className="text max-w-[167px]">
+                        <div className="texxt max-w-[167px]">
                             <p className="text-[14px] font-normal font-['Fira_Sans']">{t("company_slogan")}</p>
                         </div>
                     </div>
@@ -261,19 +304,30 @@ const Header = () => {
                                 <p className="text-[15px] font-normal font-['Fira_Sans'] text-[#A1A1A1]">{t("phone_regions_label")} {t("phone_regions")}</p>
                                 <p className="text-[15px] font-normal font-['Fira_Sans'] text-[#A1A1A1]">{t("phone_nn_label")} {t("phone_nn")}</p>
                             </div>
-                            <div className="img">
-                                <img src="/icon_normal_call.png" alt="" />
-                            </div>
+                            <button
+                                type="button"
+                                className="img call_trigger"
+                                onClick={() => setCallModalOpen(true)}
+                                aria-label="Заказать звонок"
+                            >
+                                <img src="./icon_normal_call.png" alt="" />
+                            </button>
                         </div>
 
                         <div className="lang_switcher relative" ref={langRef}>
                             <button
                                 type="button"
-                                className="flex items-center gap-[6px] text-[15px] font-[500] font-['Fira_Sans'] border-[1px] border-[#FEC80B] rounded-[4px] px-[15px] py-[5px] cursor-pointer bg-white"
+                                className="flex items-center gap-[6px] text-[15px] font-[500] font-['Fira_Sans'] border-[1px] border-[#FEC80B] rounded-[4px] px-[12px] py-[6px] cursor-pointer bg-white"
                                 onClick={() => setLangMenuOpen((prev) => !prev)}
                             >
                                 {labels[lang] || lang?.toUpperCase()}
-                                <ChevronIcon open={langMenuOpen} />
+                                <svg
+                                    className={`w-[16px] h-[16px] text-[#FEC80B] transition-transform ${langMenuOpen ? "rotate-180" : ""}`}
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path fill="currentColor" d="M7 10l5 5 5-5z" />
+                                </svg>
                             </button>
                             {langMenuOpen && (
                                 <ul className="absolute right-0 top-[calc(100%+6px)] bg-white border-[1px] border-[#eee] rounded-[6px] shadow-md z-50 min-w-[70px] overflow-hidden">
@@ -295,30 +349,87 @@ const Header = () => {
                             )}
                         </div>
                     </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        
-            <div className="section border-t-[1px] border-[#FEC80B] mt-[30px] py-[30px]">
+
+            {callModalOpen && (
+                <div className="call_modal_overlay" onClick={() => setCallModalOpen(false)}>
+                    <div className="call_modal" onClick={(event) => event.stopPropagation()}>
+                        <button
+                            type="button"
+                            className="call_modal_close"
+                            onClick={() => setCallModalOpen(false)}
+                            aria-label="Закрыть"
+                        >
+                            ×
+                        </button>
+
+                        <h3 className="call_modal_title">Заказать звонок</h3>
+                        <p className="call_modal_subtitle">Наш менеджер свяжется с Вами в ближайшее время</p>
+
+                        <form className="call_modal_form" onSubmit={handleCallSubmit}>
+                            <label className="call_field">
+                                <span>Ваше имя <span className="required">*</span></span>
+                                <input
+                                    type="text"
+                                    name="name"
+                                    value={callForm.name}
+                                    onChange={handleCallChange}
+                                    placeholder="Иван"
+                                />
+                            </label>
+
+                            <label className="call_field">
+                                <span>Телефон <span className="required">*</span></span>
+                                <input
+                                    type="tel"
+                                    name="phone"
+                                    value={callForm.phone}
+                                    onChange={handleCallChange}
+                                    placeholder="+7"
+                                />
+                            </label>
+
+                            <label className="call_checkbox">
+                                <input
+                                    type="checkbox"
+                                    name="consent"
+                                    checked={callForm.consent}
+                                    onChange={handleCallChange}
+                                />
+                                <span>Я согласен на обработку персональных данных</span>
+                            </label>
+
+                            <button type="submit" className="call_submit_btn">Оставить заявку</button>
+                        </form>
+
+                        <div className="call_modal_footer">
+                            <span>Для регионов: 8 (800) 511-05-25</span>
+                            <span>Нижний Новгород: 8 (831) 235-26-16</span>
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            <div className="section header_nav_section border-t-[1px] border-[#FEC80B]">
                 <div className="container">
                     <div className="header_bottom flex items-center justify-between py-[1px]">
                         <div className="sa flex items-center gap-[30px]" ref={menuRef}>
+                            <img src="./logo (3).png" alt="" className="mini_logo" />
 
                             <div className="relative">
                                 <button
-                                    className="catalog_btn flex items-center gap-[8px] bg-[#FEC80B] rounded-[4px] w-[132px] h-[42px] shrink-0 font-normal text-[18px] font-['Fira_Sans'] text-[#000000] cursor-pointer justify-center"
-                                    onClick={handleCatalogClick}
+                                    className="catalog_btn flex items-center gap-[8px] bg-[#FEC80B] rounded-[4px] w-[132px] h-[42px] shrink-0 font-normal text-[18px] font-['Fira_Sans'] text-[#000000] cursor-pointer"
+                                        onClick={handleCatalogClick}
+                                        aria-label={t("catalog")}
                                 >
-                                    {mobileMenuOpen ? (
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
-                                            <path fill="currentColor" d="M18.3 5.71a1 1 0 0 0-1.41 0L12 10.59 7.11 5.7A1 1 0 0 0 5.7 7.11L10.59 12l-4.9 4.89a1 1 0 1 0 1.41 1.41L12 13.41l4.89 4.9a1 1 0 0 0 1.41-1.41L13.41 12l4.9-4.89a1 1 0 0 0 0-1.4z" />
-                                        </svg>
-                                    ) : (
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
-                                            <path d="M0 0h24v24H0z" fill="none" />
-                                            <path fill="currentColor" d="M3 18v-2h18v2zm0-5v-2h18v2zm0-5V6h18v2z" />
-                                        </svg>
-                                    )}
-                                    {t("catalog")}
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                                        <path d="M0 0h24v24H0z" fill="none" />
+                                        <path fill="currentColor" d="M3 18v-2h18v2zm0-5v-2h18v2zm0-5V6h18v2z" />
+                                    </svg>
+                                    <span className="catalog_label">{t("catalog")}</span>
                                 </button>
 
                                 {openMenu === "catalog" && <MegaMenuContent />}
@@ -327,22 +438,34 @@ const Header = () => {
                             <nav className="nav_menu flex items-center gap-[28px]">
                                 <div className="relative">
                                     <button
-                                        className="flex items-center gap-[4px] text-[15px] font-normal font-['Fira_Sans'] cursor-pointer"
+                                        className="flex items-center gap-[4px] text-[15px] font-normal font-['Fira_Sans']"
                                         onClick={() => toggleMenu("onas")}
                                     >
                                         {t("about_us")}
-                                        <ChevronIcon open={openMenu === "onas"} />
+                                        <svg
+                                            className={`w-[30px] h-[40px] text-[#FEC80B] transition-transform ${openMenu === "onas" ? "rotate-180" : ""}`}
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path fill="currentColor" d="M7 10l5 5 5-5z" />
+                                        </svg>
                                     </button>
 
                                     {openMenu === "onas" && <MegaMenuContent />}
                                 </div>
                                 <div className="relative">
                                     <button
-                                        className="flex items-center gap-[4px] text-[15px] font-normal font-['Fira_Sans'] cursor-pointer"
+                                        className="flex items-center gap-[4px] text-[15px] font-normal font-['Fira_Sans']"
                                         onClick={() => toggleMenu("media")}
                                     >
                                         {t("media")}
-                                        <ChevronIcon open={openMenu === "media"} />
+                                        <svg
+                                            className={`w-[30px] h-[40px] text-[#FEC80B] transition-transform ${openMenu === "media" ? "rotate-180" : ""}`}
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path fill="currentColor" d="M7 10l5 5 5-5z" />
+                                        </svg>
                                     </button>
 
                                     {openMenu === "media" && <MegaMenuContent />}
@@ -355,35 +478,35 @@ const Header = () => {
                         </div>
 
                         <div className="header_actions flex items-center gap-5">
-                            <form
-                                className={`search_box relative ${mobileSearchOpen ? "mobile_open" : ""}`}
-                                ref={searchRef}
-                                onSubmit={handleSearchSubmit}
-                            >
+                            <div className="search_box relative">
                                 <input
-                                    ref={searchInputRef}
                                     type="text"
-                                    value={searchQuery}
-                                    onChange={(e) => setSearchQuery(e.target.value)}
                                     placeholder={t("search_placeholder")}
                                     className="w-70 h-11 rounded-[30px] border border-[#FEC80B] px-5 pr-12 text-[14px] font-['Fira_Sans'] outline-none"
                                 />
-                                <i
-                                    className="fa-solid fa-magnifying-glass w-4.5 h-4.5 absolute right-4.5 top-1/2 -translate-y-1/2 cursor-pointer"
-                                    onClick={handleSearchIconClick}
-                                ></i>
-                            </form>
+                                <i className="fa-solid fa-magnifying-glass w-4.5 h-4..5 absolute right-4.5 top-1/2 -translate-y-1/2"></i>
+                            </div>
 
-                            <button className="cart_btn cursor-pointer">
+                            <button className="cart_btn">
                                 <i className="fa-solid fa-cart-shopping w-7.5 h-7.5"></i>
                             </button>
 
-                            <button className="fav_btn relative cursor-pointer">
+                            <button className="fav_btn">
                                 <i className="fa-regular fa-heart w-7.5 h-7.5"></i>
+                            </button>
+
+                            <button
+                                type="button"
+                                className="call_mini"
+                                onClick={() => setCallModalOpen(true)}
+                                aria-label="Заказать звонок"
+                            >
+                                <img src="./icon_normal_call.png" alt="" />
                             </button>
                         </div>
                     </div>
                 </div>
+            </div>
             </div>
 
             {mobileMenuOpen && <MobileMenu />}

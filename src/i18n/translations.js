@@ -209,6 +209,7 @@ const translations = {
         katolg_brand_label: "Марка",
         katolg_search_placeholder: "Найти",
         katolg_weight_label: "Полная масса, тонн",
+        katolg_load_label: "Грузоподъемность, кг",
         weight_up_to_12: "до 12",
         weight_up_to_20: "до 20",
         weight_up_to_5_5: "до 5,5",
@@ -266,6 +267,97 @@ const translations = {
         onac_dealer_text: "ООО «РусТрак» является официальным дилером на территории РФ следующих марок: Palfinger, ИНМАН, HKTC, UNIC, DongYang, FASSI, Hangil, XCMG, HIAB.",
         onac_trust_text: "За 16 лет деятельности компания заслужила высокий уровень доверия дистрибьютеров и автопроизводителей: ИСУЗУ РУС, КАМАЗ, ГАЗ, DAEWOO, FAW, JAC, ТРАКС ВОСТОК РУС (КОМПАС), МАЗ РУС, ДАЙМЛЕР КАМАЗ РУС (FUSO), ХИНО МОТОРС, FOTON, DONG FENG, SHACHMAN, НЕФАЗ, ЗАВОД СТАРТ",
         onac_clients_text: "Наши",
+        info_product_title: "КРАН-МАНИПУЛЯТОР SOLLERS TR80-47 С КМУ НКТC 3014 (МОДЕЛЬ 4389А8)",
+        info_add_to_cart: "Добавить в корзину",
+        info_specs_link: "Смотреть все характеристики",
+        info_specs_title: "Характеристики",
+
+        spec_chassis_label: "Базовое шасси",
+        spec_chassis_value: "SOLLERS TR80-47",
+        spec_engine_label: "Двигатель",
+        spec_engine_value: "Cummins D4.0EVID170, 163 л. с.",
+        spec_gearbox_label: "КПП",
+        spec_gearbox_value: "Механическая, 6-ти ступенчатая",
+        spec_length_label: "Длина автомобиля, мм",
+        spec_width_label: "Ширина автомобиля, мм",
+        spec_height_label: "Высота автомобиля",
+        spec_wheelbase_label: "Колесная база, мм",
+        spec_platform_length_label: "Длина платформы, м",
+        spec_gross_weight_label: "Полная масса, кг",
+        spec_curb_weight_label: "Снаряженная масса, кг",
+        spec_payload_label: "Грузоподъёмность, кг",
+        spec_crane_capacity_label: "Грузоподъёмность КМУ",
+        spec_boom_reach_label: "Вылет стрелы, м",
+        newscard_title: "Первый в России контейнеровоз на шасси КАМАЗ‑65658 выпустил «Рустрак»",
+        newscard_date: "07.07.2026",
+
+        newscard_intro: "ООО «РУСТРАК» разработал контейнеровоз на шасси КАМАЗ 65658-1766-49 — первый в России проект на базе этого шасси. Это компактное и маневренное решение для контейнерной логистики. Предназначен для перевозки контейнеров с опасными грузами (категории ТС FL, АТ по классификации ДОПОГ).",
+
+        newscard_specs_title: "Ключевые характеристики",
+        newscard_spec1: "Габариты — 9040 × 2550 × 3480 мм;",
+        newscard_spec2: "Грузоподъёмность — 20 000 кг, полная масса — 29 500 кг;",
+        newscard_spec3: "Двигатель — 400 л.с. (КАМАЗ 689);",
+        newscard_spec4: "КПП — F12JZ24DD (12-ти ступенчатая роботизированная);",
+        newscard_spec5: "Нагрузка на оси — до 9000 кг (передняя) и 20 500 кг (ведущий мост).",
+
+        newscard_design_title: "Конструкция",
+        newscard_design_text: "Шасси укорочено для оптимального сопряжения согласно стандартам морских контейнеров. Усиленный надрамник изготовлен из швеллеров и гнутых профилей из сталей марок применяемых в автомобилестроении, платформа оснащена сертифицированными фитинговыми замками TLT-10 для надёжной фиксации груза. Контейнеровоз Рустрак на шасси КАМАЗ 65658 предназначен для перевозки контейнеров типов - 1CX, 1C, 1CC.",
+
+        newscard_protection_title: "Защита",
+        newscard_protection_text: "Весь металл проходит трёхэтапную обработку: дробеструйную очистку, эпоксидное грунтование с цинкфосфатными соединениями и финишную многослойную окраску. Такая технология обеспечивает высокую адгезию покрытия, надёжную антикоррозионную защиту и продлевает срок службы конструкции даже в условиях агрессивной среды портов и терминалов.",
+        video_page_title: "Видеогалерея производителя автоспецтехники РусТрак",
+        video_view_photos_btn: "Смотреть фото",
+
+        video_title_hktc: "Кран манипулятор HKTC на шасси Камаз Компас",
+        video_title_kamaz_compass: "КАМАЗ Компас 2022 | Cдвижная Штора и Крыша Тента | Обзор КАМАЗ | Грузовик с Бортом |",
+        video_title_evacuator: "Эвакуатор с прямой платформой на базе ISUZU с манипулятором PALFINGER",
+        reklama_page_title: "Рекламные материалы",
+
+        reklama_group1_title: "OOO РУСТРАК",
+        reklama_group1_link1: "Завод-доработчик коммерческого транспорта",
+
+        reklama_group2_title: "Автотопливозаправщики",
+        reklama_group2_link1: "Листовка ГАЗ NEXT",
+        reklama_group2_link2: "Листовка ГАЗ",
+        reklama_group2_link3: "Листовка FUSO",
+
+        reklama_group3_title: "Пищевые цистерны",
+        reklama_group3_link1: "Листовка ГАЗ NEXT пищевая цистерна",
+        reklama_group3_link2: "Листовка FUSO пищевая цистерна",
+        hamkor_page_title: "Партнёры",
+        hamkor_read_more: "Читать полностью",
+
+        hamkor_kamaz_title: "КАМАЗ",
+        hamkor_kamaz_text: "Группа компаний «КАМАЗ» – крупнейшая автомобильная корпорация Российской Федерации. ПАО «КАМАЗ» входит в 20-ку ведущих мировых производителей тяжёлых грузовых автомобилей и находится на 16-м месте по объёмам производства тяжёлых грузовиков полной массой более 16 тонн. Группа организаций ПАО «КАМАЗ» объединяет 109 компаний на территории России, СНГ и дальнего зарубежья. Единый производственный комплекс группы организаций ПАО «КАМАЗ» охватывает весь технологический цикл производства грузовых автомобилей – от разработки, изготовления, сборки",
+
+        hamkor_gaz_title: "Группа ГАЗ",
+        hamkor_gaz_text: "«Группа ГАЗ» специализируется на разработке и производстве легких и среднетоннажных коммерческих автомобилей, автобусов, тяжелых грузовиков, силовых агрегатов и автокомпонентов.",
+
+        hamkor_trucks_title: "ООО \"Тракс Восток Руc\"",
+        hamkor_trucks_text: "ООО «Тракс Восток Рус» является официальным дистрибьютором среднетоннажных грузовых автомобилей Компас 9 и Компас 12 с различными вариантами надстроек.",
+
+        hamkor_nefaz_title: "Публичное акционерное общество «НЕФАЗ».",
+        hamkor_nefaz_text: "Публичное акционерное общество \"НЕФАЗ\" входит в группу предприятий ПАО «КАМАЗ» и является крупнейшим в России заводом по производству спецнадстроек на шасси КАМАЗ.",
+
+        hamkor_palfinger_title: "ООО \"Палфингер Кран Рус\"",
+        hamkor_palfinger_text: "\"Палфингер Кран Рус\" - совместное предприятие концерна Palfinger(Австрия) и Группы Крафт Инвест (Россия) является эксклюзивным дистрибьютором Palfinger на территории Российский Федерации и стран СНГ",
+        vacancy_page_title: "Вакансии",
+vacancy_title: "Автоэлектрик",
+
+vacancy_responsibilities_title: "Обязанности:",
+vacancy_resp1: "электромонтаж осветительного оборудования",
+vacancy_resp2: "монтаж электрооборудования и надстроек на спецтехнику",
+
+vacancy_requirements_title: "Требования:",
+vacancy_req1: "опыт работы приветствуется",
+vacancy_req2: "желание учиться новому",
+
+vacancy_conditions_title: "Условия:",
+vacancy_cond1: "желание учиться новому",
+vacancy_cond2: "полный социальный пакет",
+vacancy_cond3: "отапливаемый цех, хорошие условия труда",
+
+vacancy_apply_btn: "Откликнуться",
     },
 
     uz: {
@@ -477,6 +569,7 @@ const translations = {
         katolg_brand_label: "Marka",
         katolg_search_placeholder: "Qidirish",
         katolg_weight_label: "To'liq og'irlik, tonna",
+        katolg_load_label: "Yuk ko'tarish qobiliyati, kg",
         weight_up_to_12: "12 gacha",
         weight_up_to_20: "20 gacha",
         weight_up_to_5_5: "5,5 gacha",
@@ -534,6 +627,97 @@ const translations = {
         onac_dealer_text: "«RusTrak» MChJ Rossiya Federatsiyasi hududida quyidagi markalarning rasmiy dileri hisoblanadi: Palfinger, INMAN, HKTC, UNIC, DongYang, FASSI, Hangil, XCMG, HIAB.",
         onac_trust_text: "16 yillik faoliyati davomida kompaniya distribyutorlar va avtoishlab chiqaruvchilarning yuqori ishonchini qozondi: ISUZU RUS, KAMAZ, GAZ, DAEWOO, FAW, JAC, TRAKS VOSTOK RUS (KOMPAS), MAZ RUS, DAYMLER KAMAZ RUS (FUSO), XINO MOTORS, FOTON, DONG FENG, SHACHMAN, NEFAZ, START ZAVODI",
         onac_clients_text: "Bizning mijozlarimiz: Gazprom, Rosatom, Rosseti, RSK «MiG», Rosneft va boshqalar.",
+        info_product_title: "SOLLERS TR80-47 KRAN-MANIPULYATORI NKTS 3014 KMU BILAN (MODEL 4389A8)",
+        info_add_to_cart: "Savatga qo'shish",
+        info_specs_link: "Barcha xususiyatlarni ko'rish",
+        info_specs_title: "Xususiyatlar",
+
+        spec_chassis_label: "Asosiy shassi",
+        spec_chassis_value: "SOLLERS TR80-47",
+        spec_engine_label: "Dvigatel",
+        spec_engine_value: "Cummins D4.0EVID170, 163 o.k.",
+        spec_gearbox_label: "Uzatmalar qutisi",
+        spec_gearbox_value: "Mexanik, 6 pog'onali",
+        spec_length_label: "Avtomobil uzunligi, mm",
+        spec_width_label: "Avtomobil eni, mm",
+        spec_height_label: "Avtomobil balandligi",
+        spec_wheelbase_label: "G'ildiraklar bazasi, mm",
+        spec_platform_length_label: "Platforma uzunligi, m",
+        spec_gross_weight_label: "To'liq og'irlik, kg",
+        spec_curb_weight_label: "Jihozlangan og'irlik, kg",
+        spec_payload_label: "Yuk ko'tarish qobiliyati, kg",
+        spec_crane_capacity_label: "KMU yuk ko'tarish qobiliyati",
+        spec_boom_reach_label: "Strela uzunligi, m",
+        newscard_title: "«RusTrak» Rossiyada birinchi bo'lib KAMAZ‑65658 shassisidagi konteynervozni ishlab chiqardi",
+        newscard_date: "07.07.2026",
+
+        newscard_intro: "«RUSTRAK» MChJ KAMAZ 65658-1766-49 shassisidagi konteynervozni ishlab chiqdi — bu shassi asosidagi Rossiyadagi birinchi loyiha. Bu konteyner logistikasi uchun ixcham va manevrli yechim. Xavfli yuklar tashuvchi konteynerlarni tashish uchun mo'ljallangan (DOPOG tasnifi bo'yicha FL, AT toifadagi transport vositalari).",
+
+        newscard_specs_title: "Asosiy xususiyatlar",
+        newscard_spec1: "O'lchamlari — 9040 × 2550 × 3480 mm;",
+        newscard_spec2: "Yuk ko'tarish qobiliyati — 20 000 kg, to'liq og'irligi — 29 500 kg;",
+        newscard_spec3: "Dvigatel — 400 o.k. (KAMAZ 689);",
+        newscard_spec4: "Uzatmalar qutisi — F12JZ24DD (12 pog'onali robotlashtirilgan);",
+        newscard_spec5: "O'qlarga yuklama — 9000 kg gacha (old) va 20 500 kg (yetakchi ko'prik).",
+
+        newscard_design_title: "Konstruksiya",
+        newscard_design_text: "Shassi dengiz konteynerlari standartlariga muvofiq optimal ulanish uchun qisqartirilgan. Mustahkamlangan asos avtomobilsozlikda qo'llaniladigan po'lat markalaridan tayyorlangan shveller va egilgan profillardan yasalgan, platforma yukni ishonchli mahkamlash uchun sertifikatlangan TLT-10 fitting qulflari bilan jihozlangan. «RusTrak» ning KAMAZ 65658 shassisidagi konteynervozi 1CX, 1C, 1CC turdagi konteynerlarni tashish uchun mo'ljallangan.",
+
+        newscard_protection_title: "Himoya",
+        newscard_protection_text: "Barcha metall uch bosqichli qayta ishlovdan o'tadi: drobestruy tozalash, sink-fosfat birikmalari bilan epoksid gruntlash va yakuniy ko'p qatlamli bo'yash. Bunday texnologiya qoplamaning yuqori yopishqoqligini, ishonchli korroziyaga qarshi himoyani ta'minlaydi va port hamda terminallarning agressiv muhitida ham konstruksiyaning xizmat muddatini uzaytiradi.",
+        video_page_title: "«RusTrak» avtomaxsus texnika ishlab chiqaruvchisining video galereyasi",
+        video_view_photos_btn: "Fotosuratlarni ko'rish",
+
+        video_title_hktc: "KAMAZ Kompas shassisidagi HKTC kran-manipulyatori",
+        video_title_kamaz_compass: "KAMAZ Kompas 2022 | Siljuvchi Parda va Tom Tenti | KAMAZ Sharhi | Bortli Yuk Mashinasi |",
+        video_title_evacuator: "PALFINGER manipulyatorli ISUZU asosidagi to'g'ri platformali evakuator",
+        reklama_page_title: "Advertising materials",
+
+        reklama_group1_title: "RUSTRAK LLC",
+        reklama_group1_link1: "Commercial vehicle modification plant",
+
+        reklama_group2_title: "Fuel tank trucks",
+        reklama_group2_link1: "GAZ NEXT brochure",
+        reklama_group2_link2: "GAZ brochure",
+        reklama_group2_link3: "FUSO brochure",
+
+        reklama_group3_title: "Food-grade tank trucks",
+        reklama_group3_link1: "GAZ NEXT food-grade tank brochure",
+        reklama_group3_link2: "FUSO food-grade tank brochure",
+        hamkor_page_title: "Hamkorlar",
+        hamkor_read_more: "To'liq o'qish",
+
+        hamkor_kamaz_title: "KAMAZ",
+        hamkor_kamaz_text: "«KAMAZ» kompaniyalar guruhi – Rossiya Federatsiyasining eng yirik avtomobil korporatsiyasi. «KAMAZ» OAJ dunyoning yetakchi 20 ta og'ir yuk avtomobillari ishlab chiqaruvchisi qatoriga kiradi va to'liq og'irligi 16 tonnadan ortiq og'ir yuk mashinalari ishlab chiqarish hajmi bo'yicha 16-o'rinni egallaydi. «KAMAZ» OAJ tashkilotlar guruhi Rossiya, MDH va uzoq xorijdagi 109 ta kompaniyani birlashtiradi. «KAMAZ» OAJ tashkilotlar guruhining yagona ishlab chiqarish majmuasi yuk avtomobillari ishlab chiqarishning butun texnologik siklini qamrab oladi – ishlanmadan, tayyorlashdan, yig'ishgacha",
+
+        hamkor_gaz_title: "GAZ Guruhi",
+        hamkor_gaz_text: "«GAZ Guruhi» yengil va o'rta tonnajli tijorat avtomobillari, avtobuslar, og'ir yuk mashinalari, quvvat agregatlari va avtokomponentlarni ishlab chiqish va ishlab chiqarishga ixtisoslashgan.",
+
+        hamkor_trucks_title: "\"Traks Vostok Rus\" MChJ",
+        hamkor_trucks_text: "«Traks Vostok Rus» MChJ turli xil ustki qism variantlariga ega Kompas 9 va Kompas 12 o'rta tonnajli yuk avtomobillarining rasmiy distribyutori hisoblanadi.",
+
+        hamkor_nefaz_title: "«NEFAZ» ochiq aksiyadorlik jamiyati.",
+        hamkor_nefaz_text: "\"NEFAZ\" ochiq aksiyadorlik jamiyati «KAMAZ» OAJ korxonalar guruhiga kiradi va Rossiyada KAMAZ shassisi uchun maxsus ustki qismlar ishlab chiqaradigan eng yirik zavod hisoblanadi.",
+
+        hamkor_palfinger_title: "\"Palfinger Kran Rus\" MChJ",
+        hamkor_palfinger_text: "\"Palfinger Kran Rus\" - Palfinger kontserni (Avstriya) va Kraft Invest Guruhi (Rossiya) qo'shma korxonasi bo'lib, Rossiya Federatsiyasi va MDH mamlakatlari hududida Palfingerning eksklyuziv distribyutori hisoblanadi",
+        vacancy_page_title: "Bo'sh ish o'rinlari",
+vacancy_title: "Avtoelektrik",
+
+vacancy_responsibilities_title: "Vazifalar:",
+vacancy_resp1: "yoritish uskunalarini elektr montaji",
+vacancy_resp2: "maxsus texnikaga elektr uskunalari va ustki qismlarni o'rnatish",
+
+vacancy_requirements_title: "Talablar:",
+vacancy_req1: "ish tajribasi bo'lishi ma'qul",
+vacancy_req2: "yangi narsalarni o'rganishga qiziqish",
+
+vacancy_conditions_title: "Shartlar:",
+vacancy_cond1: "yangi narsalarni o'rganishga qiziqish",
+vacancy_cond2: "to'liq ijtimoiy paket",
+vacancy_cond3: "isitiladigan sex, yaxshi mehnat sharoitlari",
+
+vacancy_apply_btn: "Ariza berish",
     },
 
     en: {
@@ -745,6 +929,7 @@ const translations = {
         katolg_brand_label: "Brand",
         katolg_search_placeholder: "Search",
         katolg_weight_label: "Gross weight, tons",
+        katolg_load_label: "Load capacity, kg",
         weight_up_to_12: "up to 12",
         weight_up_to_20: "up to 20",
         weight_up_to_5_5: "up to 5.5",
@@ -802,6 +987,97 @@ const translations = {
         onac_dealer_text: "RusTrak LLC is the official dealer in Russia for the following brands: Palfinger, INMAN, HKTC, UNIC, DongYang, FASSI, Hangil, XCMG, HIAB.",
         onac_trust_text: "Over 16 years of operation, the company has earned a high level of trust from distributors and vehicle manufacturers: ISUZU RUS, KAMAZ, GAZ, DAEWOO, FAW, JAC, TRAKS VOSTOK RUS (KOMPAS), MAZ RUS, DAIMLER KAMAZ RUS (FUSO), HINO MOTORS, FOTON, DONG FENG, SHACHMAN, NEFAZ, START PLANT",
         onac_clients_text: "Our clients: Gazprom, Rosatom, Rosseti, RSK MiG, Rosneft, and others.",
+        info_product_title: "SOLLERS TR80-47 CRANE LOADER WITH NKTS 3014 CRANE UNIT (MODEL 4389A8)",
+        info_add_to_cart: "Add to cart",
+        info_specs_link: "View all specifications",
+        info_specs_title: "Specifications",
+
+        spec_chassis_label: "Base chassis",
+        spec_chassis_value: "SOLLERS TR80-47",
+        spec_engine_label: "Engine",
+        spec_engine_value: "Cummins D4.0EVID170, 163 hp",
+        spec_gearbox_label: "Transmission",
+        spec_gearbox_value: "Manual, 6-speed",
+        spec_length_label: "Vehicle length, mm",
+        spec_width_label: "Vehicle width, mm",
+        spec_height_label: "Vehicle height",
+        spec_wheelbase_label: "Wheelbase, mm",
+        spec_platform_length_label: "Platform length, m",
+        spec_gross_weight_label: "Gross weight, kg",
+        spec_curb_weight_label: "Curb weight, kg",
+        spec_payload_label: "Payload capacity, kg",
+        spec_crane_capacity_label: "Crane loading capacity",
+        spec_boom_reach_label: "Boom reach, m",
+        newscard_title: "RusTrak released Russia's first container carrier on a KAMAZ‑65658 chassis",
+        newscard_date: "07.07.2026",
+
+        newscard_intro: "RusTrak LLC has developed a container carrier on the KAMAZ 65658-1766-49 chassis — the first project in Russia based on this chassis. It is a compact and maneuverable solution for container logistics, designed to transport containers with dangerous goods (ADR vehicle categories FL, AT).",
+
+        newscard_specs_title: "Key specifications",
+        newscard_spec1: "Dimensions — 9040 × 2550 × 3480 mm;",
+        newscard_spec2: "Payload capacity — 20,000 kg, gross weight — 29,500 kg;",
+        newscard_spec3: "Engine — 400 hp (KAMAZ 689);",
+        newscard_spec4: "Transmission — F12JZ24DD (12-speed automated);",
+        newscard_spec5: "Axle load — up to 9,000 kg (front) and 20,500 kg (drive axle).",
+
+        newscard_design_title: "Design",
+        newscard_design_text: "The chassis is shortened for optimal alignment according to sea container standards. The reinforced subframe is made from channel bars and bent profiles using steel grades applied in the automotive industry, and the platform is fitted with certified TLT-10 twist-lock fittings for reliable cargo securing. The RusTrak container carrier on the KAMAZ 65658 chassis is designed to transport containers of types 1CX, 1C, and 1CC.",
+
+        newscard_protection_title: "Protection",
+        newscard_protection_text: "All metal undergoes a three-stage treatment: shot blasting, epoxy priming with zinc phosphate compounds, and a final multi-layer coating. This technology ensures high coating adhesion, reliable corrosion protection, and extends the structure's service life even in the aggressive environment of ports and terminals.",
+        video_page_title: "RusTrak special vehicle manufacturer video gallery",
+        video_view_photos_btn: "View photos",
+
+        video_title_hktc: "HKTC crane loader on a KAMAZ Kompas chassis",
+        video_title_kamaz_compass: "KAMAZ Kompas 2022 | Sliding Curtain and Roof Tarp | KAMAZ Review | Flatbed Truck |",
+        video_title_evacuator: "Flatbed tow truck based on ISUZU with PALFINGER crane loader",
+        reklama_page_title: "Advertising materials",
+
+        reklama_group1_title: "RUSTRAK LLC",
+        reklama_group1_link1: "Commercial vehicle modification plant",
+
+        reklama_group2_title: "Fuel tank trucks",
+        reklama_group2_link1: "GAZ NEXT brochure",
+        reklama_group2_link2: "GAZ brochure",
+        reklama_group2_link3: "FUSO brochure",
+
+        reklama_group3_title: "Food-grade tank trucks",
+        reklama_group3_link1: "GAZ NEXT food-grade tank brochure",
+        reklama_group3_link2: "FUSO food-grade tank brochure",
+        hamkor_page_title: "Partners",
+        hamkor_read_more: "Read more",
+
+        hamkor_kamaz_title: "KAMAZ",
+        hamkor_kamaz_text: "The KAMAZ Group of Companies is the largest automotive corporation in the Russian Federation. PJSC KAMAZ ranks among the top 20 leading global manufacturers of heavy trucks and holds 16th place in production volume of heavy trucks with a gross weight of over 16 tons. The PJSC KAMAZ group of organizations brings together 109 companies in Russia, the CIS, and abroad. The unified production complex of the PJSC KAMAZ group covers the entire technological cycle of truck manufacturing — from design and fabrication to assembly",
+
+        hamkor_gaz_title: "GAZ Group",
+        hamkor_gaz_text: "GAZ Group specializes in the development and production of light and medium-duty commercial vehicles, buses, heavy trucks, power units, and auto components.",
+
+        hamkor_trucks_title: "Trucks Vostok Rus LLC",
+        hamkor_trucks_text: "Trucks Vostok Rus LLC is the official distributor of Kompas 9 and Kompas 12 medium-duty trucks with various body configurations.",
+
+        hamkor_nefaz_title: "NEFAZ Public Joint-Stock Company.",
+        hamkor_nefaz_text: "NEFAZ Public Joint-Stock Company is part of the PJSC KAMAZ group of enterprises and is Russia's largest plant for manufacturing specialized bodies on KAMAZ chassis.",
+
+        hamkor_palfinger_title: "Palfinger Kran Rus LLC",
+        hamkor_palfinger_text: "Palfinger Kran Rus is a joint venture between the Palfinger concern (Austria) and the Kraft Invest Group (Russia), and is the exclusive distributor of Palfinger in the Russian Federation and CIS countries",
+        vacancy_page_title: "Vacancies",
+vacancy_title: "Auto Electrician",
+
+vacancy_responsibilities_title: "Responsibilities:",
+vacancy_resp1: "electrical installation of lighting equipment",
+vacancy_resp2: "installation of electrical equipment and superstructures on special vehicles",
+
+vacancy_requirements_title: "Requirements:",
+vacancy_req1: "work experience is welcome",
+vacancy_req2: "desire to learn new things",
+
+vacancy_conditions_title: "Conditions:",
+vacancy_cond1: "desire to learn new things",
+vacancy_cond2: "full social package",
+vacancy_cond3: "heated workshop, good living conditions",
+
+vacancy_apply_btn: "Apply",
     },
 };
 

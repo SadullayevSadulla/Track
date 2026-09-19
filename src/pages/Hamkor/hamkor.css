@@ -1,0 +1,33 @@
+.hamkor_top h1 {
+    font-size: 32px;
+    font-weight: 500;
+    font-family: "Fira Sans", sans-serif;
+}
+
+.hamkor_bot {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.hamkor_bots h1 {
+    font-size: 24px;
+    font-weight: 500;
+    font-family: "Fira Sans", sans-serif;
+}
+
+.hamkor_bots p{
+    font-size: 18px;
+    font-weight: 400;
+    font-family: "Fira Sans", sans-serif;
+}
+
+.hamkor_bots{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.hamkor_bots a{
+    text-decoration: underline;
+}

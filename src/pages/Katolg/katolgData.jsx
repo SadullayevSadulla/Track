@@ -1,27 +1,56 @@
+// Filtr variantlari (chap panel)
+export const BRANDS = [
+    { value: "gaz", labelKey: "brand_gaz" },
+    { value: "kamaz", labelKey: "brand_kamaz" },
+    { value: "jac", labelKey: "brand_jac" },
+    { value: "daewoo", labelKey: "brand_daewoo" },
+    { value: "foton", labelKey: "brand_foton" },
+    { value: "dongfeng", labelKey: "brand_dongfeng" },
+    { value: "maz", labelKey: "brand_maz" },
+];
+
+export const WEIGHTS = [
+    { value: "up_to_5_5", labelKey: "weight_up_to_5_5" },
+    { value: "up_to_12", labelKey: "weight_up_to_12" },
+    { value: "up_to_20", labelKey: "weight_up_to_20" },
+    { value: "over_20", labelKey: "weight_over_20" },
+];
+
 const katolgData = [
     {
         id: 1,
         titleKey: "katolg_product1_title",
+        brand: "gaz",
+        weight: "up_to_5_5",
         priceType: "from",
         priceAmount: "352 000₽",
+        loadCapacity: "6340",
         image: "/000.webp",
     },
     {
         id: 2,
         titleKey: "katolg_product1_title",
+        brand: "kamaz",
+        weight: "up_to_20",
         priceType: "request",
+        loadCapacity: "13800",
         image: "/000 (1).webp",
     },
     {
         id: 3,
         titleKey: "katolg_product1_title",
+        brand: "jac",
+        weight: "up_to_12",
         priceType: "from",
         priceAmount: "352 000₽",
+        loadCapacity: "1580",
         image: "/000 (2).webp",
     },
     {
         id: 4,
         titleKey: "katolg_product1_title",
+        brand: "daewoo",
+        weight: "up_to_12",
         priceType: "from",
         priceAmount: "352 000₽",
         image: "/000 (3).webp",
@@ -29,6 +58,8 @@ const katolgData = [
     {
         id: 5,
         titleKey: "katolg_product1_title",
+        brand: "foton",
+        weight: "up_to_5_5",
         priceType: "from",
         priceAmount: "352 000₽",
         image: "/000 (1).webp",
@@ -36,6 +67,8 @@ const katolgData = [
     {
         id: 6,
         titleKey: "katolg_product1_title",
+        brand: "dongfeng",
+        weight: "over_20",
         priceType: "from",
         priceAmount: "352 000₽",
         image: "/000.webp",
@@ -43,12 +76,16 @@ const katolgData = [
     {
         id: 7,
         titleKey: "katolg_product1_title",
+        brand: "maz",
+        weight: "over_20",
         priceType: "request",
         image: "/000 (1).webp",
     },
     {
         id: 8,
         titleKey: "katolg_product1_title",
+        brand: "gaz",
+        weight: "up_to_12",
         priceType: "from",
         priceAmount: "352 000₽",
         image: "/000 (2).webp",
@@ -56,6 +93,8 @@ const katolgData = [
     {
         id: 9,
         titleKey: "katolg_product1_title",
+        brand: "kamaz",
+        weight: "over_20",
         priceType: "from",
         priceAmount: "352 000₽",
         image: "/000 (3).webp",
@@ -63,6 +102,8 @@ const katolgData = [
     {
         id: 10,
         titleKey: "katolg_product1_title",
+        brand: "jac",
+        weight: "up_to_5_5",
         priceType: "from",
         priceAmount: "352 000₽",
         image: "/000 (1).webp",

@@ -1,11 +1,11 @@
 import "./mainZapros.css"
 import { useLanguage } from "../../i18n/LanguageContext";
 
-const MainZapros = () => {
+const MainZapros = (props) => {
     const { t } = useLanguage();
 
     return (
-        <section className="bg-[#F2F2F2] mt-[60px]">
+        <section {...props} className={`bg-[#F2F2F2] mt-[60px] ${props.className || ""}`}>
             <div className="fun flex justify-between py-15 px-15">
                 <div className="container">
                     <div className="zapros">

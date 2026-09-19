@@ -130,6 +130,123 @@
   flex-shrink: 0;
 }
 
+.offer_modal_overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 120px 16px 24px;
+  z-index: 9999;
+  overflow-y: auto;
+}
+
+.offer_modal {
+  position: relative;
+  width: min(90vw, 430px);
+  max-width: 100%;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.2);
+  padding: 32px 28px 24px;
+}
+
+.offer_modal_close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  border: none;
+  background: transparent;
+  color: #111;
+  font-size: 42px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.offer_modal_title {
+  margin: 0 0 18px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 500;
+  color: #111;
+  font-family: "Fira Sans", sans-serif;
+  max-width: 423px;
+  line-height: 1.2;
+}
+
+.offer_modal_form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+
+.offer_field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  max-width: 312px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #111;
+  font-family: "Fira Sans", sans-serif;
+}
+
+.offer_field input {
+  width: 100%;
+  height: 46px;
+  border: 1px solid #d7d7d7;
+  border-radius: 4px;
+  padding: 0 12px;
+  font-size: 16px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.offer_field input:focus {
+  border-color: #f3c21d;
+  box-shadow: 0 0 0 2px rgba(243, 194, 29, 0.15);
+}
+
+.required {
+  color: #ef4444;
+}
+
+.offer_checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 312px;
+  color: #1d4ed8;
+  font-size: 15px;
+  font-family: "Fira Sans", sans-serif;
+  cursor: pointer;
+}
+
+.offer_checkbox input {
+  width: 18px;
+  height: 18px;
+  accent-color: #f3c21d;
+}
+
+.offer_submit_btn {
+  width: 100%;
+  max-width: 312px;
+  height: 52px;
+  border: none;
+  border-radius: 8px;
+  background: #f3c21d;
+  color: #111;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: "Fira Sans", sans-serif;
+}
+
 .products__buttons {
   display: flex;
   gap: 10px;
@@ -170,7 +287,6 @@
 
 
 
-/* ===================== Kichik desktop (<=1200px) ===================== */
 @media (max-width: 1200px) {
   .products {
     padding: 48px 0;
@@ -181,7 +297,6 @@
   }
 }
 
-/* ===================== Planshet (<=1024px) ===================== */
 @media (max-width: 1024px) {
   section.products {
     margin-top: 50px !important;
@@ -218,7 +333,6 @@
   }
 }
 
-/* ===================== Kichik planshet (<=768px) ===================== */
 @media (max-width: 768px) {
   .products {
     padding: 32px 0;
@@ -248,10 +362,60 @@
     top: 8px;
     right: 8px;
   }
+
+  .offer_modal {
+    padding: 28px 18px 22px;
+  }
+
+  .offer_modal_title {
+    font-size: 22px;
+  }
+
+  .offer_field,
+  .offer_checkbox,
+  .offer_submit_btn {
+    max-width: 100%;
+  }
 }
 
-/* ===================== Mobil (<=480px) ===================== */
 @media (max-width: 480px) {
+  .offer_modal_overlay {
+    padding-top: 80px;
+  }
+
+  .offer_modal {
+    width: 100%;
+    border-radius: 12px;
+    padding: 26px 14px 18px;
+  }
+
+  .offer_modal_title {
+    font-size: 20px;
+    margin-bottom: 14px;
+  }
+
+  .offer_modal_form {
+    gap: 14px;
+  }
+
+  .offer_field {
+    max-width: 100%;
+  }
+
+  .offer_checkbox {
+    font-size: 13px;
+    line-height: 1.4;
+    align-items: flex-start;
+  }
+
+  .offer_checkbox input {
+    margin-top: 2px;
+  }
+
+  .offer_submit_btn {
+    height: 50px;
+    font-size: 17px;
+  }
   .product-top {
     display: flex;
     flex-direction: column;

@@ -12,9 +12,15 @@ import { useLanguage } from "../../../i18n/LanguageContext";
 
 const MainCard = () => {
     const [favorites, setFavorites] = useState([]);
+    const [offerModalOpen, setOfferModalOpen] = useState(false);
+    const [offerForm, setOfferForm] = useState({
+        name: "",
+        email: "",
+        phone: "",
+        consent: true,
+    });
     const { t } = useLanguage();
     const navigate = useNavigate();
-
 
     const toggleFavorite = (id) => {
         setFavorites((prev) =>
@@ -22,8 +28,87 @@ const MainCard = () => {
         );
     };
 
+    const handleOfferChange = (event) => {
+        const { name, value, type, checked } = event.target;
+        setOfferForm((prev) => ({
+            ...prev,
+            [name]: type === "checkbox" ? checked : value,
+        }));
+    };
+
+    const handleOfferSubmit = (event) => {
+        event.preventDefault();
+        if (!offerForm.name.trim() || !offerForm.email.trim() || !offerForm.phone.trim()) return;
+        setOfferModalOpen(false);
+        setOfferForm({ name: "", email: "", phone: "", consent: true });
+    };
+
     return (
         <section className="products mt-[70px]">
+            {offerModalOpen && (
+                <div className="offer_modal_overlay" onClick={() => setOfferModalOpen(false)}>
+                    <div className="offer_modal" onClick={(event) => event.stopPropagation()}>
+                        <button
+                            type="button"
+                            className="offer_modal_close"
+                            onClick={() => setOfferModalOpen(false)}
+                            aria-label="Close"
+                        >
+                            ×
+                        </button>
+
+                        <h3 className="offer_modal_title">Получить коммерческое предложение</h3>
+
+                        <form className="offer_modal_form" onSubmit={handleOfferSubmit}>
+                            <label className="offer_field">
+                                <span>Ваше имя <span className="required">*</span></span>
+                                <input
+                                    type="text"
+                                    name="name"
+                                    value={offerForm.name}
+                                    onChange={handleOfferChange}
+                                    placeholder="Иван"
+                                />
+                            </label>
+
+                            <label className="offer_field">
+                                <span>E-mail <span className="required">*</span></span>
+                                <input
+                                    type="email"
+                                    name="email"
+                                    value={offerForm.email}
+                                    onChange={handleOfferChange}
+                                    placeholder="your@mail.com"
+                                />
+                            </label>
+
+                            <label className="offer_field">
+                                <span>Телефон <span className="required">*</span></span>
+                                <input
+                                    type="tel"
+                                    name="phone"
+                                    value={offerForm.phone}
+                                    onChange={handleOfferChange}
+                                    placeholder="+7"
+                                />
+                            </label>
+
+                            <label className="offer_checkbox">
+                                <input
+                                    type="checkbox"
+                                    name="consent"
+                                    checked={offerForm.consent}
+                                    onChange={handleOfferChange}
+                                />
+                                <span>Я согласен на обработку персональных данных</span>
+                            </label>
+
+                            <button type="submit" className="offer_submit_btn">{t("btn_get_offer")}</button>
+                        </form>
+                    </div>
+                </div>
+            )}
+
             <div className="container">
 
                 <div className="products__top">
@@ -107,7 +192,11 @@ const MainCard = () => {
                                             {t("btn_more")}
                                         </button>
 
-                                        <button className="product-card__btn-secondary">
+                                        <button
+                                            type="button"
+                                            className="product-card__btn-secondary"
+                                            onClick={() => setOfferModalOpen(true)}
+                                        >
                                             {t("btn_get_offer")}
                                             <svg
                                                 width="16"
