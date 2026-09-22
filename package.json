@@ -12,7 +12,6 @@
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",
     "antd": "^6.6.3",
-    "aos": "^2.3.4",
     "lucide": "^1.44.0",
     "lucide-react": "^1.47.0",
     "motion": "^13.4.0",

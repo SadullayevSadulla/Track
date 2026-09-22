@@ -244,6 +244,22 @@ const Header = (props) => {
                 </li>
 
                 <li>
+                    <button onClick={() => toggleMobileSub("about")}>
+                        {t("about_us")}
+                        <ChevronIcon open={mobileSubOpen === "about"} />
+                    </button>
+                    {mobileSubOpen === "about" && (
+                        <ul className="mobile_submenu">
+                            <li><a href="#" onClick={(event) => { event.preventDefault(); navigate("/onac"); }}>{t("menu_about_company")}</a></li>
+                            <li><a href="#" onClick={(event) => { event.preventDefault(); navigate("/news"); }}>{t("menu_about_news")}</a></li>
+                            <li><a href="#" onClick={(event) => { event.preventDefault(); navigateAndClose("/certeficat"); }}>{t("menu_about_certificates")}</a></li>
+                            <li><a href="#" onClick={(event) => { event.preventDefault(); navigateAndClose("/vaqansiya"); }}>{t("menu_about_vacancies")}</a></li>
+                            <li><a href="#" onClick={(event) => { event.preventDefault(); navigateAndClose("/kredit"); }}>{t("menu_about_leasing")}</a></li>
+                        </ul>
+                    )}
+                </li>
+
+                <li>
                     <button type="button" onClick={() => toggleMobileSub("cat")}>
                         {t("menu_categories_title") || "Категории"}
                         <ChevronIcon open={mobileSubOpen === "cat"} />
