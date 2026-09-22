@@ -9,6 +9,7 @@ import Kredit from "../pages/Kredit/kredit";
 import MainNewsCard from "../pages/mainNewsCard/mainNewsCard";
 import News from "../pages/News/news";
 import Onac from "../pages/Onac/oNac";
+import Production from "../pages/Production/production";
 import Reklama from "../pages/Reklama/reklama";
 import Repair from "../pages/Repair/repair";
 import Service from "../pages/Service/service";
@@ -95,5 +96,10 @@ export const router = [
         id: 16,
         path: '/kredit',
         element: <Kredit />
+    },
+    {
+        id: 17,
+        path: '/production',
+        element: <Production/>
     }
 ]

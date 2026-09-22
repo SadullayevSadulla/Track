@@ -2,9 +2,11 @@ import "./katolg.css"
 import katolgData, { BRANDS, WEIGHTS } from "./katolgData"
 import { useMemo, useRef, useState } from "react"
 import { useLanguage } from "../../i18n/LanguageContext"
+import { useNavigate } from "react-router-dom"
 
 const Katolg = () => {
   const { t } = useLanguage()
+  const navigate = useNavigate()
 
   const [favorites, setFavorites] = useState([])
   const [view, setView] = useState("list") // "grid" | "list"
@@ -162,14 +164,28 @@ const Katolg = () => {
 
             return (
               <div key={product.id}>
-                <div className="product-card">
+                <div
+                  className="product-card cursor-pointer"
+                  role="link"
+                  tabIndex={0}
+                  onClick={() => navigate("/information")}
+                  onKeyDown={(event) => {
+                    if (event.key === "Enter" || event.key === " ") {
+                      event.preventDefault()
+                      navigate("/information")
+                    }
+                  }}
+                >
                   <div className="product-card__image">
                     <img src={product.image} alt={t(product.titleKey)} />
 
                     <button
                       type="button"
                       className={`product-card__favorite ${isFav ? "active" : ""}`}
-                      onClick={() => toggleFavorite(product.id)}
+                      onClick={(event) => {
+                        event.stopPropagation()
+                        toggleFavorite(product.id)
+                      }}
                       aria-label="Favorite"
                       aria-pressed={isFav}
                     >

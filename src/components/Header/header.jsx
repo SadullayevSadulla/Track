@@ -53,6 +53,8 @@ const Header = (props) => {
         setMobileSubOpen((prev) => (prev === key ? null : key));
     };
 
+    // Yagona navigatsiya funksiyasi: har doim yopadi + navigate qiladi.
+    // Barcha mobil va desktop menyu linklari faqat shu orqali ishlaydi.
     const navigateAndClose = (path) => {
         setOpenMenu(null);
         setMobileMenuOpen(false);
@@ -184,22 +186,23 @@ const Header = (props) => {
                     <div>
                         <h3 className="text-[20px] font-[700] font-['Fira_Sans'] mb-[20px]">{t("menu_about_title")}</h3>
                         <ul className="flex flex-col gap-[16px]">
-                            <li><a href="#" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/onac"); }}>{t("menu_about_company")}</a></li>
-                            <li><a href="#" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/news"); }}>{t("menu_about_news")}</a></li>
-                            <li><a href="#" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/hamkor"); }}>{t("menu_about_partners")}</a></li>
-                            <li><a href="#" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/certeficat"); }}>{t("menu_about_certificates")}</a></li>
-                            <li><a href="#" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/vaqansiya"); }}>{t("menu_about_vacancies")}</a></li>
-                            <li><a href="#" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/kredit"); }}>{t("menu_about_leasing")}</a></li>
+                            <li><a href="/onac" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/onac"); }}>{t("menu_about_company")}</a></li>
+                            <li><a href="/news" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/news"); }}>{t("menu_about_news")}</a></li>
+                            <li><a href="/hamkor" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/hamkor"); }}>{t("menu_about_partners")}</a></li>
+                            <li><a href="/certeficat" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/certeficat"); }}>{t("menu_about_certificates")}</a></li>
+                            <li><a href="/vaqansiya" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/vaqansiya"); }}>{t("menu_about_vacancies")}</a></li>
+                            <li><a href="/kredit" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/kredit"); }}>{t("menu_about_leasing")}</a></li>
+                            <li><a href="/kredit" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/production"); }}>{t("menu_about_production")}</a></li>
                         </ul>
                     </div>
 
                     <div>
                         <h3 className="text-[20px] font-[700] font-['Fira_Sans'] mb-[20px]">{t("menu_media_title")}</h3>
                         <ul className="flex flex-col gap-[16px]">
-                            <li><a href="#" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/foto"); }}>{t("menu_media_gallery")}</a></li>
-                            <li><a href="#" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/vido"); }}>{t("menu_media_video")}</a></li>
-                            <li><a href="#" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/reklama"); }}>{t("menu_media_ads")}</a></li>
-                            <li><a href="#" className="text-sm-base font-['Fira_Sans']" >{t("menu_media_info")}</a></li>
+                            <li><a href="/foto" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/foto"); }}>{t("menu_media_gallery")}</a></li>
+                            <li><a href="/vido" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/vido"); }}>{t("menu_media_video")}</a></li>
+                            <li><a href="/reklama" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/reklama"); }}>{t("menu_media_ads")}</a></li>
+                            <li><a href="/media" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/media"); }}>{t("menu_media_info")}</a></li>
                         </ul>
                     </div>
 
@@ -219,8 +222,8 @@ const Header = (props) => {
         <div className="mobile_menu">
             <ul className="mobile_menu_list">
                 <li>
-                    <button onClick={() => toggleMobileSub("lang")}>
-                        {labels[lang] || lang?.toUpperCase()}   
+                    <button type="button" onClick={() => toggleMobileSub("lang")}>
+                        {labels[lang] || lang?.toUpperCase()}
                         <ChevronIcon open={mobileSubOpen === "lang"} />
                     </button>
                     {mobileSubOpen === "lang" && (
@@ -239,22 +242,6 @@ const Header = (props) => {
                                     </button>
                                 </li>
                             ))}
-                        </ul>
-                    )}
-                </li>
-
-                <li>
-                    <button onClick={() => toggleMobileSub("about")}>
-                        {t("about_us")}
-                        <ChevronIcon open={mobileSubOpen === "about"} />
-                    </button>
-                    {mobileSubOpen === "about" && (
-                        <ul className="mobile_submenu">
-                            <li><a href="#" onClick={(event) => { event.preventDefault(); navigate("/onac"); }}>{t("menu_about_company")}</a></li>
-                            <li><a href="#" onClick={(event) => { event.preventDefault(); navigate("/news"); }}>{t("menu_about_news")}</a></li>
-                            <li><a href="#" onClick={(event) => { event.preventDefault(); navigateAndClose("/certeficat"); }}>{t("menu_about_certificates")}</a></li>
-                            <li><a href="#" onClick={(event) => { event.preventDefault(); navigateAndClose("/vaqansiya"); }}>{t("menu_about_vacancies")}</a></li>
-                            <li><a href="#" onClick={(event) => { event.preventDefault(); navigateAndClose("/kredit"); }}>{t("menu_about_leasing")}</a></li>
                         </ul>
                     )}
                 </li>
@@ -283,40 +270,41 @@ const Header = (props) => {
                 </li>
 
                 <li>
-                    <button onClick={() => toggleMobileSub("about")}>
+                    <button type="button" onClick={() => toggleMobileSub("about")}>
                         {t("about_us")}
                         <ChevronIcon open={mobileSubOpen === "about"} />
                     </button>
                     {mobileSubOpen === "about" && (
                         <ul className="mobile_submenu">
-                            <li><a href="#" onClick={(event) => { event.preventDefault(); navigate("/onac"); }}>{t("menu_about_company")}</a></li>
-                            <li><a href="#" onClick={(event) => { event.preventDefault(); navigate("/news"); }}>{t("menu_about_news")}</a></li>
-                            <li><a href="#" onClick={(event) => { event.preventDefault(); navigateAndClose("/certeficat"); }}>{t("menu_about_certificates")}</a></li>
-                            <li><a href="#" onClick={(event) => { event.preventDefault(); navigateAndClose("/vaqansiya"); }}>{t("menu_about_vacancies")}</a></li>
-                            <li><a href="#" onClick={(event) => { event.preventDefault(); navigateAndClose("/kredit"); }}>{t("menu_about_leasing")}</a></li>
+                            <li><a href="/onac" onClick={(event) => { event.preventDefault(); navigateAndClose("/onac"); }}>{t("menu_about_company")}</a></li>
+                            <li><a href="/news" onClick={(event) => { event.preventDefault(); navigateAndClose("/news"); }}>{t("menu_about_news")}</a></li>
+                            <li><a href="/hamkor" onClick={(event) => { event.preventDefault(); navigateAndClose("/hamkor"); }}>{t("menu_about_partners")}</a></li>
+                            <li><a href="/certeficat" onClick={(event) => { event.preventDefault(); navigateAndClose("/certeficat"); }}>{t("menu_about_certificates")}</a></li>
+                            <li><a href="/vaqansiya" onClick={(event) => { event.preventDefault(); navigateAndClose("/vaqansiya"); }}>{t("menu_about_vacancies")}</a></li>
+                            <li><a href="/kredit" onClick={(event) => { event.preventDefault(); navigateAndClose("/kredit"); }}>{t("menu_about_leasing")}</a></li>
                         </ul>
                     )}
                 </li>
 
                 <li>
-                    <button onClick={() => toggleMobileSub("media")}>
+                    <button type="button" onClick={() => toggleMobileSub("media")}>
                         {t("media")}
                         <ChevronIcon open={mobileSubOpen === "media"} />
                     </button>
                     {mobileSubOpen === "media" && (
                         <ul className="mobile_submenu">
-                            <li><a href="#" onClick={(event) => { event.preventDefault(); navigate("/foto"); }}>{t("menu_media_gallery")}</a></li>
-                            <li><a href="#" onClick={(event) => { event.preventDefault(); navigate("/vido"); }}>{t("menu_media_video")}</a></li>
-                            <li><a href="#" onClick={(event) => { event.preventDefault(); navigate("/reklama"); }}>{t("menu_media_ads")}</a></li>
-                            <li><a href="#">{t("menu_media_info")}</a></li>
+                            <li><a href="/foto" onClick={(event) => { event.preventDefault(); navigateAndClose("/foto"); }}>{t("menu_media_gallery")}</a></li>
+                            <li><a href="/vido" onClick={(event) => { event.preventDefault(); navigateAndClose("/vido"); }}>{t("menu_media_video")}</a></li>
+                            <li><a href="/reklama" onClick={(event) => { event.preventDefault(); navigateAndClose("/reklama"); }}>{t("menu_media_ads")}</a></li>
+                            <li><a href="/media" onClick={(event) => { event.preventDefault(); navigateAndClose("/media"); }}>{t("menu_media_info")}</a></li>
                         </ul>
                     )}
                 </li>
 
-                <li><a href="/service">{t("service")}</a></li>
-                <li><a href="/repair">{t("repair")}</a></li>
-                <li><a href="/news">{t("news")}</a></li>
-                <li><a href="/contacts">{t("contacts")}</a></li>
+                <li><a href="/service" onClick={(event) => { event.preventDefault(); navigateAndClose("/service"); }}>{t("service")}</a></li>
+                <li><a href="/repair" onClick={(event) => { event.preventDefault(); navigateAndClose("/repair"); }}>{t("repair")}</a></li>
+                <li><a href="/news" onClick={(event) => { event.preventDefault(); navigateAndClose("/news"); }}>{t("news")}</a></li>
+                <li><a href="/contacts" onClick={(event) => { event.preventDefault(); navigateAndClose("/contacts"); }}>{t("contacts")}</a></li>
             </ul>
         </div>,
         document.body
@@ -329,228 +317,240 @@ const Header = (props) => {
                     <div className="header_top_inner">
                         <div className="container">
                             <div className="header_top">
-                    <div className="header_logo flex items-center">
-                        <a className="logo" href="/">
-                            <img src="./logo (3).png" alt=""  className="w-[160px] h-[45px]" />
-                        </a>
-                        <span className="divider"></span>
-                        <div className="texxt max-w-[167px]">
-                            <p className="text-[14px] font-normal font-['Fira_Sans']">{t("company_slogan")}</p>
-                        </div>
-                    </div>
-                    <div className="salom flex items-center gap-[61px]">
-                        <div className="header_contact flex flex-col gap-[5px] ">
-                            <p className="text-[16px] font-normal font-['Fira_Sans']">{t("work_time_label")}</p>
-                            <p className="text-[15px] font-normal font-['Fira_Sans'] text-[#A1A1A1]">{t("address")}</p>
-                        </div>
-                        <div className="header_phone flex items-center gap-[10px]">
-                            <div className="texttt">
-                                <p className="text-[15px] font-normal font-['Fira_Sans'] text-[#A1A1A1]">{t("phone_regions_label")} {t("phone_regions")}</p>
-                                <p className="text-[15px] font-normal font-['Fira_Sans'] text-[#A1A1A1]">{t("phone_nn_label")} {t("phone_nn")}</p>
-                            </div>
-                            <button
-                                type="button"
-                                className="img call_trigger"
-                                onClick={() => setCallModalOpen(true)}
-                                aria-label="Заказать звонок"
-                            >
-                                <img src="./icon_normal_call.png" alt="" />
-                            </button>
-                        </div>
+                                <div className="header_logo flex items-center">
+                                    <a className="logo" href="/" onClick={(event) => { event.preventDefault(); navigateAndClose("/"); }}>
+                                        <img src="./logo (3).png" alt="" className="w-[160px] h-[45px]" />
+                                    </a>
+                                    <span className="divider"></span>
+                                    <div className="texxt max-w-[167px]">
+                                        <p className="text-[14px] font-normal font-['Fira_Sans']">{t("company_slogan")}</p>
+                                    </div>
+                                </div>
+                                <div className="salom flex items-center gap-[61px]">
+                                    <div className="header_contact flex flex-col gap-[5px] ">
+                                        <p className="text-[16px] font-normal font-['Fira_Sans']">{t("work_time_label")}</p>
+                                        <p className="text-[15px] font-normal font-['Fira_Sans'] text-[#A1A1A1]">{t("address")}</p>
+                                    </div>
+                                    <div className="header_phone flex items-center gap-[10px]">
+                                        <div className="texttt">
+                                            <p className="text-[15px] font-normal font-['Fira_Sans'] text-[#A1A1A1]">{t("phone_regions_label")} {t("phone_regions")}</p>
+                                            <p className="text-[15px] font-normal font-['Fira_Sans'] text-[#A1A1A1]">{t("phone_nn_label")} {t("phone_nn")}</p>
+                                        </div>
+                                        <button
+                                            type="button"
+                                            className="img call_trigger"
+                                            onClick={() => setCallModalOpen(true)}
+                                            aria-label="Заказать звонок"
+                                        >
+                                            <img src="./icon_normal_call.png" alt="" />
+                                        </button>
+                                    </div>
 
-                        <div className="lang_switcher relative" ref={langRef}>
-                            <button
-                                type="button"
-                                className="flex items-center gap-[6px] text-[15px] font-[500] font-['Fira_Sans'] border-[1px] border-[#FEC80B] rounded-[4px] px-[12px] py-[6px] cursor-pointer bg-white"
-                                onClick={() => setLangMenuOpen((prev) => !prev)}
-                            >
-                                {labels[lang] || lang?.toUpperCase()}
-                                <svg
-                                    className={`w-[16px] h-[16px] text-[#FEC80B] transition-transform ${langMenuOpen ? "rotate-180" : ""}`}
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <path fill="currentColor" d="M7 10l5 5 5-5z" />
-                                </svg>
-                            </button>
-                            {langMenuOpen && (
-                                <ul className="absolute right-0 top-[calc(100%+6px)] bg-white border-[1px] border-[#eee] rounded-[6px] shadow-md z-50 min-w-[70px] overflow-hidden">
-                                    {langs.map((code) => (
-                                        <li key={code}>
-                                            <button
-                                                type="button"
-                                                className={`w-full text-left px-[14px] py-[8px] text-[14px] font-['Fira_Sans'] cursor-pointer hover:bg-[#FEC80B]/20 ${lang === code ? "font-[700] text-[#000]" : "text-[#555]"}`}
-                                                onClick={() => {
-                                                    setLang(code);
-                                                    setLangMenuOpen(false);
-                                                }}
+                                    <div className="lang_switcher relative" ref={langRef}>
+                                        <button
+                                            type="button"
+                                            className="flex items-center gap-[6px] text-[15px] font-[500] font-['Fira_Sans'] border-[1px] border-[#FEC80B] rounded-[4px] px-[12px] py-[6px] cursor-pointer bg-white"
+                                            onClick={() => setLangMenuOpen((prev) => !prev)}
+                                        >
+                                            {labels[lang] || lang?.toUpperCase()}
+                                            <svg
+                                                className={`w-[16px] h-[16px] text-[#FEC80B] transition-transform ${langMenuOpen ? "rotate-180" : ""}`}
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 24 24"
                                             >
-                                                {labels[code] || code?.toUpperCase()}
-                                            </button>
-                                        </li>
-                                    ))}
-                                </ul>
-                            )}
-                        </div>
-                    </div>
+                                                <path fill="currentColor" d="M7 10l5 5 5-5z" />
+                                            </svg>
+                                        </button>
+                                        {langMenuOpen && (
+                                            <ul className="absolute right-0 top-[calc(100%+6px)] bg-white border-[1px] border-[#eee] rounded-[6px] shadow-md z-50 min-w-[70px] overflow-hidden">
+                                                {langs.map((code) => (
+                                                    <li key={code}>
+                                                        <button
+                                                            type="button"
+                                                            className={`w-full text-left px-[14px] py-[8px] text-[14px] font-['Fira_Sans'] cursor-pointer hover:bg-[#FEC80B]/20 ${lang === code ? "font-[700] text-[#000]" : "text-[#555]"}`}
+                                                            onClick={() => {
+                                                                setLang(code);
+                                                                setLangMenuOpen(false);
+                                                            }}
+                                                        >
+                                                            {labels[code] || code?.toUpperCase()}
+                                                        </button>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        )}
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-            {callModalOpen && createPortal(
-                <div className="call_modal_overlay" onClick={() => setCallModalOpen(false)}>
-                    <div className="call_modal" onClick={(event) => event.stopPropagation()}>
-                        <button
-                            type="button"
-                            className="call_modal_close"
-                            onClick={() => setCallModalOpen(false)}
-                            aria-label="Закрыть"
-                        >
-                            ×
-                        </button>
+                {callModalOpen && createPortal(
+                    <div className="call_modal_overlay" onClick={() => setCallModalOpen(false)}>
+                        <div className="call_modal" onClick={(event) => event.stopPropagation()}>
+                            <button
+                                type="button"
+                                className="call_modal_close"
+                                onClick={() => setCallModalOpen(false)}
+                                aria-label="Закрыть"
+                            >
+                                ×
+                            </button>
 
-                        <h3 className="call_modal_title">Заказать звонок</h3>
-                        <p className="call_modal_subtitle">Наш менеджер свяжется с Вами в ближайшее время</p>
+                            <h3 className="call_modal_title">Заказать звонок</h3>
+                            <p className="call_modal_subtitle">Наш менеджер свяжется с Вами в ближайшее время</p>
 
-                        <form className="call_modal_form" onSubmit={handleCallSubmit}>
-                            <label className="call_field">
-                                <span>Ваше имя <span className="required">*</span></span>
-                                <input
-                                    type="text"
-                                    name="name"
-                                    value={callForm.name}
-                                    onChange={handleCallChange}
-                                    placeholder="Иван"
-                                />
-                            </label>
+                            <form className="call_modal_form" onSubmit={handleCallSubmit}>
+                                <label className="call_field">
+                                    <span>Ваше имя <span className="required">*</span></span>
+                                    <input
+                                        type="text"
+                                        name="name"
+                                        value={callForm.name}
+                                        onChange={handleCallChange}
+                                        placeholder="Иван"
+                                    />
+                                </label>
 
-                            <label className="call_field">
-                                <span>Телефон <span className="required">*</span></span>
-                                <input
-                                    type="tel"
-                                    name="phone"
-                                    value={callForm.phone}
-                                    onChange={handleCallChange}
-                                    placeholder="+7"
-                                />
-                            </label>
+                                <label className="call_field">
+                                    <span>Телефон <span className="required">*</span></span>
+                                    <input
+                                        type="tel"
+                                        name="phone"
+                                        value={callForm.phone}
+                                        onChange={handleCallChange}
+                                        placeholder="+7"
+                                    />
+                                </label>
 
-                            <label className="call_checkbox">
-                                <input
-                                    type="checkbox"
-                                    name="consent"
-                                    checked={callForm.consent}
-                                    onChange={handleCallChange}
-                                />
-                                <span>Я согласен на обработку персональных данных</span>
-                            </label>
+                                <label className="call_checkbox">
+                                    <input
+                                        type="checkbox"
+                                        name="consent"
+                                        checked={callForm.consent}
+                                        onChange={handleCallChange}
+                                    />
+                                    <span>Я согласен на обработку персональных данных</span>
+                                </label>
 
-                            <button type="submit" className="call_submit_btn">Оставить заявку</button>
-                        </form>
+                                <button type="submit" className="call_submit_btn">Оставить заявку</button>
+                            </form>
 
-                        <div className="call_modal_footer">
-                            <span>Для регионов: 8 (800) 511-05-25</span>
-                            <span>Нижний Новгород: 8 (831) 235-26-16</span>
+                            <div className="call_modal_footer">
+                                <span>Для регионов: 8 (800) 511-05-25</span>
+                                <span>Нижний Новгород: 8 (831) 235-26-16</span>
+                            </div>
                         </div>
-                    </div>
-                </div>,
-                document.body
-            )}
+                    </div>,
+                    document.body
+                )}
 
-            <div className="section header_nav_section border-t-[1px] border-[#FEC80B]">
-                <div className="container">
-                    <div className="header_bottom flex items-center justify-between py-[1px]">
-                        <div className="sa flex items-center gap-[30px]" ref={menuRef}>
-                            <img src="./logo (3).png" alt="" className="mini_logo" />
+                <div className="section header_nav_section border-t-[1px] border-[#FEC80B]">
+                    <div className="container">
+                        <div className="header_bottom flex items-center justify-between py-[1px]">
+                            <div className="sa flex items-center gap-[30px]" ref={menuRef}>
+                                <img src="./logo (3).png" alt="" className="mini_logo" />
 
-                            <div className="relative">
-                                <button
-                                    type="button"
-                                    className={`catalog_btn flex items-center gap-[8px] bg-[#FEC80B] rounded-[4px] w-[132px] h-[42px] shrink-0 font-normal text-[18px] font-['Fira_Sans'] text-[#000000] cursor-pointer ${isCatalogMenuOpen ? "is-open" : ""}`}
-                                    onClick={handleCatalogClick}
-                                    aria-label={t("catalog")}
-                                    aria-expanded={isCatalogMenuOpen}
-                                >
-                                    <CatalogToggleIcon open={isCatalogMenuOpen} />
-                                    <span className="catalog_label">{t("catalog")}</span>
+                                <div className="relative">
+                                    <button
+                                        type="button"
+                                        className={`catalog_btn flex items-center gap-[8px] bg-[#FEC80B] rounded-[4px] w-[132px] h-[42px] shrink-0 font-normal text-[18px] font-['Fira_Sans'] text-[#000000] cursor-pointer ${isCatalogMenuOpen ? "is-open" : ""}`}
+                                        onClick={handleCatalogClick}
+                                        aria-label={t("catalog")}
+                                        aria-expanded={isCatalogMenuOpen}
+                                    >
+                                        <CatalogToggleIcon open={isCatalogMenuOpen} />
+                                        <span className="catalog_label">{t("catalog")}</span>
+                                    </button>
+
+                                    {openMenu === "catalog" && <MegaMenuContent />}
+                                </div>
+
+                                <nav className="nav_menu flex items-center gap-[28px]">
+                                    <div className="relative">
+                                        <button
+                                            type="button"
+                                            className="flex items-center gap-[4px] text-[15px] font-normal font-['Fira_Sans']"
+                                            onClick={() => toggleMenu("onas")}
+                                        >
+                                            {t("about_us")}
+                                            <svg
+                                                className={`w-[30px] h-[40px] text-[#FEC80B] transition-transform ${openMenu === "onas" ? "rotate-180" : ""}`}
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 24 24"
+                                            >
+                                                <path fill="currentColor" d="M7 10l5 5 5-5z" />
+                                            </svg>
+                                        </button>
+
+                                        {openMenu === "onas" && <MegaMenuContent />}
+                                    </div>
+                                    <div className="relative">
+                                        <button
+                                            type="button"
+                                            className="flex items-center gap-[4px] text-[15px] font-normal font-['Fira_Sans']"
+                                            onClick={() => toggleMenu("media")}
+                                        >
+                                            {t("media")}
+                                            <svg
+                                                className={`w-[30px] h-[40px] text-[#FEC80B] transition-transform ${openMenu === "media" ? "rotate-180" : ""}`}
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 24 24"
+                                            >
+                                                <path fill="currentColor" d="M7 10l5 5 5-5z" />
+                                            </svg>
+                                        </button>
+
+                                        {openMenu === "media" && <MegaMenuContent />}
+                                    </div>
+                                    <a href="/service" className="text-sm-base font-normal font-primary" onClick={(event) => { event.preventDefault(); navigateAndClose("/service"); }}>{t("service")}</a>
+                                    <a href="/repair" className="text-[15px] font-normal font-primary" onClick={(event) => { event.preventDefault(); navigateAndClose("/repair"); }}>{t("repair")}</a>
+                                    <a href="/news" className="text-[15px] font-normal font-primary" onClick={(event) => { event.preventDefault(); navigateAndClose("/news"); }}>{t("news")}</a>
+                                    <a href="/contacts" className="text-[15px] font-normal font-primary" onClick={(event) => { event.preventDefault(); navigateAndClose("/contacts"); }}>{t("contacts")}</a>
+                                </nav>
+                            </div>
+
+                            <div className="header_actions flex items-center gap-5">
+                                <form className="search_box relative" onSubmit={handleSearchSubmit} ref={searchRef}>
+                                    <input
+                                        type="text"
+                                        placeholder={t("search_placeholder")}
+                                        className="w-70 h-11 rounded-[30px] border border-[#FEC80B] px-5 pr-12 text-[14px] font-['Fira_Sans'] outline-none"
+                                        value={searchQuery}
+                                        onChange={(event) => setSearchQuery(event.target.value)}
+                                        ref={searchInputRef}
+                                    />
+                                    <button
+                                        type="button"
+                                        className="absolute right-4.5 top-1/2 -translate-y-1/2 cursor-pointer"
+                                        onClick={handleSearchIconClick}
+                                        aria-label={t("search_placeholder")}
+                                    >
+                                        <i className="fa-solid fa-magnifying-glass w-4.5 h-4.5"></i>
+                                    </button>
+                                </form>
+
+                                <button className="cart_btn" type="button">
+                                    <i className="fa-solid fa-cart-shopping w-7.5 h-7.5"></i>
                                 </button>
 
-                                {openMenu === "catalog" && <MegaMenuContent />}
+                                <button className="fav_btn" type="button">
+                                    <i className="fa-regular fa-heart w-7.5 h-7.5"></i>
+                                </button>
+
+                                <button
+                                    type="button"
+                                    className="call_mini"
+                                    onClick={() => setCallModalOpen(true)}
+                                    aria-label="Заказать звонок"
+                                >
+                                    <img src="./icon_normal_call.png" alt="" />
+                                </button>
                             </div>
-
-                            <nav className="nav_menu flex items-center gap-[28px]">
-                                <div className="relative">
-                                    <button
-                                        className="flex items-center gap-[4px] text-[15px] font-normal font-['Fira_Sans']"
-                                        onClick={() => toggleMenu("onas")}
-                                    >
-                                        {t("about_us")}
-                                        <svg
-                                            className={`w-[30px] h-[40px] text-[#FEC80B] transition-transform ${openMenu === "onas" ? "rotate-180" : ""}`}
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            viewBox="0 0 24 24"
-                                        >
-                                            <path fill="currentColor" d="M7 10l5 5 5-5z" />
-                                        </svg>
-                                    </button>
-
-                                    {openMenu === "onas" && <MegaMenuContent />}
-                                </div>
-                                <div className="relative">
-                                    <button
-                                        className="flex items-center gap-[4px] text-[15px] font-normal font-['Fira_Sans']"
-                                        onClick={() => toggleMenu("media")}
-                                    >
-                                        {t("media")}
-                                        <svg
-                                            className={`w-[30px] h-[40px] text-[#FEC80B] transition-transform ${openMenu === "media" ? "rotate-180" : ""}`}
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            viewBox="0 0 24 24"
-                                        >
-                                            <path fill="currentColor" d="M7 10l5 5 5-5z" />
-                                        </svg>
-                                    </button>
-
-                                    {openMenu === "media" && <MegaMenuContent />}
-                                </div>
-                                <a href="/service" className="text-sm-base font-normal font-primary">{t("service")}</a>
-                                <a href="/repair" className="text-[15px] font-normal font-primary">{t("repair")}</a>
-                                <a href="/news" className="text-[15px] font-normal font-primary">{t("news")}</a>
-                                <a href="/contacts" className="text-[15px] font-normal font-primary">{t("contacts")}</a>
-                            </nav>
-                        </div>
-
-                        <div className="header_actions flex items-center gap-5">
-                            <div className="search_box relative">
-                                <input
-                                    type="text"
-                                    placeholder={t("search_placeholder")}
-                                    className="w-70 h-11 rounded-[30px] border border-[#FEC80B] px-5 pr-12 text-[14px] font-['Fira_Sans'] outline-none"
-                                />
-                                <i className="fa-solid fa-magnifying-glass w-4.5 h-4..5 absolute right-4.5 top-1/2 -translate-y-1/2"></i>
-                            </div>
-
-                            <button className="cart_btn">
-                                <i className="fa-solid fa-cart-shopping w-7.5 h-7.5"></i>
-                            </button>
-
-                            <button className="fav_btn">
-                                <i className="fa-regular fa-heart w-7.5 h-7.5"></i>
-                            </button>
-
-                            <button
-                                type="button"
-                                className="call_mini"
-                                onClick={() => setCallModalOpen(true)}
-                                aria-label="Заказать звонок"
-                            >
-                                <img src="./icon_normal_call.png" alt="" />
-                            </button>
                         </div>
                     </div>
                 </div>
-            </div>
             </div>
 
             {mobileMenuOpen && <MobileMenu />}
