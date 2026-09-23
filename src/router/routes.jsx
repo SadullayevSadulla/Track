@@ -1,5 +1,6 @@
 import { Certeficat } from "../pages/certeficat/certeficat";
 import Contacts from "../pages/Contacts/contacts";
+import Favorit from "../pages/Favorit/favorit";
 import Foto from "../pages/Foto/foto";
 import Hamkor from "../pages/Hamkor/hamkor";
 import Home from "../pages/Home/home";
@@ -101,5 +102,10 @@ export const router = [
         id: 17,
         path: '/production',
         element: <Production/>
+    },
+    {
+        id: 18,
+        path: '/favorit',
+        element: <Favorit/>
     }
 ]

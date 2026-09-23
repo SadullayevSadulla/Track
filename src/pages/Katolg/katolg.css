@@ -155,11 +155,9 @@
     font-family: "Fira Sans", sans-serif;
 }
 
-/* ===== Tavsif ===== */
 .katolg_description{
-    grid-column: 1 / -1;
+    grid-column: 2;
     max-width: 960px;
-    margin: 72px auto 0;
     font-size: 18px;
     line-height: 1.55;
 }
@@ -295,7 +293,8 @@
 
     .katolg_top,
     .katolg_left,
-    .katolg_data{
+    .katolg_data,
+    .katolg_description{
         grid-column: 1;
         grid-row: auto;
     }
@@ -365,7 +364,6 @@
         margin-top: 30px;
     }
 
-    /* Mobilda list/grid tugmalari yashirin bo'lgani uchun grid qoladi */
     .top_button{
         display: none;
     }

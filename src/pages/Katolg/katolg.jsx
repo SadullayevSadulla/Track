@@ -55,8 +55,6 @@ const Katolg = () => {
 
   return (
     <section className="container">
-      {/* "flex" klassi olib tashlandi — .katolg o'zi grid bo'lgani uchun
-          "flex" klassi uni ustidan yozib, butun sahifa gridini buzayotgan edi */}
       <div className="katolg">
         <div className="katolg_top flex justify-between items-center">
           <div className="top_text flex items-center gap-8">

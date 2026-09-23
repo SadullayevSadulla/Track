@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation} from "swiper/modules";
+import { Navigation } from "swiper/modules";
+import { useFavoriteStore } from "../../../store/favoriteStore";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -11,7 +12,10 @@ import productsData from "./cardData";
 import { useLanguage } from "../../../i18n/LanguageContext";
 
 const MainCard = () => {
-    const [favorites, setFavorites] = useState([]);
+    const favorites = useFavoriteStore((state) => state.favorites);
+    const toggleFavorite = useFavoriteStore(
+        (state) => state.toggleFavorite
+    );
     const [offerModalOpen, setOfferModalOpen] = useState(false);
     const [offerForm, setOfferForm] = useState({
         name: "",
@@ -21,12 +25,6 @@ const MainCard = () => {
     });
     const { t } = useLanguage();
     const navigate = useNavigate();
-
-    const toggleFavorite = (id) => {
-        setFavorites((prev) =>
-            prev.includes(id) ? prev.filter((favId) => favId !== id) : [...prev, id]
-        );
-    };
 
     const handleOfferChange = (event) => {
         const { name, value, type, checked } = event.target;
@@ -164,7 +162,9 @@ const MainCard = () => {
                                     <button
                                         className={`product-card__favorite ${favorites.includes(product.id) ? "active" : ""
                                             }`}
-                                        onClick={() => toggleFavorite(product.id)}
+                                        onClick={() => {
+                                            toggleFavorite(product.id);
+                                        }}
                                     >
                                         <svg
                                             width="20"
@@ -174,7 +174,7 @@ const MainCard = () => {
                                             stroke="currentColor"
                                             strokeWidth="2"
                                         >
-                                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" />
                                         </svg>
                                     </button>
                                 </div>

@@ -3,6 +3,7 @@ import { createPortal } from "react-dom";
 import "./header.css"
 import { useLanguage } from "../../i18n/LanguageContext";
 import { useNavigate } from "react-router-dom";
+import { useFavoriteStore } from "../../store/favoriteStore";
 
 const Header = (props) => {
     const [openMenu, setOpenMenu] = useState(null);
@@ -22,6 +23,7 @@ const Header = (props) => {
     const headerRef = useRef(null);
     const { lang, setLang, t, supportedLangs, LANG_LABELS } = useLanguage();
     const navigate = useNavigate();
+    const favorites = useFavoriteStore((state) => state.favorites);
     const labels = LANG_LABELS || { ru: "RU", uz: "UZ", en: "EN" };
     const langs = supportedLangs || ["ru", "uz", "en"];
 
@@ -531,12 +533,13 @@ const Header = (props) => {
                                     </button>
                                 </form>
 
-                                <button className="cart_btn" type="button">
+                                <button className="cart_btn cursor-pointer" type="button" >
                                     <i className="fa-solid fa-cart-shopping w-7.5 h-7.5"></i>
                                 </button>
 
-                                <button className="fav_btn" type="button">
-                                    <i className="fa-regular fa-heart w-7.5 h-7.5"></i>
+                                <button className="fav_btn cursor-pointer" type="button" onClick={(event) => { event.preventDefault(); navigateAndClose("/favorit"); }}>
+                                    <i className="fa-regular fa-heart w-10 h-10"></i>
+                                    {favorites.length > 0 && <span className="fav_badge">{favorites.length}</span>}
                                 </button>
 
                                 <button
