@@ -2,9 +2,15 @@ import React from 'react'
 import "./video.css"
 import videoData from "./videoData"
 import { useLanguage } from "../../i18n/LanguageContext"
+import { useNavigate } from "react-router-dom"
 
 const Vido = () => {
     const { t } = useLanguage();
+    const navigate = useNavigate();
+
+    const navigateAndClose = (path) => {
+        navigate(path);
+    };
 
     return (
         <div className='container'>
@@ -14,7 +20,7 @@ const Vido = () => {
                         <h1>{t("video_page_title")}</h1>
                     </div>
                     <div className="video_top_button">
-                        <button>{t("video_view_photos_btn")}</button>
+                        <button onClick={(event) => { event.preventDefault(); navigateAndClose("/foto"); }}>{t("video_view_photos_btn")}</button>
                     </div>
                 </div>
                 <div className="flex flex-wrap justify-between gap-10">

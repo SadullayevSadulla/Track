@@ -194,6 +194,7 @@ const Header = (props) => {
                             <li><a href="/certeficat" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/certeficat"); }}>{t("menu_about_certificates")}</a></li>
                             <li><a href="/vaqansiya" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/vaqansiya"); }}>{t("menu_about_vacancies")}</a></li>
                             <li><a href="/kredit" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/kredit"); }}>{t("menu_about_leasing")}</a></li>
+                            <li><a href="/otqaz" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/otqaz"); }}>{t("menu_about_otqaz")}</a></li>
                             <li><a href="/kredit" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/production"); }}>{t("menu_about_production")}</a></li>
                         </ul>
                     </div>
@@ -284,6 +285,7 @@ const Header = (props) => {
                             <li><a href="/certeficat" onClick={(event) => { event.preventDefault(); navigateAndClose("/certeficat"); }}>{t("menu_about_certificates")}</a></li>
                             <li><a href="/vaqansiya" onClick={(event) => { event.preventDefault(); navigateAndClose("/vaqansiya"); }}>{t("menu_about_vacancies")}</a></li>
                             <li><a href="/kredit" onClick={(event) => { event.preventDefault(); navigateAndClose("/kredit"); }}>{t("menu_about_leasing")}</a></li>
+                            <li><a href="/otqaz" onClick={(event) => { event.preventDefault(); navigateAndClose("/otqaz"); }}>{t("menu_about_otqaz")}</a></li>
                         </ul>
                     )}
                 </li>

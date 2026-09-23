@@ -10,6 +10,7 @@ import Kredit from "../pages/Kredit/kredit";
 import MainNewsCard from "../pages/mainNewsCard/mainNewsCard";
 import News from "../pages/News/news";
 import Onac from "../pages/Onac/oNac";
+import { Otqaz } from "../pages/Otqaz/otqaz";
 import Production from "../pages/Production/production";
 import Reklama from "../pages/Reklama/reklama";
 import Repair from "../pages/Repair/repair";
@@ -107,5 +108,10 @@ export const router = [
         id: 18,
         path: '/favorit',
         element: <Favorit/>
+    },
+    {
+        id: 19,
+        path: '/otqaz',
+        element: <Otqaz/>
     }
 ]
