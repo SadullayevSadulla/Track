@@ -21,3 +21,4 @@ export const Otqaz = () => {
     </div>
   )
 }
+
