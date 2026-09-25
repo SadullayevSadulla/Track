@@ -4,6 +4,123 @@
     gap: 40px 24px;
 }
 
+.offer_modal_overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 120px 16px 24px;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.35);
+}
+
+.offer_modal {
+    position: relative;
+    width: min(90vw, 430px);
+    max-width: 100%;
+    padding: 32px 28px 24px;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.2);
+}
+
+.offer_modal_close {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    border: none;
+    background: transparent;
+    color: #111;
+    font-size: 42px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.offer_modal_title {
+    max-width: 423px;
+    margin: 0 0 18px;
+    color: #111;
+    font-family: "Fira Sans", sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.offer_modal_form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.offer_field {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 312px;
+    gap: 8px;
+    color: #111;
+    font-family: "Fira Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.offer_field input {
+    box-sizing: border-box;
+    width: 100%;
+    height: 46px;
+    padding: 0 12px;
+    border: 1px solid #d7d7d7;
+    border-radius: 4px;
+    outline: none;
+    font-size: 16px;
+}
+
+.offer_field input:focus {
+    border-color: #f3c21d;
+    box-shadow: 0 0 0 2px rgba(243, 194, 29, 0.15);
+}
+
+.required {
+    color: #ef4444;
+}
+
+.offer_checkbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 312px;
+    gap: 10px;
+    color: #1d4ed8;
+    font-family: "Fira Sans", sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.offer_checkbox input {
+    width: 18px;
+    height: 18px;
+    accent-color: #f3c21d;
+}
+
+.offer_submit_btn {
+    width: 100%;
+    max-width: 312px;
+    height: 52px;
+    border: none;
+    border-radius: 8px;
+    background: #f3c21d;
+    color: #111;
+    font-family: "Fira Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
 .katolg_top{
     grid-column: 1 / -1;
 }
@@ -104,7 +221,7 @@
     grid-row: 1;
     display: flex;
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
     justify-content: center;
     gap: 12px;
     margin: 0;
@@ -112,8 +229,9 @@
 
 .katolg_data--list .product-card__action-buttons {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    width: 100%;
     gap: 14px;
 }
 
@@ -121,6 +239,7 @@
     margin: 0;
     font-size: 21px;
     font-weight: 700;
+    text-align: center;
     white-space: nowrap;
 }
 
@@ -134,7 +253,28 @@
 .katolg_data--list .product-card__btn-secondary {
     justify-content: center;
     color: #111;
-    font-size: 17px;
+    min-width: 0;
+}
+
+.katolg_data:not(.katolg_data--list) .product-card__actions {
+    width: 100%;
+    min-width: 0;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.katolg_data:not(.katolg_data--list) .product-card__btn-main {
+    flex-shrink: 0;
+}
+
+.katolg_data:not(.katolg_data--list) .product-card__btn-secondary {
+    min-width: 0;
+    justify-content: flex-end;
+    gap: 4px;
+    font-size: 14px;
+    line-height: 1.2;
+    text-align: center;
+    white-space: normal;
 }
 
 .katolg_data--list .product-card__favorite {
@@ -145,7 +285,6 @@
     background: transparent;
 }
 
-/* ===== Bo'sh natija ===== */
 .katolg_empty{
     grid-column: 1 / -1;
     padding: 48px 0;
@@ -350,7 +489,7 @@
 
     .katolg_data--list .product-card__actions {
         display: flex;
-        align-items: stretch;
+        align-items: center;
         gap: 14px;
     }
 

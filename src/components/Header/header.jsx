@@ -4,6 +4,7 @@ import "./header.css"
 import { useLanguage } from "../../i18n/LanguageContext";
 import { useNavigate } from "react-router-dom";
 import { useFavoriteStore } from "../../store/favoriteStore";
+import { useCartStore } from "../../store/cartStore";
 
 const Header = (props) => {
     const [openMenu, setOpenMenu] = useState(null);
@@ -24,6 +25,7 @@ const Header = (props) => {
     const { lang, setLang, t, supportedLangs, LANG_LABELS } = useLanguage();
     const navigate = useNavigate();
     const favorites = useFavoriteStore((state) => state.favorites);
+    const cart = useCartStore((state) => state.cart);
     const labels = LANG_LABELS || { ru: "RU", uz: "UZ", en: "EN" };
     const langs = supportedLangs || ["ru", "uz", "en"];
 
@@ -55,8 +57,6 @@ const Header = (props) => {
         setMobileSubOpen((prev) => (prev === key ? null : key));
     };
 
-    // Yagona navigatsiya funksiyasi: har doim yopadi + navigate qiladi.
-    // Barcha mobil va desktop menyu linklari faqat shu orqali ishlaydi.
     const navigateAndClose = (path) => {
         setOpenMenu(null);
         setMobileMenuOpen(false);
@@ -340,14 +340,6 @@ const Header = (props) => {
                                             <p className="text-[15px] font-normal font-['Fira_Sans'] text-[#A1A1A1]">{t("phone_regions_label")} {t("phone_regions")}</p>
                                             <p className="text-[15px] font-normal font-['Fira_Sans'] text-[#A1A1A1]">{t("phone_nn_label")} {t("phone_nn")}</p>
                                         </div>
-                                        <button
-                                            type="button"
-                                            className="img call_trigger"
-                                            onClick={() => setCallModalOpen(true)}
-                                            aria-label="Заказать звонок"
-                                        >
-                                            <img src="./icon_normal_call.png" alt="" />
-                                        </button>
                                     </div>
 
                                     <div className="lang_switcher relative" ref={langRef}>
@@ -535,8 +527,9 @@ const Header = (props) => {
                                     </button>
                                 </form>
 
-                                <button className="cart_btn cursor-pointer" type="button" >
+                                <button className="cart_btn cursor-pointer" type="button" onClick={() => navigateAndClose("/cart")} aria-label="Savat">
                                     <i className="fa-solid fa-cart-shopping w-7.5 h-7.5"></i>
+                                    {cart.length > 0 && <span className="cart_badge">{cart.length}</span>}
                                 </button>
 
                                 <button className="fav_btn cursor-pointer" type="button" onClick={(event) => { event.preventDefault(); navigateAndClose("/favorit"); }}>

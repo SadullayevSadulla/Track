@@ -107,6 +107,9 @@ const translations = {
         stat3_text: "ООО «РусТрак» дорожит доверием автопрома, которое подтверждено полномочиями от 11 автопроизводителей",
         products_section_title: "Рекомендуемая продукция",
         btn_get_offer: "Получить КП",
+        cart_title: "Корзина",
+        cart_empty: "В корзине пока нет товаров",
+        cart_remove: "Удалить",
         price_from: "от",
         price_on_request: "Цена по запросу",
 
@@ -510,6 +513,9 @@ const translations = {
         stat3_text: "«RusTrak» MChJ avtomobilsozlik ishonchini qadrlaydi, bu 11 ta avtoishlab chiqaruvchidan olingan vakolatnomalar bilan tasdiqlangan",
         products_section_title: "Tavsiya etilgan mahsulotlar",
         btn_get_offer: "Taklif olish",
+        cart_title: "Savat",
+        cart_empty: "Savatda hozircha mahsulot yo'q",
+        cart_remove: "O'chirish",
         price_from: "dan",
         price_on_request: "Narxi so'rov bo'yicha",
 
@@ -913,6 +919,9 @@ const translations = {
         stat3_text: "RusTrak LLC values the trust of the automotive industry, confirmed by authorizations from 11 vehicle manufacturers",
         products_section_title: "Recommended products",
         btn_get_offer: "Get a quote",
+        cart_title: "Cart",
+        cart_empty: "There are no products in the cart yet",
+        cart_remove: "Remove",
         price_from: "from",
         price_on_request: "Price on request",
 

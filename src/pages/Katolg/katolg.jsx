@@ -3,16 +3,25 @@ import katolgData, { BRANDS, WEIGHTS } from "./katolgData"
 import { useMemo, useRef, useState } from "react"
 import { useLanguage } from "../../i18n/LanguageContext"
 import { useNavigate } from "react-router-dom"
+import { useCartStore } from "../../store/cartStore"
 
 const Katolg = () => {
   const { t } = useLanguage()
   const navigate = useNavigate()
 
   const [favorites, setFavorites] = useState([])
-  const [view, setView] = useState("list") // "grid" | "list"
+  const addToCart = useCartStore((state) => state.addToCart);
+  const [view, setView] = useState("list")
   const [brandQuery, setBrandQuery] = useState("")
   const [selectedBrands, setSelectedBrands] = useState([])
   const [selectedWeights, setSelectedWeights] = useState([])
+  const [offerModalOpen, setOfferModalOpen] = useState(false)
+  const [offerForm, setOfferForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    consent: true,
+  })
   const dataRef = useRef(null)
 
   const toggleFavorite = (id) => {
@@ -51,10 +60,62 @@ const Katolg = () => {
     dataRef.current?.scrollIntoView({ behavior: "smooth", block: "start" })
   }
 
+  const handleOfferChange = (event) => {
+    const { name, value, type, checked } = event.target
+    setOfferForm((prev) => ({
+      ...prev,
+      [name]: type === "checkbox" ? checked : value,
+    }))
+  }
+
+  const handleOfferSubmit = (event) => {
+    event.preventDefault()
+    if (!offerForm.name.trim() || !offerForm.email.trim() || !offerForm.phone.trim()) return
+    setOfferModalOpen(false)
+    setOfferForm({ name: "", email: "", phone: "", consent: true })
+  }
+
   const hasFilters = selectedBrands.length > 0 || selectedWeights.length > 0 || brandQuery
 
   return (
     <section className="container">
+      {offerModalOpen && (
+        <div className="offer_modal_overlay" onClick={() => setOfferModalOpen(false)}>
+          <div className="offer_modal" onClick={(event) => event.stopPropagation()}>
+            <button
+              type="button"
+              className="offer_modal_close"
+              onClick={() => setOfferModalOpen(false)}
+              aria-label="Close"
+            >
+              ×
+            </button>
+
+            <h3 className="offer_modal_title">Получить коммерческое предложение</h3>
+
+            <form className="offer_modal_form" onSubmit={handleOfferSubmit}>
+              <label className="offer_field">
+                <span>Ваше имя <span className="required">*</span></span>
+                <input type="text" name="name" value={offerForm.name} onChange={handleOfferChange} placeholder="Иван" required />
+              </label>
+              <label className="offer_field">
+                <span>E-mail <span className="required">*</span></span>
+                <input type="email" name="email" value={offerForm.email} onChange={handleOfferChange} placeholder="your@mail.com" required />
+              </label>
+              <label className="offer_field">
+                <span>Телефон <span className="required">*</span></span>
+                <input type="tel" name="phone" value={offerForm.phone} onChange={handleOfferChange} placeholder="+7" required />
+              </label>
+              <label className="offer_checkbox">
+                <input type="checkbox" name="consent" checked={offerForm.consent} onChange={handleOfferChange} />
+                <span>Я согласен на обработку персональных данных</span>
+              </label>
+              <button type="submit" className="offer_submit_btn">{t("btn_get_offer")}</button>
+            </form>
+          </div>
+        </div>
+      )}
+
       <div className="katolg">
         <div className="katolg_top flex justify-between items-center">
           <div className="top_text flex items-center gap-8">
@@ -237,7 +298,14 @@ const Katolg = () => {
                             {t("btn_more")}
                           </button>
 
-                          <button type="button" className="product-card__btn-secondary">
+                          <button
+                            type="button"
+                            className="product-card__btn-secondary"
+                            onClick={(event) => {
+                              event.stopPropagation()
+                              setOfferModalOpen(true)
+                            }}
+                          >
                             {t("btn_get_offer")}
                             <svg
                               width="16"
@@ -266,7 +334,43 @@ const Katolg = () => {
                           >
                             {t("btn_more")}
                           </button>
-                          <button type="button" className="product-card__btn-secondary">
+                          <button
+                            type="button"
+                            className="product-card__cart cursor-pointer"
+                            onClick={(event) => {
+                              event.stopPropagation()
+
+                              addToCart(product)
+                            }}
+                            aria-label="Savatga qo'shish"
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="1.5em"
+                              height="1.5em"
+                              viewBox="0 0 16 16"
+                            >
+                              <path
+                                d="M0 0h16v16H0z"
+                                fill="none"
+                              />
+
+                              <path
+                                fill="currentColor"
+                                d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607L1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4a2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4a2 2 0 0 0-2 0m-7 1a1 1 0 1 1 0 2a1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2a1 1 0 0 1 0-2"
+                              />
+                            </svg>
+                          </button>
+                          <button
+                            type="button"
+                            className="product-card__btn-secondary text-[16px]"
+                            aria-label={t("btn_get_offer")}
+                            title={t("btn_get_offer")}
+                            onClick={(event) => {
+                              event.stopPropagation()
+                              setOfferModalOpen(true)
+                            }}
+                          >
                             {t("btn_get_offer")}
                             <svg
                               width="16"

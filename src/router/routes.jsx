@@ -1,4 +1,5 @@
 import { Certeficat } from "../pages/certeficat/certeficat";
+import Cart from "../pages/Cart/cart";
 import Contacts from "../pages/Contacts/contacts";
 import Favorit from "../pages/Favorit/favorit";
 import Foto from "../pages/Foto/foto";
@@ -113,5 +114,10 @@ export const router = [
         id: 19,
         path: '/otqaz',
         element: <Otqaz/>
+    },
+    {
+        id: 20,
+        path: '/cart',
+        element: <Cart />
     }
 ]
