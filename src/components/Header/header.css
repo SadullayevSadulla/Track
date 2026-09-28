@@ -284,9 +284,9 @@
 }
 
 .call_mini {
-    width: 0;
+    width: 40px;
     height: 40px;
-    opacity: 0;
+    opacity: 1;
     overflow: hidden;
     flex: none;
     border: 0;
@@ -299,6 +299,16 @@
 .call_mini img {
     width: 20px;
     margin: auto;
+}
+
+.call_mini--fixed {
+    width: 0;
+    opacity: 0;
+}
+
+.header_fixed.is-compact .call_mini--fixed {
+    width: 40px;
+    opacity: 1;
 }
 
 .catalog_label {
@@ -339,11 +349,6 @@
 
     .header_fixed.is-compact .mini_logo {
         max-width: 140px;
-        opacity: 1;
-    }
-
-    .header_fixed.is-compact .call_mini {
-        width: 40px;
         opacity: 1;
     }
 

@@ -133,9 +133,9 @@
   border: 0;
   border-radius: 4px;
   background: #ffc400;
-  color: #111;
+  color: black;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 500;
   cursor: pointer;
 }
 
@@ -217,5 +217,59 @@
   .cart-page__offer,
   .cart-page__remove {
     width: 100%;
+  }
+}
+
+.inputs input {
+  border: 1px solid #888;
+  border-radius: 3px;
+  padding: 8px;
+  width: 354px;
+}
+
+.inputs input:focus{
+  border-color: #f3c21d;
+  box-shadow: 0 0 0 2px rgba(243, 194, 29, 0.15);
+}
+
+.cart_button_text h1 {
+  font-size: 32px;
+  font-weight: 500;
+  font-family: "Fira Sans", sans-serif;
+}
+
+.cart_right_ps{
+  max-width: 285px;
+  color: #888;
+}
+
+.cart_right_button button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 1px solid;
+  width: 286px;
+  height: 41px;
+  border-radius: 4px;
+  background: transparent;
+  color: #292929;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.cart_right_button button:hover{
+  color: white;
+  background-color: black;
+}
+
+@media (max-width:950px) {
+  .cart_button{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-inline:auto;
+    gap: 10px;
   }
 }

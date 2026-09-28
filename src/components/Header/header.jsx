@@ -97,6 +97,12 @@ const Header = (props) => {
     };
 
     useEffect(() => {
+        const openCallModal = () => setCallModalOpen(true);
+        window.addEventListener("open-call-modal", openCallModal);
+        return () => window.removeEventListener("open-call-modal", openCallModal);
+    }, []);
+
+    useEffect(() => {
         document.body.style.overflow = mobileMenuOpen || callModalOpen ? "hidden" : "";
         return () => { document.body.style.overflow = ""; };
     }, [mobileMenuOpen, callModalOpen]);
@@ -342,39 +348,49 @@ const Header = (props) => {
                                         </div>
                                     </div>
 
-                                    <div className="lang_switcher relative" ref={langRef}>
+                                    <div className="header_language_actions flex items-center gap-3">
                                         <button
                                             type="button"
-                                            className="flex items-center gap-[6px] text-[15px] font-[500] font-['Fira_Sans'] border-[1px] border-[#FEC80B] rounded-[4px] px-[12px] py-[6px] cursor-pointer bg-white"
-                                            onClick={() => setLangMenuOpen((prev) => !prev)}
+                                            className="call_mini call_mini--top"
+                                            onClick={() => setCallModalOpen(true)}
+                                            aria-label="Заказать звонок"
                                         >
-                                            {labels[lang] || lang?.toUpperCase()}
-                                            <svg
-                                                className={`w-[16px] h-[16px] text-[#FEC80B] transition-transform ${langMenuOpen ? "rotate-180" : ""}`}
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                viewBox="0 0 24 24"
-                                            >
-                                                <path fill="currentColor" d="M7 10l5 5 5-5z" />
-                                            </svg>
+                                            <img src="./icon_normal_call.png" alt="" />
                                         </button>
-                                        {langMenuOpen && (
-                                            <ul className="absolute right-0 top-[calc(100%+6px)] bg-white border-[1px] border-[#eee] rounded-[6px] shadow-md z-50 min-w-[70px] overflow-hidden">
-                                                {langs.map((code) => (
-                                                    <li key={code}>
-                                                        <button
-                                                            type="button"
-                                                            className={`w-full text-left px-[14px] py-[8px] text-[14px] font-['Fira_Sans'] cursor-pointer hover:bg-[#FEC80B]/20 ${lang === code ? "font-[700] text-[#000]" : "text-[#555]"}`}
-                                                            onClick={() => {
-                                                                setLang(code);
-                                                                setLangMenuOpen(false);
-                                                            }}
-                                                        >
-                                                            {labels[code] || code?.toUpperCase()}
-                                                        </button>
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        )}
+                                        <div className="lang_switcher relative" ref={langRef}>
+                                            <button
+                                                type="button"
+                                                className="flex items-center gap-[6px] text-[15px] font-[500] font-['Fira_Sans'] border-[1px] border-[#FEC80B] rounded-[4px] px-[12px] py-[6px] cursor-pointer bg-white"
+                                                onClick={() => setLangMenuOpen((prev) => !prev)}
+                                            >
+                                                {labels[lang] || lang?.toUpperCase()}
+                                                <svg
+                                                    className={`w-[16px] h-[16px] text-[#FEC80B] transition-transform ${langMenuOpen ? "rotate-180" : ""}`}
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    viewBox="0 0 24 24"
+                                                >
+                                                    <path fill="currentColor" d="M7 10l5 5 5-5z" />
+                                                </svg>
+                                            </button>
+                                            {langMenuOpen && (
+                                                <ul className="absolute right-0 top-[calc(100%+6px)] bg-white border-[1px] border-[#eee] rounded-[6px] shadow-md z-50 min-w-[70px] overflow-hidden">
+                                                    {langs.map((code) => (
+                                                        <li key={code}>
+                                                            <button
+                                                                type="button"
+                                                                className={`w-full text-left px-[14px] py-[8px] text-[14px] font-['Fira_Sans'] cursor-pointer hover:bg-[#FEC80B]/20 ${lang === code ? "font-[700] text-[#000]" : "text-[#555]"}`}
+                                                                onClick={() => {
+                                                                    setLang(code);
+                                                                    setLangMenuOpen(false);
+                                                                }}
+                                                            >
+                                                                {labels[code] || code?.toUpperCase()}
+                                                            </button>
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            )}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -539,7 +555,7 @@ const Header = (props) => {
 
                                 <button
                                     type="button"
-                                    className="call_mini"
+                                    className="call_mini call_mini--fixed"
                                     onClick={() => setCallModalOpen(true)}
                                     aria-label="Заказать звонок"
                                 >
