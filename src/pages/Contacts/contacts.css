@@ -6,7 +6,7 @@
 
 .top_left {
     flex: 1;
-    min-width: 0; /* iframe flex-container ichida siqilishi uchun shart */
+    min-width: 0;
 }
 
 .top_left iframe {
@@ -89,12 +89,19 @@
 .contact_avatar img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
     border-radius: 50%;
+    object-fit: cover;
 }
 
 .contact_avatar span {
     display: none;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    color: #555;
+    font-size: 32px;
+    font-weight: 600;
 }
 
 .contact_item h3 {
