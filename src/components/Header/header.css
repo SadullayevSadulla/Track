@@ -34,6 +34,10 @@
     gap: 12px;
 }
 
+.header_phone .texttt {
+    text-align: left;
+}
+
 
 
 .divider {

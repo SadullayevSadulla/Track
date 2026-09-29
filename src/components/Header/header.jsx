@@ -342,7 +342,7 @@ const Header = (props) => {
                                         <p className="text-[15px] font-normal font-['Fira_Sans'] text-[#A1A1A1]">{t("address")}</p>
                                     </div>
                                     <div className="header_phone flex items-center gap-[10px]">
-                                        <div className="texttt">
+                                        <div className="texttt flex flex-col items-end">
                                             <p className="text-[15px] font-normal font-['Fira_Sans'] text-[#A1A1A1]">{t("phone_regions_label")} {t("phone_regions")}</p>
                                             <p className="text-[15px] font-normal font-['Fira_Sans'] text-[#A1A1A1]">{t("phone_nn_label")} {t("phone_nn")}</p>
                                         </div>
@@ -451,7 +451,7 @@ const Header = (props) => {
 
                             <div className="call_modal_footer">
                                 <span>Для регионов: 8 (800) 511-05-25</span>
-                                <span>Нижний Новгород: 8 (831) 235-26-16</span>
+                                <span>Нижний Новгород: 8 (831) 235-25-17</span>
                             </div>
                         </div>
                     </div>,
