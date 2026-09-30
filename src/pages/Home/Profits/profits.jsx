@@ -17,6 +17,8 @@ const slideRight = {
   visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
 };
 
+const BREAKPOINT = 1024;
+
 const MENU_DATA = [
   {
     id: "kb",
@@ -57,15 +59,26 @@ const MENU_DATA = [
 
 export default function ArcNavigation() {
   const containerRef = useRef(null);
-  const [activeIndex, setActiveIndex] = useState(0); // Desktop pinned scroll uchun
-  const [scrollProgress, setScrollProgress] = useState(0); // Progress bar o'sishi uchun
-  const [activeMobileId, setActiveMobileId] = useState("kb"); // Mobile intersection observer uchun
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const [activeMobileId, setActiveMobileId] = useState("kb");
+  const [isDesktop, setIsDesktop] = useState(
+    typeof window !== "undefined" ? window.innerWidth >= BREAKPOINT : true,
+  );
 
-  // Desktop Scroll Pinning Logic
   useEffect(() => {
+    const mql = window.matchMedia(`(min-width: ${BREAKPOINT}px)`);
+    const onChange = (e) => setIsDesktop(e.matches);
+    setIsDesktop(mql.matches);
+    mql.addEventListener("change", onChange);
+    return () => mql.removeEventListener("change", onChange);
+  }, []);
+
+  useEffect(() => {
+    if (!isDesktop) return;
+
     const handleScroll = () => {
-      // Faqat desktop uchun ishlaydi
-      if (window.innerWidth < 768 || !containerRef.current) return;
+      if (window.innerWidth < BREAKPOINT || !containerRef.current) return;
 
       const rect = containerRef.current.getBoundingClientRect();
       const { top, height } = rect;
@@ -77,7 +90,6 @@ export default function ArcNavigation() {
       const scrollDistance = -top;
       let progress = scrollDistance / maxScroll;
 
-      // Progress 0 dan 1 gacha chegaralanadi
       progress = Math.max(0, Math.min(1, progress));
       setScrollProgress(progress);
 
@@ -95,11 +107,10 @@ export default function ArcNavigation() {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleScroll);
     };
-  }, []);
+  }, [isDesktop]);
 
-  // Mobile Intersection Observer Logic
   useEffect(() => {
-    if (window.innerWidth >= 768) return;
+    if (isDesktop) return;
 
     const observerOptions = {
       root: null,
@@ -127,7 +138,7 @@ export default function ArcNavigation() {
     });
 
     return () => observer.disconnect();
-  }, []);
+  }, [isDesktop]);
 
   const handleDotClick = (index) => {
     setActiveIndex(index);
@@ -137,10 +148,10 @@ export default function ArcNavigation() {
     <>
       <div
         ref={containerRef}
-        className="relative container hidden md:block font-sans"
+        className="relative container hidden lg:block font-sans"
         style={{ height: `${MENU_DATA.length * 100 + 20}vh` }}
       >
-       <div className="sticky top-24 h-[calc(100vh-6rem)] flex items-center justify-center overflow-hidden w-full">
+        <div className="sticky top-24 h-[calc(100vh-6rem)] flex items-center justify-center overflow-hidden w-full">
           <div className="ml-0 mr-auto max-w-6xl w-full px-4 flex items-center justify-start gap-70">
             <div className="relative aspect-square w-7/12 flex items-center justify-start min-h-125">
               <div className="absolute inset-[5%] z-10 pointer-events-none rounded-full" />
@@ -220,7 +231,7 @@ export default function ArcNavigation() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col gap-6 md:hidden my-10 font-sans">
+      <div className="flex flex-col gap-6 lg:hidden my-10 font-sans">
         <div className="top-0 bg-white/90 backdrop-blur-sm z-40 py-4 border-b border-neutral-100 flex justify-center">
           <img
             src="/benefits.png"

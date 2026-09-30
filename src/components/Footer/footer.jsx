@@ -70,21 +70,23 @@ const Footer = (props) => {
   ];
 
   return (
-    <footer {...props} className={`relative bg-black text-white pt-15.5 pb-10 ${props.className || ""}`}>
+    <footer
+      {...props}
+      className={`relative bg-black text-white pt-12 md:pt-15.5 pb-20 md:pb-10 ${props.className || ""}`}
+    >
       <div className="container">
-        <div className="flex flex-col md:flex-row md:justify-between">
+        <div className="flex flex-col md:flex-row md:justify-between md:gap-10">
           <motion.div
             variants={container}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-150px" }}
-            className="mb-7.5"
+            className="mb-7.5 shrink-0"
           >
-            <motion.span variants={fadeUp} className="inline-block mb-2">
+            <motion.span variants={fadeUp} className="block mb-2">
               {t("footer_phone")}
             </motion.span>
-            <br />
-            <motion.span variants={fadeUp} className="inline-block mb-2">
+            <motion.span variants={fadeUp} className="block mb-2">
               {t("footer_email")}
             </motion.span>
 
@@ -102,14 +104,13 @@ const Footer = (props) => {
 
             <motion.img
               variants={fadeUp}
-              className="mt-6.25"
-              width={200}
+              className="mt-6.25 w-40 sm:w-50 max-w-full"
               src="/qr.svg"
               alt="QR Code image"
             />
           </motion.div>
 
-          <div className="flex mb-10 gap-5 sm:gap-20 text-sm text-[#d1d1d1] font-semibold flex-col md:flex-row">
+          <div className="flex flex-col gap-5 mb-10 text-sm text-[#d1d1d1] font-semibold md:flex-row md:gap-12 lg:gap-20">
             <div>
               <motion.h2
                 variants={fadeUp}
@@ -127,42 +128,52 @@ const Footer = (props) => {
                 whileInView="visible"
                 onClick={() => setIsOnasOpen((prev) => !prev)}
                 viewport={{ once: true, margin: "-50px" }}
-                className="flex gap-1 md:hidden cursor-pointer text-base mb-3 md:mb-8 text-white"
+                aria-expanded={isOnasOpen}
+                className="flex items-center gap-1 md:hidden cursor-pointer text-base text-white"
                 type="button"
               >
-                {t("about_us")} <ChevronDown className={isOnasOpen ? "rotate-180 transition-transform" : "transition-transform"} />
+                {t("about_us")}
+                <ChevronDown
+                  className={`transition-transform duration-300 ${isOnasOpen ? "rotate-180" : ""}`}
+                />
               </motion.button>
 
               <div
-                className={`flex flex-col gap-3 lg:flex-row lg:gap-20 md:h-auto md:overflow-visible transition-all ease-in duration-300 overflow-hidden ${!isOnasOpen ? "h-0" : "h-110"}`}
+                className={`grid transition-[grid-template-rows] duration-300 ease-in-out md:grid-rows-[1fr] ${
+                  isOnasOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+                }`}
               >
-                <motion.ul
-                  variants={containerSec}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, margin: "-150px" }}
-                  className="flex flex-col gap-3 mr-20 text-[#d1d1d1]"
-                >
-                  {aboutLinks.slice(0, 3).map((item) => (
-                    <motion.li key={item.to} variants={shortFadeUp}>
-                      <Link to={item.to}>{item.label}</Link>
-                    </motion.li>
-                  ))}
-                </motion.ul>
+                <div className="min-h-0 overflow-hidden md:overflow-visible">
+                  <div className="flex flex-col gap-3 pt-3 md:pt-0 lg:flex-row lg:gap-20">
+                    <motion.ul
+                      variants={containerSec}
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true, margin: "-150px" }}
+                      className="flex flex-col gap-3 text-[#d1d1d1]"
+                    >
+                      {aboutLinks.slice(0, 3).map((item) => (
+                        <motion.li key={item.to} variants={shortFadeUp}>
+                          <Link to={item.to}>{item.label}</Link>
+                        </motion.li>
+                      ))}
+                    </motion.ul>
 
-                <motion.ul
-                  variants={containerSec}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, margin: "-150px" }}
-                  className="flex flex-col gap-3 mr-20"
-                >
-                  {aboutLinks.slice(3).map((item) => (
-                    <motion.li key={item.to} variants={shortFadeUp}>
-                      <Link to={item.to}>{item.label}</Link>
-                    </motion.li>
-                  ))}
-                </motion.ul>
+                    <motion.ul
+                      variants={containerSec}
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true, margin: "-150px" }}
+                      className="flex flex-col gap-3 text-[#d1d1d1]"
+                    >
+                      {aboutLinks.slice(3).map((item) => (
+                        <motion.li key={item.to} variants={shortFadeUp}>
+                          <Link to={item.to}>{item.label}</Link>
+                        </motion.li>
+                      ))}
+                    </motion.ul>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -183,25 +194,37 @@ const Footer = (props) => {
                 whileInView="visible"
                 onClick={() => setIsMediaOpen((prev) => !prev)}
                 viewport={{ once: true, margin: "-50px" }}
-                className="text-base flex gap-1 cursor-pointer mb-3 md:mb-8 text-white md:hidden"
+                aria-expanded={isMediaOpen}
+                className="text-base flex items-center gap-1 cursor-pointer text-white md:hidden"
                 type="button"
               >
-                {t("media")} <ChevronDown className={isMediaOpen ? "rotate-180 transition-transform" : "transition-transform"} />
+                {t("media")}
+                <ChevronDown
+                  className={`transition-transform duration-300 ${isMediaOpen ? "rotate-180" : ""}`}
+                />
               </motion.button>
 
-              <motion.ul
-                variants={containerSec}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-150px" }}
-                className={`flex flex-col gap-3 transition-all ease-in duration-300 md:h-auto md:overflow-visible overflow-hidden ${!isMediaOpen ? "h-0" : "h-20"}`}
+              <div
+                className={`grid transition-[grid-template-rows] duration-300 ease-in-out md:grid-rows-[1fr] ${
+                  isMediaOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+                }`}
               >
-                {mediaLinks.map((item) => (
-                  <motion.li key={item.to} variants={shortFadeUp}>
-                    <Link to={item.to}>{item.label}</Link>
-                  </motion.li>
-                ))}
-              </motion.ul>
+                <div className="min-h-0 overflow-hidden md:overflow-visible">
+                  <motion.ul
+                    variants={containerSec}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-150px" }}
+                    className="flex flex-col gap-3 pt-3 md:pt-0"
+                  >
+                    {mediaLinks.map((item) => (
+                      <motion.li key={item.to} variants={shortFadeUp}>
+                        <Link to={item.to}>{item.label}</Link>
+                      </motion.li>
+                    ))}
+                  </motion.ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -212,7 +235,7 @@ const Footer = (props) => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="text-sm md:order-1 order-2 lg:mr-60 text-[#d1d1d1] opacity-40 font-medium"
+            className="text-sm md:order-1 order-2 lg:mr-60 text-[#d1d1d1] opacity-40 font-medium md:max-w-md lg:max-w-none"
           >
             {t("footer_copyright")}
             <br />
@@ -224,7 +247,7 @@ const Footer = (props) => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="flex gap-5 md:order-2"
+            className="flex flex-wrap items-center gap-4 sm:gap-5 md:order-2 md:pr-16 lg:pr-0"
           >
             {socialLinks.map((item) => (
               <motion.a key={item.alt} variants={shortFadeUp} href={item.href}>

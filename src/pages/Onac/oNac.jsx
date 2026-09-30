@@ -13,7 +13,6 @@ import { useLanguage } from "../../i18n/LanguageContext";
 const Onac = () => {
   const { t } = useLanguage();
 
-  const todayPoints = Array.from({ length: 7 });
 
   return (
     <section>
@@ -110,14 +109,22 @@ const Onac = () => {
           <div className="seg_text">
             <h1>{t("onac_today_title")}</h1>
             <div className="seb_p">
-              {todayPoints.map((_, index) => (
-                <div className="pppp" key={index}>
+
+              <div className="pppp">
+                <div className="sb">
                   <div className="lot">
                     <i className="fa-solid fa-check"></i>
                   </div>
                   <p>{t("onac_today_point")}</p>
                 </div>
-              ))}
+                <div className="sb">
+                    <div className="lot">
+                    <i className="fa-solid fa-check"></i>
+                  </div>
+                  <p>{t("onac_today_mt")}</p>
+                </div>
+                <p>{t("onac_today_mtt")}</p>
+              </div>
             </div>
           </div>
           <div className="seg_img">

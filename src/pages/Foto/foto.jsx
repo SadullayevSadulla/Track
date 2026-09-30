@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './foto.css';
+import { useNavigate } from "react-router-dom"
+
 
 const imagesData = {
   cars: [
@@ -29,14 +31,18 @@ const imagesData = {
 export default function Foto() {
   const [activeTab, setActiveTab] = useState('cars');
   const [modalImg, setModalImg] = useState(null);
+    const navigate = useNavigate();
 
+    const navigateAndClose = (path) => {
+        navigate(path);
+    };
   const currentImages = imagesData[activeTab] || imagesData.cars;
 
   return (
     <div className="gallery-container container">
       <header className="gallery-header">
         <h1 className="gallery-title">Фотогалерея производителя автоспецтехники РусТрак</h1>
-        <button className="video-btn">Смотреть видео</button>
+        <button className="video-btn" onClick={(event) => { event.preventDefault(); navigateAndClose("/vido"); }}>Смотреть видео</button>
       </header>
 
       <nav className="gallery-nav">

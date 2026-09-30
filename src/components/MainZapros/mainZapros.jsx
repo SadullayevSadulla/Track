@@ -29,6 +29,16 @@ const ContactSec = () => {
     const { t } = useLanguage();
     const [isHovered, setIsHovered] = useState(false);
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const form = e.currentTarget;
+        const name = form.elements.name.value.trim();
+        const phone = form.elements.phone.value.trim();
+        if (!name || !phone) return;
+
+        form.reset();
+    };
+
     return (
         <section className="lg:h-85.25 pb-7 lg:py-0 flex relative lg:overflow-hidden! bg-light-gray/20">
             <div className="container">
@@ -56,6 +66,7 @@ const ContactSec = () => {
                     </div>
 
                     <motion.form
+                        onSubmit={handleSubmit}
                         variants={container}
                         initial="hidden"
                         whileInView="visible"
@@ -69,6 +80,8 @@ const ContactSec = () => {
                                 <motion.input
                                     variants={shortFadeUp}
                                     id="name"
+                                    name="name"
+                                    required
                                     className="py-2.75 px-3 rounded-sm border outline-0"
                                     type="text"
                                     placeholder={t("zapros_name_placeholder")}
@@ -82,6 +95,10 @@ const ContactSec = () => {
                                 <motion.input
                                     variants={shortFadeUp}
                                     id="phone"
+                                    name="phone"
+                                    required
+                                    pattern="[0-9+()\s\-]{10,}"
+                                    title="Telefon raqamini to'g'ri kiriting"
                                     className="py-2.75 px-3 rounded-sm border outline-0"
                                     type="tel"
                                     onMouseLeave={() => setIsHovered(false)}

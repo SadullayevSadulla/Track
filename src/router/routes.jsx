@@ -112,7 +112,7 @@ export const router = [
     },
     {
         id: 19,
-        path: '/otqaz',
+        path: '/Отзывы',
         element: <Otqaz/>
     },
     {

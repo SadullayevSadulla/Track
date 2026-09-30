@@ -42,7 +42,7 @@ const translations = {
         menu_about_certificates: "Сертификаты",
         menu_about_vacancies: "Вакансии",
         menu_about_leasing: "Кредит и лизинг",
-        menu_about_otqaz: "Отказ",
+        menu_about_otqaz: "Отзывы",
 
         menu_media_title: "Медиа",
         menu_media_gallery: "Фотогалерея",
@@ -262,6 +262,8 @@ const translations = {
 
         onac_today_title: "Сегодня ООО «Рустрак» - это:",
         onac_today_point: "3 производственных корпуса, общей площадью более 7000 м2;",
+        onac_today_mt:"производственная территория более 20000 м2;",
+        onac_today_mtt:"служба качества, гарантирующая выпуск высококачественной техники;",
 
         onac_industries_title: "Отрасли применения выпускаемой техники:",
         onac_industries_text: "Cтроительная, телекоммуникационная, коммунальная, дорожное хозяйство, логистика, сельское хозяйство.",

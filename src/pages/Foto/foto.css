@@ -145,6 +145,13 @@ body {
   }
 }
 
+@media (max-width:535px) {
+  .gallery-nav{
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
 @media (max-width: 480px) {
   .gallery-grid {
     grid-template-columns: 1fr;
