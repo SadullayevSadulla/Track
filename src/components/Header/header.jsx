@@ -68,7 +68,10 @@ const Header = (props) => {
         e?.preventDefault();
         const q = searchQuery.trim();
         if (!q) return;
-        window.location.href = `/search?q=${encodeURIComponent(q)}`;
+
+        navigate(`/search?q=${encodeURIComponent(q)}`);
+        setSearchQuery("");
+        setMobileSearchOpen(false);
     };
 
     const handleSearchIconClick = () => {
@@ -526,12 +529,12 @@ const Header = (props) => {
                             <div className="header_actions flex items-center gap-5">
                                 <form className="search_box relative" onSubmit={handleSearchSubmit} ref={searchRef}>
                                     <input
+                                        ref={searchInputRef}
                                         type="text"
                                         placeholder={t("search_placeholder")}
-                                        className="w-70 h-11 rounded-[30px] border border-[#FEC80B] px-5 pr-12 text-[14px] font-['Fira_Sans'] outline-none"
                                         value={searchQuery}
-                                        onChange={(event) => setSearchQuery(event.target.value)}
-                                        ref={searchInputRef}
+                                        onChange={(e) => setSearchQuery(e.target.value)}
+                                        className="w-70 h-11 rounded-[30px] border border-[#FEC80B] px-5 pr-12 text-[14px] font-['Fira_Sans'] outline-none"
                                     />
                                     <button
                                         type="button"

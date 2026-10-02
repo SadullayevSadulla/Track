@@ -35,7 +35,7 @@ const Repair = () => {
         </div>
       </div>
 
-      <section className="slide-section mt-10">
+      <section className="slide-section flex items-center justify-center gap-8 mt-10">
         <div className="bot_img mb-7">
           <ReactCompareSlider
             itemOne={
@@ -47,6 +47,23 @@ const Repair = () => {
             itemTwo={
               <ReactCompareSliderImage
                 src="/first_car_1.jpg"
+                alt={t("repair_after")}
+              />
+            }
+          />
+        </div>
+        <div className="bot_img2 mb-7">
+          <ReactCompareSlider
+            style={{ width: "100%", height: "100%" }}
+            itemOne={
+              <ReactCompareSliderImage
+                src="/third_car_1.jpg"
+                alt={t("repair_before")}
+              />
+            }
+            itemTwo={
+              <ReactCompareSliderImage
+                src="/third_car_2.jpg"
                 alt={t("repair_after")}
               />
             }

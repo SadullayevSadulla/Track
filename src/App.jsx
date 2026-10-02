@@ -6,6 +6,7 @@ import Header from "./components/Header/header";
 import Footer from "./components/Footer/footer";
 import MainZapros from "./components/MainZapros/mainZapros";
 import Preloader from "./components/Preloader/Preloader";
+import Breadcrumb from "./components/Breadcrumb";
 
 function App() {
     const [loading, setLoading] = useState(true);
@@ -36,6 +37,7 @@ function App() {
                             path={item.path}
                             element={
                                 <div style={{ width: "100%" }}>
+                                    <Breadcrumb />
                                     {item.element}
                                 </div>
                             }

@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./information.css"
+import "../Home/MainCard/mainCard.css"
 import { useLanguage } from "../../i18n/LanguageContext"
 
 const productImage = "/000.webp"
@@ -22,12 +23,75 @@ const specifications = [
 
 const Information = () => {
   const { t } = useLanguage();
+  const [offerModalOpen, setOfferModalOpen] = useState(false)
+  const [offerForm, setOfferForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    consent: true,
+  })
+
+  const handleOfferChange = (event) => {
+    const { name, value, type, checked } = event.target
+    setOfferForm((prev) => ({
+      ...prev,
+      [name]: type === "checkbox" ? checked : value,
+    }))
+  }
+
+  const handleOfferSubmit = (event) => {
+    event.preventDefault()
+    if (!offerForm.name.trim() || !offerForm.email.trim() || !offerForm.phone.trim()) return
+    setOfferModalOpen(false)
+    setOfferForm({ name: "", email: "", phone: "", consent: true })
+  }
 
   const getSpecValue = ([, valueKey, rawValue]) =>
     valueKey ? t(valueKey) : rawValue;
 
   return (
     <section className="information container">
+      {offerModalOpen && (
+        <div className="offer_modal_overlay" onClick={() => setOfferModalOpen(false)}>
+          <div className="offer_modal" onClick={(event) => event.stopPropagation()}>
+            <button
+              type="button"
+              className="offer_modal_close"
+              onClick={() => setOfferModalOpen(false)}
+              aria-label="Close"
+            >
+              ×
+            </button>
+
+            <h3 className="offer_modal_title">Получить коммерческое предложение</h3>
+
+            <form className="offer_modal_form" onSubmit={handleOfferSubmit}>
+              <label className="offer_field">
+                <span>Ваше имя <span className="required">*</span></span>
+                <input type="text" name="name" value={offerForm.name} onChange={handleOfferChange} placeholder="Иван" />
+              </label>
+
+              <label className="offer_field">
+                <span>E-mail <span className="required">*</span></span>
+                <input type="email" name="email" value={offerForm.email} onChange={handleOfferChange} placeholder="your@mail.com" />
+              </label>
+
+              <label className="offer_field">
+                <span>Телефон <span className="required">*</span></span>
+                <input type="tel" name="phone" value={offerForm.phone} onChange={handleOfferChange} placeholder="+7" />
+              </label>
+
+              <label className="offer_checkbox">
+                <input type="checkbox" name="consent" checked={offerForm.consent} onChange={handleOfferChange} />
+                <span>Я согласен на обработку персональных данных</span>
+              </label>
+
+              <button type="submit" className="offer_submit_btn">{t("btn_get_offer")}</button>
+            </form>
+          </div>
+        </div>
+      )}
+
       <div className="information__inner">
         <h1 className="information__title">
           {t("info_product_title")}
@@ -42,7 +106,7 @@ const Information = () => {
             <h2>{t("price_on_request")}</h2>
             <div className="information__actions">
               <button className="information__cart" type="button">{t("info_add_to_cart")}</button>
-              <button className="information__offer" type="button">{t("btn_get_offer")}</button>
+              <button className="information__offer" type="button" onClick={() => setOfferModalOpen(true)}>{t("btn_get_offer")}</button>
             </div>
 
             <dl className="information__specifications">

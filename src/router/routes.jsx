@@ -18,6 +18,8 @@ import Repair from "../pages/Repair/repair";
 import Service from "../pages/Service/service";
 import Vaqansiva from "../pages/vaqansiva/vaqansiva";
 import Vido from "../pages/Video/vido";
+import CatalogPage from "../pages/Katolg/Catalog/catalog";
+import SearchPage from "../pages/Search/search";
 
 export const router = [
     {
@@ -119,5 +121,15 @@ export const router = [
         id: 20,
         path: '/cart',
         element: <Cart />
+    },
+    {
+        id:21,
+        path: '/CatalogPage',
+        element: <CatalogPage />
+    },
+    {
+        id:22,
+        path: '/search',
+        element: <SearchPage />
     }
 ]

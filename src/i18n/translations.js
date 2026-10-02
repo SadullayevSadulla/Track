@@ -198,6 +198,8 @@ const translations = {
         position_sales_manager: "Менеджер по продажам",
         katolg_title: "Шторные автомобили",
         katolg_count: "30 товаров",
+        search_results_title: "Результаты поиска",
+        search_no_results: "По вашему запросу ничего не найдено",
 
         brand_gaz: "ГАЗ",
         brand_kamaz: "КАМАЗ",
@@ -606,6 +608,8 @@ const translations = {
         position_sales_manager: "Sotuv menejeri",
         katolg_title: "Pardali avtomobillar",
         katolg_count: "30 ta mahsulot",
+        search_results_title: "Qidiruv natijalari",
+        search_no_results: "So'rovingiz bo'yicha hech narsa topilmadi",
 
         brand_gaz: "GAZ",
         brand_kamaz: "KAMAZ",
@@ -1012,6 +1016,8 @@ const translations = {
         position_sales_manager: "Sales Manager",
         katolg_title: "Curtain-side trucks",
         katolg_count: "30 products",
+        search_results_title: "Search results",
+        search_no_results: "No results found for your search",
 
         brand_gaz: "GAZ",
         brand_kamaz: "KAMAZ",
