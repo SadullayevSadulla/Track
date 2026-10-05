@@ -19,8 +19,17 @@ const LABELS = {
   "/kredit": "Кредит",
   "/production": "Продукция",
   "/favorit": "Избранное",
+  "/Отзывы": "Отзывы",
   "/otqaz": "Отказ",
   "/cart": "Корзина",
+};
+
+const decodeSegment = (segment) => {
+  try {
+    return decodeURIComponent(segment);
+  } catch {
+    return segment;
+  }
 };
 
 const formatLabel = (segment) => {
@@ -44,6 +53,7 @@ export default function Breadcrumb() {
   }
 
   const segments = location.pathname.split("/").filter(Boolean);
+  const decodedSegments = segments.map((segment) => decodeSegment(segment));
 
   return (
     <nav aria-label="Breadcrumb" className="container mb-6 mt-6 text-sm text-gray-500">
@@ -54,7 +64,9 @@ export default function Breadcrumb() {
 
         {segments.map((segment, index) => {
           const path = `/${segments.slice(0, index + 1).join("/")}`;
-          const label = LABELS[path] || formatLabel(segment);
+          const decodedPath = `/${decodedSegments.slice(0, index + 1).join("/")}`;
+          const decodedSegment = decodeSegment(segment);
+          const label = LABELS[path] || LABELS[decodedPath] || formatLabel(decodedSegment);
           const isLast = index === segments.length - 1;
 
           return (
@@ -63,7 +75,7 @@ export default function Breadcrumb() {
               {isLast ? (
                 <span className="text-gray-700">{label}</span>
               ) : (
-                <Link to={path} className="hover:text-yellow-600 transition">
+                <Link to={decodedPath} className="hover:text-yellow-600 transition">
                   {label}
                 </Link>
               )}

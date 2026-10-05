@@ -8,3 +8,28 @@
     font-weight: 500;
     font-family: "Fira Sans", sans-serif;
 }
+
+.certeficat_img {
+  width: 100%;
+}
+
+.certeficat_item {
+  display: block;
+  width: 250px;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.certeficat_item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.certeficat_item:hover img {
+  transform: scale(1.05);
+}

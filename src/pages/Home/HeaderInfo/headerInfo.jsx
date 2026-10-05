@@ -8,9 +8,12 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { useLanguage } from "../../../i18n/LanguageContext";
+import { useNavigate } from "react-router-dom";
+
 
 const HeaderInfo = () => {
     const { t } = useLanguage();
+    const navigate = useNavigate();
 
     return (
         <section className="container">
@@ -47,7 +50,7 @@ const HeaderInfo = () => {
                                     {t("slide1_text_2")}
                                 </p>
                                 <div className="slide_actions">
-                                    <button className="btn btn--outline btn--light">
+                                    <button type="button" className="btn btn--outline btn--light" onClick={() => navigate("/mainNewsCard")}>
                                         {t("btn_order_call")}
                                     </button>
                                 </div>
@@ -73,7 +76,7 @@ const HeaderInfo = () => {
                                     {t("slide2_text")}
                                 </p>
                                 <div className="slide_actions">
-                                    <button className="btn btn--solid">{t("btn_more")}</button>
+                                    <button className="btn btn--solid" onClick={() => navigate("/katalog")}>{t("btn_more")}</button>
                                 </div>
                             </div>
                         </div>
@@ -93,7 +96,7 @@ const HeaderInfo = () => {
                                     {t("slide3_text")}
                                 </p>
                                 <div className="slide_actions">
-                                    <button className="btn btn--solid">{t("btn_open_catalog")}</button>
+                                    <button className="btn btn--solid" onClick={() => navigate("/onac")}>{t("btn_open_catalog")}</button>
                                     <button className="btn btn--outline btn--light">
                                         {t("btn_order_call")}
                                     </button>
@@ -120,7 +123,7 @@ const HeaderInfo = () => {
                                     {t("slide4_text")}
                                 </p>
                                 <div className="slide_actions">
-                                    <button className="btn btn--solid">{t("btn_more")}</button>
+                                    <button className="btn btn--solid" onClick={() => navigate("/katalog")}>{t("btn_more")}</button>
                                     <button className="btn btn--outline btn--light">
                                         {t("btn_order_call")}
                                     </button>
