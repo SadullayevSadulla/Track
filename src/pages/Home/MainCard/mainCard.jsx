@@ -160,7 +160,7 @@ const MainCard = () => {
                                     <img src={product.image} alt={t(product.titleKey)} />
 
                                     <button
-                                        className={`product-card__favorite ${favorites.includes(product.id) ? "active" : ""
+                                        className={`product-card__favorite ${favorites.includes(String(product.id)) ? "active" : ""
                                             }`}
                                         onClick={() => {
                                             toggleFavorite(product.id);
@@ -170,7 +170,7 @@ const MainCard = () => {
                                             width="20"
                                             height="20"
                                             viewBox="0 0 24 24"
-                                            fill={favorites.includes(product.id) ? "#f5a623" : "none"}
+                                            fill={favorites.includes(String(product.id)) ? "#f5a623" : "none"}
                                             stroke="currentColor"
                                             strokeWidth="2"
                                         >

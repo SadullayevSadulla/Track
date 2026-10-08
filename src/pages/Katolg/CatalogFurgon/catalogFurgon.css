@@ -1,0 +1,179 @@
+.furgon-catalog {
+  align-items: start;
+}
+
+.furgon-catalog__tools {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.furgon-catalog__filters {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding: 16px;
+  border: 0;
+  background: #fff;
+}
+
+.furgon-catalog__filters .marka_in {
+  gap: 12px;
+}
+
+.furgon-catalog__filters .marka_in h1 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.furgon-catalog__filters .cran-catalog__search {
+  margin: 0;
+}
+
+.furgon-catalog__filters .kj input {
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+  margin: 0;
+  accent-color: #fec80b;
+}
+
+.furgon-catalog__filters .kj p {
+  margin: 0;
+}
+
+.furgon-catalog__length-filter {
+  gap: 14px;
+}
+
+.furgon-catalog__filter-actions .btn9 button {
+  width: 100%;
+  padding: 12px 16px;
+}
+
+.furgon-catalog__results {
+  min-width: 0;
+}
+
+.furgon-catalog__results > .cran-catalog__products {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  scroll-margin-top: 100px;
+}
+
+.furgon-catalog__results > .cran-catalog__products.katolg_data--list {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.furgon-catalog__results > .cran-catalog__products > div {
+  min-width: 0;
+  width: 100%;
+}
+
+.furgon-catalog__results > .cran-catalog__products.katolg_data--list .product-card {
+  width: 100%;
+}
+
+.furgon-product--unavailable .product-card__image::after {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.72);
+  content: "";
+}
+
+.furgon-product--unavailable .product-card__image img {
+  opacity: 0.62;
+}
+
+.furgon-product__unavailable-label {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  color: #111;
+  font-size: 20px;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+}
+
+.furgon-product__similar {
+  display: flex;
+  width: 100%;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 0;
+  border-radius: 4px;
+  background: #fec80b;
+  color: #111;
+  font-family: "Fira Sans", sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.furgon-catalog__description {
+  max-width: 960px;
+  margin-top: 74px;
+  color: #171717;
+  font-family: "Fira Sans", sans-serif;
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+.furgon-catalog__description p {
+  margin: 0 0 18px;
+}
+
+.furgon-catalog__description h2 {
+  margin: 24px 0 14px;
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.furgon-catalog__description ul {
+  display: grid;
+  gap: 10px;
+  margin: 0 0 18px;
+  padding-left: 22px;
+  list-style: none;
+}
+
+.furgon-catalog__description li::before {
+  margin-left: -22px;
+  margin-right: 12px;
+  color: #fec80b;
+  content: "◆";
+}
+
+@media (max-width: 1050px) {
+  .furgon-catalog__results > .cran-catalog__products {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .furgon-catalog__tools {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .furgon-catalog__filters {
+    padding: 16px;
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  .furgon-catalog__results > .cran-catalog__products {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .furgon-catalog__description {
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .furgon-catalog__results > .cran-catalog__products {
+    grid-template-columns: 1fr;
+  }
+}

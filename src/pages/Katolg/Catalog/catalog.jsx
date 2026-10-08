@@ -31,7 +31,7 @@ const CatalogPage = () => {
           {items.map((item) => (
             <Link
               key={item.id}
-              to="/katolg"
+              to={item.id === 1 ? "/CatalogFuel" : item.id === 2 ? "/CatalogAwp" : item.id === 3 ? "/CatalogWater" : item.id === 4 ? "/CatalogEvkrator" : item.id === 5 ? "/CatalogFurgon" : item.id === 7 ? "/CatalogIL" : item.id === 11 ? "/CatalogKran" : "/katolg"}
               className="border-r border-b border-gray-200 flex flex-col items-start p-4 hover:bg-gray-50 transition duration-200 group"
             >
               <p className="font-semibold text-[15px] mb-0.5 group-hover:text-yellow transition duration-200">

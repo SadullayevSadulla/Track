@@ -1,4 +1,3 @@
-// Filtr variantlari (chap panel)
 export const BRANDS = [
     { value: "gaz", labelKey: "brand_gaz" },
     { value: "kamaz", labelKey: "brand_kamaz" },

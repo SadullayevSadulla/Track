@@ -4,12 +4,14 @@ import { useMemo, useRef, useState } from "react"
 import { useLanguage } from "../../i18n/LanguageContext"
 import { useNavigate } from "react-router-dom"
 import { useCartStore } from "../../store/cartStore"
+import { useFavoriteStore } from "../../store/favoriteStore"
 
 const Katolg = () => {
   const { t } = useLanguage()
   const navigate = useNavigate()
 
-  const [favorites, setFavorites] = useState([])
+  const favorites = useFavoriteStore((state) => state.favorites)
+  const toggleFavorite = useFavoriteStore((state) => state.toggleFavorite)
   const addToCart = useCartStore((state) => state.addToCart);
   const [view, setView] = useState("list")
   const [brandQuery, setBrandQuery] = useState("")
@@ -23,12 +25,6 @@ const Katolg = () => {
     consent: true,
   })
   const dataRef = useRef(null)
-
-  const toggleFavorite = (id) => {
-    setFavorites((prev) =>
-      prev.includes(id) ? prev.filter((favId) => favId !== id) : [...prev, id]
-    )
-  }
 
   const toggleInList = (setter, value) => {
     setter((prev) =>
@@ -165,7 +161,7 @@ const Katolg = () => {
                   onChange={(e) => setBrandQuery(e.target.value)}
                 />
               </div>
-            </div>
+            </div> 
 
             <div className="mk">
               {visibleBrands.map((brand) => (
@@ -218,7 +214,7 @@ const Katolg = () => {
           )}
 
           {filteredProducts.map((product) => {
-            const isFav = favorites.includes(product.id)
+            const isFav = favorites.includes(String(product.id))
             const weightLabel = WEIGHTS.find((w) => w.value === product.weight)?.labelKey
 
             return (

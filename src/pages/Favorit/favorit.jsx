@@ -10,7 +10,9 @@ const Favorit = () => {
   const toggleFavorite = useFavoriteStore((state) => state.toggleFavorite);
   const { t } = useLanguage();
   const navigate = useNavigate();
-  const favoriteProducts = productsData.filter((product) => favorites.includes(product.id));
+  const favoriteProducts = productsData.filter((product) =>
+    favorites.includes(String(product.id))
+  );
 
   return (
     <main className="products-page">

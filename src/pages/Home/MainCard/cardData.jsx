@@ -33,6 +33,55 @@ const productsData = [
         priceAmount: "352 000₽",
         image: "/000 (1).webp",
     },
+    {
+        id: 6,
+        titleKey: "product2_title",
+        priceType: "from",
+        priceAmount: "352 000₽",
+        image: "/000.jpg",
+    },
+    {
+        id: 7,
+        titleKey: "product2_title",
+        priceType: "from",
+        priceAmount: "352 000₽",
+        image: "/gmb4rcarl25rm4hcygyi90d901eh305a.jpg",
+    },
+    {
+        id: 8,
+        titleKey: "product2_title",
+        priceType: "from",
+        priceAmount: "352 000₽",
+        image: "/yeln332de47gv9sv2s7n4poxdnfufjv3.jpg",
+    },
+    {
+        id: 9,
+        titleKey: "product2_title",
+        priceType: "from",
+        priceAmount: "352 000₽",
+        image: "/93uq5fjhi5e4skil4nm5lvh9lxp4ymzr.jpg",
+    },
+    {
+        id: 10,
+        titleKey: "product2_title",
+        priceType: "from",
+        priceAmount: "352 000₽",
+        image: "/4qludc7vy9hr2o36vqan808424bqra2f.jpg",
+    },
+    {
+        id: 11,
+        titleKey: "product2_title",
+        priceType: "from",
+        priceAmount: "352 000₽",
+        image: "/z81dz76r10rm4zz03kh6mh93bqrgi2hk.jpg",
+    },
+    {
+        id: 12,
+        titleKey: "product2_title",
+        priceType: "from",
+        priceAmount: "352 000₽",
+        image: "/hvk3vcpvmblxb0h4764ut0kkte6116s3.webp",
+    },
 ];
 
 export default productsData;

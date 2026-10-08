@@ -1,6 +1,8 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
+const normalizeFavoriteId = (id) => String(id);
+
 export const useFavoriteStore = create(
     persist(
         (set) => ({
@@ -8,22 +10,27 @@ export const useFavoriteStore = create(
 
             toggleFavorite: (id) =>
                 set((state) => {
-                    if (state.favorites.includes(id)) {
+                    const normalizedId = normalizeFavoriteId(id);
+                    const currentFavorites = (state.favorites ?? []).map(String);
+
+                    if (currentFavorites.includes(normalizedId)) {
                         return {
-                            favorites: state.favorites.filter(
-                                (favoriteId) => favoriteId !== id
+                            favorites: currentFavorites.filter(
+                                (favoriteId) => favoriteId !== normalizedId
                             ),
                         };
                     }
 
                     return {
-                        favorites: [...state.favorites, id],
+                        favorites: [...currentFavorites, normalizedId],
                     };
                 }),
         }),
         {
             name: "favorite-products",
-            partialize: (state) => ({ favorites: state.favorites }),
+            partialize: (state) => ({
+                favorites: (state.favorites ?? []).map(String),
+            }),
         }
     )
 );

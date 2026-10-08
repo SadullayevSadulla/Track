@@ -19,6 +19,15 @@ import Service from "../pages/Service/service";
 import Vaqansiva from "../pages/vaqansiva/vaqansiva";
 import Vido from "../pages/Video/vido";
 import CatalogPage from "../pages/Katolg/Catalog/catalog";
+import CatalogCran from "../pages/Katolg/CatalogKran/catalogCran";
+import CatalogFuel from "../pages/Katolg/CatalogFuel/catalogFuel";
+import CatalogAwp from "../pages/Katolg/CatalogAwp/catalogAwp";
+import CatalogWater from "../pages/Katolg/CatalogWater/catalogWater";
+import CatalogEvkrator from "../pages/Katolg/CatalogEvkrator/catalogEvkrator";
+import CatalogBord from "../pages/Katolg/CatalogBord/catalogBord";
+import CatalogFurgon from "../pages/Katolg/CatalogFurgon/catalogFurgon";
+import CatalogCanto from "../pages/Katolg/CatalogCanto/catalogCanto";
+import CatalogIl from "../pages/Katolg/CatalogIL/catalogIl";
 import SearchPage from "../pages/Search/search";
 
 export const router = [
@@ -126,6 +135,56 @@ export const router = [
         id:21,
         path: '/CatalogPage',
         element: <CatalogPage />
+    },
+    {
+        id: 23,
+        path: '/CatalogKran',
+        element: <CatalogCran />
+    },
+    {
+        id: 24,
+        path: '/CatalogFuel',
+        element: <CatalogFuel />
+    },
+    {
+        id: 25,
+        path: '/CatalogAwp',
+        element: <CatalogAwp />
+    },
+    {
+        id: 26,
+        path: '/CatalogWater',
+        element: <CatalogWater />
+    },
+    {
+        id: 27,
+        path: '/CatalogEvkrator',
+        element: <CatalogEvkrator />
+    },
+    {
+        id: 28,
+        path: '/CatalogBord',
+        element: <CatalogBord />
+    },
+    {
+        id: 29,
+        path: '/CatalogFurgon',
+        element: <CatalogFurgon />
+    },
+    {
+        id: 30,
+        path: '/CatalogCanto',
+        element: <CatalogCanto />
+    },
+    {
+        id: 31,
+        path: '/CatalogIL',
+        element: <CatalogIl />
+    },
+    {
+        id: 32,
+        path: '/CatalogIl',
+        element: <CatalogIl />
     },
     {
         id:22,

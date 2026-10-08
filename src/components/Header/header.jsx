@@ -180,15 +180,15 @@ const Header = (props) => {
                         <h3 className="text-[20px] font-[700] font-['Fira_Sans'] mb-[20px]">{t("menu_categories_title")}</h3>
                         <ul className="flex flex-col gap-[16px]">
                             <li><a href="/katolg" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/katolg"); }}>{t("menu_cat_curtain")}</a></li>
-                            <li><a href="/katolg" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/katolg"); }}>{t("menu_cat_crane")}</a></li>
-                            <li><a href="/katolg" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/katolg"); }}>{t("menu_cat_fuel_truck")}</a></li>
-                            <li><a href="/katolg" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/katolg"); }}>{t("menu_cat_lift")}</a></li>
-                            <li><a href="/katolg" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/katolg"); }}>{t("menu_cat_tank")}</a></li>
-                            <li><a href="/katolg" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/katolg"); }}>{t("menu_cat_tow")}</a></li>
-                            <li><a href="/katolg" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/katolg"); }}>{t("menu_cat_flatbed")}</a></li>
-                            <li><a href="/katolg" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/katolg"); }}>{t("menu_cat_isotherm")}</a></li>
-                            <li><a href="/katolg" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/katolg"); }}>{t("menu_cat_container")}</a></li>
-                            <li><a href="/katolg" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/katolg"); }}>{t("menu_cat_hook_loader")}</a></li>
+                            <li><a href="/katolg" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/CatalogKran"); }}>{t("menu_cat_crane")}</a></li>
+                            <li><a href="/CatalogFuel" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/CatalogFuel"); }}>{t("menu_cat_fuel_truck")}</a></li>
+                            <li><a href="/CatalogAwp" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/CatalogAwp"); }}>{t("menu_cat_lift")}</a></li>
+                            <li><a href="/CatalogWater" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/CatalogWater"); }}>{t("menu_cat_tank")}</a></li>
+                            <li><a href="/CatalogEvkrator" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/CatalogEvkrator"); }}>{t("menu_cat_tow")}</a></li>
+                            <li><a href="/CatalogBord" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/CatalogBord"); }}>{t("menu_cat_flatbed")}</a></li>
+                            <li><a href="/CatalogFurgon" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/CatalogFurgon"); }}>{t("menu_cat_isotherm")}</a></li>
+                            <li><a href="/CatalogCanto" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/CatalogCanto"); }}>{t("menu_cat_container")}</a></li>
+                            <li><a href="/CatalogCanto" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/CatalogCanto"); }}>{t("menu_cat_hook_loader")}</a></li>
                             <li><a href="/katolg" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/katolg"); }}>{t("menu_cat_dump")}</a></li>
                             <li><a href="/katolg" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/katolg"); }}>{t("menu_cat_adr")}</a></li>
                         </ul>
@@ -267,13 +267,13 @@ const Header = (props) => {
                         <ul className="mobile_submenu">
                             <li><button type="button" onClick={() => navigateAndClose("/katolg")}>{t("menu_cat_curtain")}</button></li>
                             <li><button type="button" onClick={() => navigateAndClose("/katolg")}>{t("menu_cat_crane")}</button></li>
-                            <li><button type="button" onClick={() => navigateAndClose("/katolg")}>{t("menu_cat_fuel_truck")}</button></li>
-                            <li><button type="button" onClick={() => navigateAndClose("/katolg")}>{t("menu_cat_lift")}</button></li>
-                            <li><button type="button" onClick={() => navigateAndClose("/katolg")}>{t("menu_cat_tank")}</button></li>
-                            <li><button type="button" onClick={() => navigateAndClose("/katolg")}>{t("menu_cat_tow")}</button></li>
-                            <li><button type="button" onClick={() => navigateAndClose("/katolg")}>{t("menu_cat_flatbed")}</button></li>
-                            <li><button type="button" onClick={() => navigateAndClose("/katolg")}>{t("menu_cat_isotherm")}</button></li>
-                            <li><button type="button" onClick={() => navigateAndClose("/katolg")}>{t("menu_cat_container")}</button></li>
+                            <li><button type="button" onClick={() => navigateAndClose("/CatalogFuel")}>{t("menu_cat_fuel_truck")}</button></li>
+                            <li><button type="button" onClick={() => navigateAndClose("/CatalogAwp")}>{t("menu_cat_lift")}</button></li>
+                            <li><button type="button" onClick={() => navigateAndClose("/CatalogWater")}>{t("menu_cat_tank")}</button></li>
+                            <li><button type="button" onClick={() => navigateAndClose("/CatalogEvkrator")}>{t("menu_cat_tow")}</button></li>
+                            <li><button type="button" onClick={() => navigateAndClose("/CatalogBord")}>{t("menu_cat_flatbed")}</button></li>
+                            <li><button type="button" onClick={() => navigateAndClose("/CatalogFurgon")}>{t("menu_cat_isotherm")}</button></li>
+                            <li><button type="button" onClick={() => navigateAndClose("/CatalogCanto")}>{t("menu_cat_container")}</button></li>
                             <li><button type="button" onClick={() => navigateAndClose("/katolg")}>{t("menu_cat_hook_loader")}</button></li>
                             <li><button type="button" onClick={() => navigateAndClose("/katolg")}>{t("menu_cat_dump")}</button></li>
                             <li><button type="button" onClick={() => navigateAndClose("/katolg")}>{t("menu_cat_adr")}</button></li>
