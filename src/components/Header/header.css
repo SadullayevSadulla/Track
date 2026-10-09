@@ -38,6 +38,9 @@
     text-align: left;
 }
 
+.header_menu_textle{
+    font-family: var(--font-fira);
+}
 
 
 .divider {

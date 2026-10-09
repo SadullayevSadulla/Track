@@ -519,10 +519,10 @@ const Header = (props) => {
 
                                         {openMenu === "media" && <MegaMenuContent />}
                                     </div>
-                                    <a href="/service" className="text-sm-base font-normal font-primary" onClick={(event) => { event.preventDefault(); navigateAndClose("/service"); }}>{t("service")}</a>
-                                    <a href="/repair" className="text-[15px] font-normal font-primary" onClick={(event) => { event.preventDefault(); navigateAndClose("/repair"); }}>{t("repair")}</a>
-                                    <a href="/news" className="text-[15px] font-normal font-primary" onClick={(event) => { event.preventDefault(); navigateAndClose("/news"); }}>{t("news")}</a>
-                                    <a href="/contacts" className="text-[15px] font-normal font-primary" onClick={(event) => { event.preventDefault(); navigateAndClose("/contacts"); }}>{t("contacts")}</a>
+                                    <a href="/service" className="header_menu_textle text-sm-base font-normal font-primary" onClick={(event) => { event.preventDefault(); navigateAndClose("/service"); }}>{t("service")}</a>
+                                    <a href="/repair" className="header_menu_textle text-[15px] font-normal font-primary" onClick={(event) => { event.preventDefault(); navigateAndClose("/repair"); }}>{t("repair")}</a>
+                                    <a href="/news" className="header_menu_textle text-[15px] font-normal font-primary" onClick={(event) => { event.preventDefault(); navigateAndClose("/news"); }}>{t("news")}</a>
+                                    <a href="/contacts" className="header_menu_textle text-[15px] font-normal font-primary" onClick={(event) => { event.preventDefault(); navigateAndClose("/contacts"); }}>{t("contacts")}</a>
                                 </nav>
                             </div>
 
