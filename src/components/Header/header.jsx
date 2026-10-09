@@ -188,9 +188,9 @@ const Header = (props) => {
                             <li><a href="/CatalogBord" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/CatalogBord"); }}>{t("menu_cat_flatbed")}</a></li>
                             <li><a href="/CatalogFurgon" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/CatalogFurgon"); }}>{t("menu_cat_isotherm")}</a></li>
                             <li><a href="/CatalogCanto" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/CatalogCanto"); }}>{t("menu_cat_container")}</a></li>
-                            <li><a href="/CatalogCanto" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/CatalogCanto"); }}>{t("menu_cat_hook_loader")}</a></li>
-                            <li><a href="/katolg" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/katolg"); }}>{t("menu_cat_dump")}</a></li>
-                            <li><a href="/katolg" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/katolg"); }}>{t("menu_cat_adr")}</a></li>
+                            <li><a href="/CatalogIl" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/CatalogIl"); }}>{t("menu_cat_hook_loader")}</a></li>
+                            <li><a href="/CatalogYuk" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/CatalogYuk"); }}>{t("menu_cat_dump")}</a></li>
+                            <li><a href="/CatalogDopt" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/CatalogDopt"); }}>{t("menu_cat_adr")}</a></li>
                         </ul>
                     </div>
 

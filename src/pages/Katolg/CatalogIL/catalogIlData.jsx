@@ -1,38 +1,30 @@
 const CatalogIlData = [
   {
-    id: 1,
-    titleKey: "il_product_1",
-    brand: "ISUZU",
+    id: "il-1",
+    brand: "isuzu",
+    title: "Крюковой погрузчик PALFINGER PH T20Pi на шасси ISUZU GIGA-Q",
     wheelFormula: "6x4",
-    image: "/vjoes7lbmmv501ajqj0xgxdue9hfw65t.webp",
+    image: "/mws1g0rxjg30c8ptinxu3yguv0my9g74.webp",
     available: false,
-    priceType: "on_request",
   },
   {
-    id: 2,
-    titleKey: "il_product_2",
-    brand: "ISUZU",
+    id: "il-2",
+    brand: "isuzu",
+    title: "Крюковой погрузчик PALFINGER PH T05_L3900 SLD на шасси ISUZU NQR",
     wheelFormula: "4x2",
-    image: "/wtidloztd9su8mcv8v1voevgtwqd30bm.webp",
+    image: "/ys9z64kzmkgdcpp1pjfv3ozi4dsxuuih.webp",
     available: false,
-    priceType: "on_request",
   },
   {
-    id: 3,
-    titleKey: "il_product_3",
-    brand: "ISUZU",
+    id: "il-3",
+    brand: "hyundai",
+    title: "Крюковой погрузчик PALFINGER PH T05_L3900 SLD на шасси HYUNDAI",
     wheelFormula: "4x2",
-    image: "/silztdz65pys4k6ze5rx1p00dznt777b.webp",
+    image: "/pi6g0e2629tccqy4cjtyh6u98tq4022a.webp",
     available: false,
-    priceType: "on_request",
   },
 ];
 
 export const ilWheelFormulas = ["4x2", "6x4"];
-
-export const ilBrands = [
-  { value: "ISUZU", labelKey: "brand_isuzu" },
-  { value: "HYUNDAI", labelKey: "brand_hyundai" },
-];
 
 export default CatalogIlData;

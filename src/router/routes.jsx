@@ -29,6 +29,8 @@ import CatalogFurgon from "../pages/Katolg/CatalogFurgon/catalogFurgon";
 import CatalogCanto from "../pages/Katolg/CatalogCanto/catalogCanto";
 import CatalogIl from "../pages/Katolg/CatalogIL/catalogIl";
 import SearchPage from "../pages/Search/search";
+import CatalogYuk from "../pages/Katolg/CatalogYuk/catalogYuk";
+import CatalogDopt from "../pages/Katolg/CatalogDopt/catalogDopt";
 
 export const router = [
     {
@@ -114,17 +116,17 @@ export const router = [
     {
         id: 17,
         path: '/production',
-        element: <Production/>
+        element: <Production />
     },
     {
         id: 18,
         path: '/favorit',
-        element: <Favorit/>
+        element: <Favorit />
     },
     {
         id: 19,
         path: '/Отзывы',
-        element: <Otqaz/>
+        element: <Otqaz />
     },
     {
         id: 20,
@@ -132,7 +134,7 @@ export const router = [
         element: <Cart />
     },
     {
-        id:21,
+        id: 21,
         path: '/CatalogPage',
         element: <CatalogPage />
     },
@@ -187,8 +189,18 @@ export const router = [
         element: <CatalogIl />
     },
     {
-        id:22,
+        id: 33,
         path: '/search',
         element: <SearchPage />
-    }
+    },
+    {
+        id: 34,
+        path: '/CatalogYuk',
+        element: <CatalogYuk />
+    },
+    {
+        id: 35,
+        path: '/CatalogDopt',
+        element: <CatalogDopt />
+    },
 ]
