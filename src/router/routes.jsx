@@ -60,7 +60,7 @@ export const router = [
     },
     {
         id: 6,
-        path: '/katolg',
+        path: '/katolg/Curtain-side-trucks',
         element: <Katolg />,
     },
     {
@@ -135,7 +135,7 @@ export const router = [
     },
     {
         id: 21,
-        path: '/catalog/Шторные-автомобили',
+        path: '/catalog',
         element: <CatalogPage />
     },
     {
