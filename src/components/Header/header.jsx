@@ -180,17 +180,17 @@ const Header = (props) => {
                         <h3 className="text-[20px] font-[700] font-['Fira_Sans'] mb-[20px]">{t("menu_categories_title")}</h3>
                         <ul className="flex flex-col gap-[16px]">
                             <li><a href="/katolg" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/katolg"); }}>{t("menu_cat_curtain")}</a></li>
-                            <li><a href="/katolg" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/CatalogKran"); }}>{t("menu_cat_crane")}</a></li>
-                            <li><a href="/CatalogFuel" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/CatalogFuel"); }}>{t("menu_cat_fuel_truck")}</a></li>
-                            <li><a href="/CatalogAwp" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/CatalogAwp"); }}>{t("menu_cat_lift")}</a></li>
-                            <li><a href="/CatalogWater" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/CatalogWater"); }}>{t("menu_cat_tank")}</a></li>
-                            <li><a href="/CatalogEvkrator" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/CatalogEvkrator"); }}>{t("menu_cat_tow")}</a></li>
-                            <li><a href="/CatalogBord" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/CatalogBord"); }}>{t("menu_cat_flatbed")}</a></li>
-                            <li><a href="/CatalogFurgon" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/CatalogFurgon"); }}>{t("menu_cat_isotherm")}</a></li>
-                            <li><a href="/CatalogCanto" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/CatalogCanto"); }}>{t("menu_cat_container")}</a></li>
-                            <li><a href="/CatalogIl" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/CatalogIl"); }}>{t("menu_cat_hook_loader")}</a></li>
-                            <li><a href="/CatalogYuk" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/CatalogYuk"); }}>{t("menu_cat_dump")}</a></li>
-                            <li><a href="/CatalogDopt" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/CatalogDopt"); }}>{t("menu_cat_adr")}</a></li>
+                            <li><a href="/catalog/kran-manipulyatory" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/catalog/kran-manipulyatory"); }}>{t("menu_cat_crane")}</a></li>
+                            <li><a href="/catalog/toplivovozy" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/catalog/toplivovozy"); }}>{t("menu_cat_fuel_truck")}</a></li>
+                            <li><a href="/catalog/avtomobilnye-masterskie" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/catalog/avtomobilnye-masterskie"); }}>{t("menu_cat_lift")}</a></li>
+                            <li><a href="/catalog/vodovozy" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/catalog/vodovozy"); }}>{t("menu_cat_tank")}</a></li>
+                            <li><a href="/catalog/evakuatory" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/catalog/evakuatory"); }}>{t("menu_cat_tow")}</a></li>
+                            <li><a href="/catalog/bortovye-avtomobili" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/catalog/bortovye-avtomobili"); }}>{t("menu_cat_flatbed")}</a></li>
+                            <li><a href="/catalog/furgony" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/catalog/furgony"); }}>{t("menu_cat_isotherm")}</a></li>
+                            <li><a href="/catalog/cementovozy" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/catalog/cementovozy"); }}>{t("menu_cat_container")}</a></li>
+                            <li><a href="/catalog/il" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/catalog/il"); }}>{t("menu_cat_hook_loader")}</a></li>
+                            <li><a href="/catalog/gruzoviki" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/catalog/gruzoviki"); }}>{t("menu_cat_dump")}</a></li>
+                            <li><a href="/catalog/dopolnitelnoe-oborudovanie" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/catalog/dopolnitelnoe-oborudovanie"); }}>{t("menu_cat_adr")}</a></li>
                         </ul>
                     </div>
 
@@ -265,18 +265,18 @@ const Header = (props) => {
                     </button>
                     {mobileSubOpen === "cat" && (
                         <ul className="mobile_submenu">
-                            <li><button type="button" onClick={() => navigateAndClose("/katolg")}>{t("menu_cat_curtain")}</button></li>
-                            <li><button type="button" onClick={() => navigateAndClose("/katolg")}>{t("menu_cat_crane")}</button></li>
-                            <li><button type="button" onClick={() => navigateAndClose("/CatalogFuel")}>{t("menu_cat_fuel_truck")}</button></li>
-                            <li><button type="button" onClick={() => navigateAndClose("/CatalogAwp")}>{t("menu_cat_lift")}</button></li>
-                            <li><button type="button" onClick={() => navigateAndClose("/CatalogWater")}>{t("menu_cat_tank")}</button></li>
-                            <li><button type="button" onClick={() => navigateAndClose("/CatalogEvkrator")}>{t("menu_cat_tow")}</button></li>
-                            <li><button type="button" onClick={() => navigateAndClose("/CatalogBord")}>{t("menu_cat_flatbed")}</button></li>
-                            <li><button type="button" onClick={() => navigateAndClose("/CatalogFurgon")}>{t("menu_cat_isotherm")}</button></li>
-                            <li><button type="button" onClick={() => navigateAndClose("/CatalogCanto")}>{t("menu_cat_container")}</button></li>
-                            <li><button type="button" onClick={() => navigateAndClose("/katolg")}>{t("menu_cat_hook_loader")}</button></li>
-                            <li><button type="button" onClick={() => navigateAndClose("/katolg")}>{t("menu_cat_dump")}</button></li>
-                            <li><button type="button" onClick={() => navigateAndClose("/katolg")}>{t("menu_cat_adr")}</button></li>
+                            <li><a href="/katolg" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/katolg"); }}>{t("menu_cat_curtain")}</a></li>
+                            <li><a href="/catalog/kran-manipulyatory" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/catalog/kran-manipulyatory"); }}>{t("menu_cat_crane")}</a></li>
+                            <li><a href="/catalog/toplivovozy" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/catalog/toplivovozy"); }}>{t("menu_cat_fuel_truck")}</a></li>
+                            <li><a href="/catalog/avtomobilnye-masterskie" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/catalog/avtomobilnye-masterskie"); }}>{t("menu_cat_lift")}</a></li>
+                            <li><a href="/catalog/vodovozy" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/catalog/vodovozy"); }}>{t("menu_cat_tank")}</a></li>
+                            <li><a href="/catalog/evakuatory" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/catalog/evakuatory"); }}>{t("menu_cat_tow")}</a></li>
+                            <li><a href="/catalog/bortovye-avtomobili" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/catalog/bortovye-avtomobili"); }}>{t("menu_cat_flatbed")}</a></li>
+                            <li><a href="/catalog/furgony" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/catalog/furgony"); }}>{t("menu_cat_isotherm")}</a></li>
+                            <li><a href="/catalog/cementovozy" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/catalog/cementovozy"); }}>{t("menu_cat_container")}</a></li>
+                            <li><a href="/catalog/il" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/catalog/il"); }}>{t("menu_cat_hook_loader")}</a></li>
+                            <li><a href="/catalog/gruzoviki" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/catalog/gruzoviki"); }}>{t("menu_cat_dump")}</a></li>
+                            <li><a href="/catalog/dopolnitelnoe-oborudovanie" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/catalog/dopolnitelnoe-oborudovanie"); }}>{t("menu_cat_adr")}</a></li>
                         </ul>
                     )}
                 </li>
@@ -332,7 +332,7 @@ const Header = (props) => {
                             <div className="header_top">
                                 <div className="header_logo flex items-center">
                                     <a className="logo" href="/" onClick={(event) => { event.preventDefault(); navigateAndClose("/"); }}>
-                                        <img src="./logo (3).png" alt="" className="w-[160px] h-[45px]" />
+                                        <img src="/logo (3).png" alt="" className="w-[160px] h-[45px]" />
                                     </a>
                                     <span className="divider"></span>
                                     <div className="texxt max-w-[167px]">
@@ -358,7 +358,7 @@ const Header = (props) => {
                                             onClick={() => setCallModalOpen(true)}
                                             aria-label="Заказать звонок"
                                         >
-                                            <img src="./icon_normal_call.png" alt="" />
+                                            <img src="/icon_normal_call.png" alt="" />
                                         </button>
                                         <div className="lang_switcher relative" ref={langRef}>
                                             <button
@@ -465,7 +465,7 @@ const Header = (props) => {
                     <div className="container">
                         <div className="header_bottom flex items-center justify-between py-[1px]">
                             <div className="sa flex items-center gap-[30px]" ref={menuRef}>
-                                <img src="./logo (3).png" alt="" className="mini_logo" />
+                                <img src="/logo (3).png" alt="" className="mini_logo" />
 
                                 <div className="relative">
                                     <button
@@ -562,7 +562,7 @@ const Header = (props) => {
                                     onClick={() => setCallModalOpen(true)}
                                     aria-label="Заказать звонок"
                                 >
-                                    <img src="./icon_normal_call.png" alt="" />
+                                    <img src="/icon_normal_call.png" alt="" />
                                 </button>
                             </div>
                         </div>

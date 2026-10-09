@@ -29,11 +29,12 @@ function App() {
     return (
         <>
             <Header />
+
             <main>
                 <Routes>
-                    {router.map((item, i) => (
+                    {router.map((item) => (
                         <Route
-                            key={i}
+                            key={item.id}
                             path={item.path}
                             element={
                                 <div style={{ width: "100%" }}>

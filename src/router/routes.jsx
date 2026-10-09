@@ -135,71 +135,72 @@ export const router = [
     },
     {
         id: 21,
-        path: '/CatalogPage',
+        path: '/catalog',
         element: <CatalogPage />
     },
     {
-        id: 23,
-        path: '/CatalogKran',
+        id: 22,
+        path: '/catalog/kran-manipulyatory',
         element: <CatalogCran />
     },
     {
-        id: 24,
-        path: '/CatalogFuel',
+        id: 23,
+        path: '/catalog/toplivovozy',
         element: <CatalogFuel />
     },
     {
-        id: 25,
-        path: '/CatalogAwp',
+        id: 24,
+        path: '/catalog/avtomobilnye-masterskie',
         element: <CatalogAwp />
     },
     {
-        id: 26,
-        path: '/CatalogWater',
+        id: 25,
+        path: '/catalog/vodovozy',
         element: <CatalogWater />
     },
     {
-        id: 27,
-        path: '/CatalogEvkrator',
+        id: 26,
+        path: '/catalog/evakuatory',
         element: <CatalogEvkrator />
     },
     {
-        id: 28,
-        path: '/CatalogBord',
+        id: 27,
+        path: '/catalog/bortovye-avtomobili',
         element: <CatalogBord />
     },
     {
-        id: 29,
-        path: '/CatalogFurgon',
+        id: 28,
+        path: '/catalog/furgony',
         element: <CatalogFurgon />
     },
     {
-        id: 30,
-        path: '/CatalogCanto',
+        id: 29,
+        path: '/catalog/cementovozy',
         element: <CatalogCanto />
     },
     {
+        id: 30,
+        path: '/catalog/il',
+        element: <CatalogIl />
+    },
+    {
         id: 31,
-        path: '/CatalogIL',
-        element: <CatalogIl />
-    },
-    {
-        id: 32,
-        path: '/CatalogIl',
-        element: <CatalogIl />
-    },
-    {
-        id: 33,
-        path: '/search',
+        path: '/catalog/search',
         element: <SearchPage />
     },
     {
-        id: 34,
-        path: '/CatalogYuk',
+        id: 32,
+        path: '/catalog/gruzoviki',
         element: <CatalogYuk />
     },
     {
-        id: 35,
+        id: 33,
+        path: '/catalog/dopolnitelnoe-oborudovanie',
+        element: <CatalogDopt />
+    },
+
+    {
+        id: 34,
         path: '/CatalogDopt',
         element: <CatalogDopt />
     },
