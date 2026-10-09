@@ -179,7 +179,7 @@ const Header = (props) => {
                     <div>
                         <h3 className="text-[20px] font-[700] font-['Fira_Sans'] mb-[20px]">{t("menu_categories_title")}</h3>
                         <ul className="flex flex-col gap-[16px]">
-                            <li><a href="/katolg" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/katolg"); }}>{t("menu_cat_curtain")}</a></li>
+                            <li><a href="/catalog/Шторные-автомобили" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/catalog/Шторные-автомобили"); }}>{t("menu_cat_curtain")}</a></li>
                             <li><a href="/catalog/kran-manipulyatory" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/catalog/kran-manipulyatory"); }}>{t("menu_cat_crane")}</a></li>
                             <li><a href="/catalog/toplivovozy" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/catalog/toplivovozy"); }}>{t("menu_cat_fuel_truck")}</a></li>
                             <li><a href="/catalog/avtomobilnye-masterskie" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/catalog/avtomobilnye-masterskie"); }}>{t("menu_cat_lift")}</a></li>

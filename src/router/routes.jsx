@@ -135,7 +135,7 @@ export const router = [
     },
     {
         id: 21,
-        path: '/catalog',
+        path: '/catalog/Шторные-автомобили',
         element: <CatalogPage />
     },
     {
