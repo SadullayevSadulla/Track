@@ -7,6 +7,8 @@ const CatalogAwpData = [
     image: "/000 (1).webp",
     available: true,
     priceType: "request",
+    grossWeight: 17.5,
+    payload: 3300,
   },
   {
     id: "awp-2",
@@ -16,6 +18,8 @@ const CatalogAwpData = [
     image: "/000 (2).webp",
     available: false,
     priceType: "request",
+    grossWeight: 22.0,
+    payload: 4800,
   },
   {
     id: "awp-3",
@@ -25,6 +29,8 @@ const CatalogAwpData = [
     image: "/000 (3).webp",
     available: false,
     priceType: "request",
+    grossWeight: 18.5,
+    payload: 4200,
   },
   {
     id: "awp-4",
@@ -34,6 +40,8 @@ const CatalogAwpData = [
     image: "/000 (4).webp",
     available: false,
     priceType: "request",
+    grossWeight: 16.2,
+    payload: 2800,
   },
 ];
 

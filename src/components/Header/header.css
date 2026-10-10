@@ -21,6 +21,10 @@
     flex: 0 0 167px;
 }
 
+.ttrr{
+    font-family: "Fira Sans", sans-serif;
+}
+
 .header_logo .texxt p {
     margin: 0;
     line-height: 1.35;

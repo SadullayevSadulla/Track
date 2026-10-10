@@ -5,6 +5,7 @@ import { useLanguage } from "../../i18n/LanguageContext";
 import { useNavigate } from "react-router-dom";
 import { useFavoriteStore } from "../../store/favoriteStore";
 import { useCartStore } from "../../store/cartStore";
+import { CATEGORY_PATHS, PATHS } from "../../router/paths";
 
 const Header = (props) => {
     const [openMenu, setOpenMenu] = useState(null);
@@ -68,10 +69,8 @@ const Header = (props) => {
         e?.preventDefault();
         const q = searchQuery.trim();
         if (!q) return;
-
-        navigate(`/search?q=${encodeURIComponent(q)}`);
-        setSearchQuery("");
         setMobileSearchOpen(false);
+        navigateAndClose(`${PATHS.search}?q=${encodeURIComponent(q)}`);
     };
 
     const handleSearchIconClick = () => {
@@ -179,7 +178,7 @@ const Header = (props) => {
                     <div>
                         <h3 className="text-[20px] font-[700] font-['Fira_Sans'] mb-[20px]">{t("menu_categories_title")}</h3>
                         <ul className="flex flex-col gap-[16px]">
-                            <li><a href="/katolg/Curtain-side-trucks" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/katolg/Curtain-side-trucks"); }}>{t("menu_cat_curtain")}</a></li>
+                            <li><a href="/catalog/shtornye-avtomobili" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/catalog/shtornye-avtomobili"); }}>{t("menu_cat_curtain")}</a></li>
                             <li><a href="/catalog/kran-manipulyatory" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/catalog/kran-manipulyatory"); }}>{t("menu_cat_crane")}</a></li>
                             <li><a href="/catalog/toplivovozy" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/catalog/toplivovozy"); }}>{t("menu_cat_fuel_truck")}</a></li>
                             <li><a href="/catalog/avtomobilnye-masterskie" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/catalog/avtomobilnye-masterskie"); }}>{t("menu_cat_lift")}</a></li>
@@ -187,7 +186,7 @@ const Header = (props) => {
                             <li><a href="/catalog/evakuatory" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/catalog/evakuatory"); }}>{t("menu_cat_tow")}</a></li>
                             <li><a href="/catalog/bortovye-avtomobili" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/catalog/bortovye-avtomobili"); }}>{t("menu_cat_flatbed")}</a></li>
                             <li><a href="/catalog/furgony" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/catalog/furgony"); }}>{t("menu_cat_isotherm")}</a></li>
-                            <li><a href="/catalog/cementovozy" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/catalog/cementovozy"); }}>{t("menu_cat_container")}</a></li>
+                            <li><a href="/catalog/konteynerovozy" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/catalog/konteynerovozy"); }}>{t("menu_cat_container")}</a></li>
                             <li><a href="/catalog/il" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/catalog/il"); }}>{t("menu_cat_hook_loader")}</a></li>
                             <li><a href="/catalog/gruzoviki" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/catalog/gruzoviki"); }}>{t("menu_cat_dump")}</a></li>
                             <li><a href="/catalog/dopolnitelnoe-oborudovanie" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/catalog/dopolnitelnoe-oborudovanie"); }}>{t("menu_cat_adr")}</a></li>
@@ -265,18 +264,18 @@ const Header = (props) => {
                     </button>
                     {mobileSubOpen === "cat" && (
                         <ul className="mobile_submenu">
-                            <li><a href="/katolg" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/katolg"); }}>{t("menu_cat_curtain")}</a></li>
-                            <li><a href="/catalog/kran-manipulyatory" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/catalog/kran-manipulyatory"); }}>{t("menu_cat_crane")}</a></li>
-                            <li><a href="/catalog/toplivovozy" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/catalog/toplivovozy"); }}>{t("menu_cat_fuel_truck")}</a></li>
-                            <li><a href="/catalog/avtomobilnye-masterskie" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/catalog/avtomobilnye-masterskie"); }}>{t("menu_cat_lift")}</a></li>
-                            <li><a href="/catalog/vodovozy" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/catalog/vodovozy"); }}>{t("menu_cat_tank")}</a></li>
-                            <li><a href="/catalog/evakuatory" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/catalog/evakuatory"); }}>{t("menu_cat_tow")}</a></li>
-                            <li><a href="/catalog/bortovye-avtomobili" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/catalog/bortovye-avtomobili"); }}>{t("menu_cat_flatbed")}</a></li>
-                            <li><a href="/catalog/furgony" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/catalog/furgony"); }}>{t("menu_cat_isotherm")}</a></li>
-                            <li><a href="/catalog/cementovozy" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/catalog/cementovozy"); }}>{t("menu_cat_container")}</a></li>
-                            <li><a href="/catalog/il" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/catalog/il"); }}>{t("menu_cat_hook_loader")}</a></li>
-                            <li><a href="/catalog/gruzoviki" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/catalog/gruzoviki"); }}>{t("menu_cat_dump")}</a></li>
-                            <li><a href="/catalog/dopolnitelnoe-oborudovanie" className="text-sm-base font-['Fira_Sans']" onClick={(event) => { event.preventDefault(); navigateAndClose("/catalog/dopolnitelnoe-oborudovanie"); }}>{t("menu_cat_adr")}</a></li>
+                            <li><button type="button" onClick={() => navigateAndClose("/catalog/shtornye-avtomobili")}>{t("menu_cat_curtain")}</button></li>
+                            <li><button type="button" onClick={() => navigateAndClose("/catalog/kran-manipulyatory")}>{t("menu_cat_crane")}</button></li>
+                            <li><button type="button" onClick={() => navigateAndClose("/catalog/toplivovozy")}>{t("menu_cat_fuel_truck")}</button></li>
+                            <li><button type="button" onClick={() => navigateAndClose("/catalog/avtomobilnye-masterskie")}>{t("menu_cat_lift")}</button></li>
+                            <li><button type="button" onClick={() => navigateAndClose("/catalog/vodovozy")}>{t("menu_cat_tank")}</button></li>
+                            <li><button type="button" onClick={() => navigateAndClose("/catalog/evakuatory")}>{t("menu_cat_tow")}</button></li>
+                            <li><button type="button" onClick={() => navigateAndClose("/catalog/bortovye-avtomobili")}>{t("menu_cat_flatbed")}</button></li>
+                            <li><button type="button" onClick={() => navigateAndClose("/catalog/furgony")}>{t("menu_cat_isotherm")}</button></li>
+                            <li><button type="button" onClick={() => navigateAndClose("/catalog/konteynerovozy")}>{t("menu_cat_container")}</button></li>
+                            <li><button type="button" onClick={() => navigateAndClose("/catalog/il")}>{t("menu_cat_hook_loader")}</button></li>
+                            <li><button type="button" onClick={() => navigateAndClose("/catalog/gruzoviki")}>{t("menu_cat_dump")}</button></li>
+                            <li><button type="button" onClick={() => navigateAndClose("/catalog/dopolnitelnoe-oborudovanie")}>{t("menu_cat_adr")}</button></li>
                         </ul>
                     )}
                 </li>
@@ -519,22 +518,22 @@ const Header = (props) => {
 
                                         {openMenu === "media" && <MegaMenuContent />}
                                     </div>
-                                    <a href="/service" className="header_menu_textle text-sm-base font-normal font-primary" onClick={(event) => { event.preventDefault(); navigateAndClose("/service"); }}>{t("service")}</a>
-                                    <a href="/repair" className="header_menu_textle text-[15px] font-normal font-primary" onClick={(event) => { event.preventDefault(); navigateAndClose("/repair"); }}>{t("repair")}</a>
-                                    <a href="/news" className="header_menu_textle text-[15px] font-normal font-primary" onClick={(event) => { event.preventDefault(); navigateAndClose("/news"); }}>{t("news")}</a>
-                                    <a href="/contacts" className="header_menu_textle text-[15px] font-normal font-primary" onClick={(event) => { event.preventDefault(); navigateAndClose("/contacts"); }}>{t("contacts")}</a>
+                                    <a href="/service" className="ttrr text-sm-base font-normal font-primary" onClick={(event) => { event.preventDefault(); navigateAndClose("/service"); }}>{t("service")}</a>
+                                    <a href="/repair" className="ttrr text-[15px] font-normal font-primary" onClick={(event) => { event.preventDefault(); navigateAndClose("/repair"); }}>{t("repair")}</a>
+                                    <a href="/news" className="ttrr  text-[15px] font-normal font-primary" onClick={(event) => { event.preventDefault(); navigateAndClose("/news"); }}>{t("news")}</a>
+                                    <a href="/contacts" className="ttrr text-[15px] font-normal font-primary" onClick={(event) => { event.preventDefault(); navigateAndClose("/contacts"); }}>{t("contacts")}</a>
                                 </nav>
                             </div>
 
                             <div className="header_actions flex items-center gap-5">
                                 <form className="search_box relative" onSubmit={handleSearchSubmit} ref={searchRef}>
                                     <input
-                                        ref={searchInputRef}
                                         type="text"
                                         placeholder={t("search_placeholder")}
-                                        value={searchQuery}
-                                        onChange={(e) => setSearchQuery(e.target.value)}
                                         className="w-70 h-11 rounded-[30px] border border-[#FEC80B] px-5 pr-12 text-[14px] font-['Fira_Sans'] outline-none"
+                                        value={searchQuery}
+                                        onChange={(event) => setSearchQuery(event.target.value)}
+                                        ref={searchInputRef}
                                     />
                                     <button
                                         type="button"

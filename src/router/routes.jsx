@@ -60,7 +60,7 @@ export const router = [
     },
     {
         id: 6,
-        path: '/katolg/Curtain-side-trucks',
+        path: '/catalog/shtornye-avtomobili',
         element: <Katolg />,
     },
     {
@@ -125,7 +125,7 @@ export const router = [
     },
     {
         id: 19,
-        path: '/Отзывы',
+        path: '/otzyvy',
         element: <Otqaz />
     },
     {
@@ -175,7 +175,7 @@ export const router = [
     },
     {
         id: 29,
-        path: '/catalog/cementovozy',
+        path: '/catalog/konteynerovozy',
         element: <CatalogCanto />
     },
     {
@@ -184,8 +184,8 @@ export const router = [
         element: <CatalogIl />
     },
     {
-        id: 31,
-        path: '/catalog/search',
+        id:31,
+        path: '/search',
         element: <SearchPage />
     },
     {
@@ -198,10 +198,16 @@ export const router = [
         path: '/catalog/dopolnitelnoe-oborudovanie',
         element: <CatalogDopt />
     },
-
-    {
-        id: 34,
-        path: '/CatalogDopt',
-        element: <CatalogDopt />
-    },
 ]
+
+export const redirects = [
+    { from: '/katolg', to: '/catalog' },
+    { from: '/katalog', to: '/catalog' },
+    { from: '/katolog', to: '/catalog' },
+    { from: '/katolog/Curtain-side-trucks', to: '/catalog/shtornye-avtomobili' },
+    { from: '/catalog/cementovozy', to: '/catalog/konteynerovozy' },
+    { from: '/CatalogDopt', to: '/catalog/dopolnitelnoe-oborudovanie' },
+    { from: '/Отзывы', to: '/otzyvy' },
+    { from: '/otqaz', to: '/otzyvy' },
+    { from: '/media', to: '/information' },
+];

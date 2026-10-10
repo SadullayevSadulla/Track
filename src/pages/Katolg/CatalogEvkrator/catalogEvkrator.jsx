@@ -123,6 +123,37 @@ const CatalogEvkrator = () => {
                   </div>
                   <div className="product-card__info">
                     <h3 className="product-card__title">{t(product.titleKey)}</h3>
+                    {view === "list" && (
+                      <div className="product-card__specs">
+                        <p>
+                          <strong>{t("katolg_weight_label")}</strong>
+                          <i></i>
+                          <span>
+                            {(() => {
+                              const fallbackWeights = { up_to_5_5: 5.5, up_to_12: 12, up_to_20: 20, over_20: 20 };
+                              const rawGross = Number(product.grossWeight ?? fallbackWeights[product.weight] ?? 0);
+                              return rawGross > 0
+                                ? `${rawGross.toFixed(rawGross % 1 === 0 ? 0 : 1)} т`
+                                : product.weight
+                                  ? t(`weight_${product.weight}`)
+                                  : "-";
+                            })()}
+                          </span>
+                        </p>
+                        <p>
+                          <strong>{t("katolg_load_label")}</strong>
+                          <i></i>
+                          <span>
+                            {(() => {
+                              const rawPayload = Number(product.payload ?? product.loadCapacity ?? 0);
+                              return rawPayload > 0
+                                ? `${(rawPayload / 1000).toFixed((rawPayload / 1000) % 1 === 0 ? 0 : 1)} т`
+                                : "-";
+                            })()}
+                          </span>
+                        </p>
+                      </div>
+                    )}
                     {view === "list" ? (
                       <div className="product-card__actions">
                         <p className="product-card__price">{t("price_on_request")}</p>

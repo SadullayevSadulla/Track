@@ -1,6 +1,5 @@
 const translations = {
     ru: {
-        // Header top
         company_slogan: "производство и продажа автоспецтехники",
         work_time_label: "Время работы",
         address: "г. Нижний Новгород ул. Торфяная, 35",
@@ -356,8 +355,8 @@ const translations = {
 
         onac_today_title: "Сегодня ООО «Рустрак» - это:",
         onac_today_point: "3 производственных корпуса, общей площадью более 7000 м2;",
-        onac_today_mt:"производственная территория более 20000 м2;",
-        onac_today_mtt:"служба качества, гарантирующая выпуск высококачественной техники;",
+        onac_today_mt: "производственная территория более 20000 м2;",
+        onac_today_mtt: "служба качества, гарантирующая выпуск высококачественной техники;",
 
         onac_industries_title: "Отрасли применения выпускаемой техники:",
         onac_industries_text: "Cтроительная, телекоммуникационная, коммунальная, дорожное хозяйство, логистика, сельское хозяйство.",
@@ -500,6 +499,18 @@ const translations = {
         production_quality_title: "Контроль качества",
         production_quality_text1: "Контроль качества нашей продукции осуществляется на всех этапах производства. Мы используем только надёжные комплектующие, покупая их у проверенных поставщиков. Специалисты «РусТрак» строго следят за выполнением технологии производства. Постоянное тестирование и испытания выпускаемой продукции исключают поступление рекламаций. На производстве введена общемировая практика сертификации соответствия продукции: на каждую единицу спецтехники, которая сходит с нашего производства, имеется сертификат международного образца (ISO 9001).",
         production_quality_text2: "Отдел контроля качества оценивает каждую единицу техники, что гарантирует нашим покупателям длительный срок эксплуатации и безотказную работу техники.",
+        crumb_aria_label: "Хлебные крошки",
+        crumb_home: "Главная",
+        crumb_services: "Услуги",
+        crumb_information: "Информация",
+        crumb_photo: "Фото",
+        crumb_ads: "Реклама",
+        crumb_certificate: "Сертификат",
+        crumb_credit: "Кредит",
+        crumb_production: "Продукция",
+        crumb_refusal: "Отказ",
+        crumb_cart: "Корзина",
+
     },
 
     uz: {
@@ -997,6 +1008,17 @@ const translations = {
         production_quality_title: "Sifat nazorati",
         production_quality_text1: "Mahsulotimizning sifat nazorati ishlab chiqarishning barcha bosqichlarida amalga oshiriladi. Biz faqat ishonchli komplektlashtiruvchi qismlardan foydalanamiz, ularni tekshirilgan yetkazib beruvchilardan sotib olamiz. «RusTrak» mutaxassislari ishlab chiqarish texnologiyasiga rioya qilinishini qat'iy nazorat qiladi. Ishlab chiqarilayotgan mahsulotni doimiy sinash va tekshirish reklamatsiyalarning kelib tushishini istisno qiladi. Ishlab chiqarishda mahsulot muvofiqligini sertifikatlashning umumjahon amaliyoti joriy etilgan: ishlab chiqarishimizdan chiqadigan har bir maxsus texnika birligi uchun xalqaro namunadagi sertifikat (ISO 9001) mavjud.",
         production_quality_text2: "Sifat nazorati bo'limi har bir texnika birligini baholaydi, bu xaridorlarimizga texnikaning uzoq muddat ekspluatatsiyasi va uzluksiz ishlashini kafolatlaydi.",
+        crumb_aria_label: "Navigatsiya yo'li",
+        crumb_home: "Bosh sahifa",
+        crumb_services: "Xizmatlar",
+        crumb_information: "Ma'lumot",
+        crumb_photo: "Foto",
+        crumb_ads: "Reklama",
+        crumb_certificate: "Sertifikat",
+        crumb_credit: "Kredit",
+        crumb_production: "Mahsulotlar",
+        crumb_refusal: "Rad etish",
+        crumb_cart: "Savat",
     },
 
     en: {
@@ -1494,6 +1516,18 @@ const translations = {
         production_quality_title: "Quality control",
         production_quality_text1: "Quality control of our products is carried out at all stages of production. We use only reliable components, purchasing them from trusted suppliers. RusTrak specialists strictly monitor compliance with production technology. Continuous testing of the products manufactured eliminates the occurrence of claims. The company has implemented the global practice of product conformity certification: every unit of special equipment leaving our production has an international-standard certificate (ISO 9001).",
         production_quality_text2: "The quality control department evaluates every unit of equipment, guaranteeing our customers a long service life and trouble-free operation.",
+        crumb_aria_label: "Breadcrumb",
+        crumb_home: "Home",
+        crumb_services: "Services",
+        crumb_information: "Information",
+        crumb_photo: "Photo",
+        crumb_ads: "Advertising",
+        crumb_certificate: "Certificate",
+        crumb_credit: "Credit",
+        crumb_production: "Products",
+        crumb_refusal: "Refusal",
+        crumb_cart: "Cart",
+
     },
 };
 

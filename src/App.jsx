@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import { Route, Routes, useLocation } from "react-router-dom";
+import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 
-import { router } from "./router/routes";
+import { router, redirects } from "./router/routes";
+import NotFound from "./pages/NotFound/notFound";
 import Header from "./components/Header/header";
 import Footer from "./components/Footer/footer";
 import MainZapros from "./components/MainZapros/mainZapros";
@@ -44,6 +45,16 @@ function App() {
                             }
                         />
                     ))}
+
+                    {redirects.map((item) => (
+                        <Route
+                            key={item.from}
+                            path={item.from}
+                            element={<Navigate to={item.to} replace />}
+                        />
+                    ))}
+
+                    <Route path="*" element={<NotFound />} />
                 </Routes>
             </main>
             <MainZapros />
