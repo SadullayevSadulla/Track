@@ -12,7 +12,7 @@ const categoryRoutes = {
   7: "/catalog/il",
   8: "/catalog/gruzoviki",
   9: "/catalog/dopolnitelnoe-oborudovanie",
-  10: "/katolg",
+  10: "/catalog/shtornye-avtomobili",
   11: "/catalog/kran-manipulyatory",
 };
 

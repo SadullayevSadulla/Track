@@ -16,10 +16,30 @@ const CatalogAwp = () => {
   const favorites = useFavoriteStore((state) => state.favorites);
   const toggleFavorite = useFavoriteStore((state) => state.toggleFavorite);
   const productsRef = useRef(null);
-  const [view, setView] = useState("grid");
+  const [view, setView] = useState("list");
   const [brandQuery, setBrandQuery] = useState("");
   const [selectedBrands, setSelectedBrands] = useState([]);
   const [selectedWheelFormulas, setSelectedWheelFormulas] = useState([]);
+
+  const formatGrossWeight = (product) => {
+    const fallbackWeights = { up_to_5_5: 5.5, up_to_12: 12, up_to_20: 20, over_20: 20 };
+    const rawGross = Number(product.grossWeight ?? fallbackWeights[product.weight] ?? 0);
+    if (rawGross > 0) {
+      return `${Number.isInteger(rawGross) ? rawGross.toString() : rawGross.toFixed(1)} т`;
+    }
+    if (product.weight) {
+      return `${t(`weight_${product.weight}`)} т`;
+    }
+    return "-";
+  };
+
+  const formatPayload = (product) => {
+    const rawPayload = Number(product.payload ?? product.loadCapacity ?? 0);
+    if (rawPayload > 0) {
+      return `${Number.isInteger(rawPayload) ? rawPayload.toString() : rawPayload.toFixed(1)} кг`;
+    }
+    return "-";
+  };
 
   const visibleBrands = useMemo(() => {
     const normalizedQuery = brandQuery.trim().toLocaleLowerCase();
@@ -192,29 +212,12 @@ const CatalogAwp = () => {
                       <p>
                         <strong>{t("katolg_weight_label")}</strong>
                         <i></i>
-                        <span>
-                          {(() => {
-                            const fallbackWeights = { up_to_5_5: 5.5, up_to_12: 12, up_to_20: 20, over_20: 20 };
-                            const rawGross = Number(product.grossWeight ?? fallbackWeights[product.weight] ?? 0);
-                            return rawGross > 0
-                              ? `${rawGross.toFixed(rawGross % 1 === 0 ? 0 : 1)} т`
-                              : product.weight
-                                ? t(`weight_${product.weight}`)
-                                : "-";
-                          })()}
-                        </span>
+                        <span>{formatGrossWeight(product)}</span>
                       </p>
                       <p>
                         <strong>{t("katolg_load_label")}</strong>
                         <i></i>
-                        <span>
-                          {(() => {
-                            const rawPayload = Number(product.payload ?? product.loadCapacity ?? 0);
-                            return rawPayload > 0
-                              ? `${(rawPayload / 1000).toFixed((rawPayload / 1000) % 1 === 0 ? 0 : 1)} т`
-                              : "-";
-                          })()}
-                        </span>
+                        <span>{formatPayload(product)}</span>
                       </p>
                     </div>
                   )}

@@ -2,6 +2,9 @@ const productsData = [
     {
         id: 1,
         titleKey: "product1_title",
+        weight: "up_to_5_5",
+        grossWeight: 5.5,
+        payload: 3500,
         priceType: "from",
         priceAmount: "352 000₽",
         image: "/000.webp",
@@ -9,12 +12,18 @@ const productsData = [
     {
         id: 2,
         titleKey: "product2_title",
+        weight: "up_to_20",
+        grossWeight: 18,
+        payload: 12000,
         priceType: "request",
         image: "/000 (1).webp",
     },
     {
         id: 3,
         titleKey: "product3_title",
+        weight: "up_to_12",
+        grossWeight: 11.8,
+        payload: 7800,
         priceType: "from",
         priceAmount: "352 000₽",
         image: "/000 (2).webp",
@@ -22,6 +31,9 @@ const productsData = [
     {
         id: 4,
         titleKey: "product4_title",
+        weight: "up_to_12",
+        grossWeight: 12,
+        payload: 8200,
         priceType: "from",
         priceAmount: "352 000₽",
         image: "/000 (3).webp",
@@ -29,6 +41,9 @@ const productsData = [
     {
         id: 5,
         titleKey: "product2_title",
+        weight: "up_to_20",
+        grossWeight: 18.5,
+        payload: 13000,
         priceType: "from",
         priceAmount: "352 000₽",
         image: "/000 (1).webp",
@@ -36,6 +51,9 @@ const productsData = [
     {
         id: 6,
         titleKey: "product2_title",
+        weight: "over_20",
+        grossWeight: 25,
+        payload: 15000,
         priceType: "from",
         priceAmount: "352 000₽",
         image: "/000.jpg",
@@ -43,6 +61,9 @@ const productsData = [
     {
         id: 7,
         titleKey: "product2_title",
+        weight: "up_to_12",
+        grossWeight: 11.7,
+        payload: 9000,
         priceType: "from",
         priceAmount: "352 000₽",
         image: "/gmb4rcarl25rm4hcygyi90d901eh305a.jpg",
@@ -50,6 +71,9 @@ const productsData = [
     {
         id: 8,
         titleKey: "product2_title",
+        weight: "up_to_5_5",
+        grossWeight: 5.5,
+        payload: 3400,
         priceType: "from",
         priceAmount: "352 000₽",
         image: "/yeln332de47gv9sv2s7n4poxdnfufjv3.jpg",
@@ -57,6 +81,9 @@ const productsData = [
     {
         id: 9,
         titleKey: "product2_title",
+        weight: "up_to_20",
+        grossWeight: 18.5,
+        payload: 12500,
         priceType: "from",
         priceAmount: "352 000₽",
         image: "/93uq5fjhi5e4skil4nm5lvh9lxp4ymzr.jpg",
@@ -64,6 +91,9 @@ const productsData = [
     {
         id: 10,
         titleKey: "product2_title",
+        weight: "up_to_12",
+        grossWeight: 11.9,
+        payload: 7600,
         priceType: "from",
         priceAmount: "352 000₽",
         image: "/4qludc7vy9hr2o36vqan808424bqra2f.jpg",
@@ -71,6 +101,9 @@ const productsData = [
     {
         id: 11,
         titleKey: "product2_title",
+        weight: "up_to_20",
+        grossWeight: 19,
+        payload: 14200,
         priceType: "from",
         priceAmount: "352 000₽",
         image: "/z81dz76r10rm4zz03kh6mh93bqrgi2hk.jpg",
@@ -78,6 +111,9 @@ const productsData = [
     {
         id: 12,
         titleKey: "product2_title",
+        weight: "up_to_12",
+        grossWeight: 12,
+        payload: 8200,
         priceType: "from",
         priceAmount: "352 000₽",
         image: "/hvk3vcpvmblxb0h4764ut0kkte6116s3.webp",

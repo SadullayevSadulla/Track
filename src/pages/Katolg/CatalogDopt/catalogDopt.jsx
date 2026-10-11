@@ -2,6 +2,7 @@ import { useMemo, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useLanguage } from "../../../i18n/LanguageContext";
 import { useCartStore } from "../../../store/cartStore";
+import { useFavoriteStore } from "../../../store/favoriteStore";
 import CatalogDoptData, {
   doptBrands,
   doptPlatformTypes,
@@ -19,6 +20,8 @@ const CatalogDopt = () => {
   const { t, lang } = useLanguage();
   const navigate = useNavigate();
   const addToCart = useCartStore((state) => state.addToCart);
+  const favorites = useFavoriteStore((state) => state.favorites);
+  const toggleFavorite = useFavoriteStore((state) => state.toggleFavorite);
   const productsRef = useRef(null);
   const [view, setView] = useState("grid");
   const [brandQuery, setBrandQuery] = useState("");
@@ -27,7 +30,6 @@ const CatalogDopt = () => {
   const [masses, setMasses] = useState([]);
   const [formulas, setFormulas] = useState([]);
   const [lengths, setLengths] = useState([]);
-  const [favorites, setFavorites] = useState([]);
 
   const visibleBrands = useMemo(() => {
     const query = brandQuery.trim().toLocaleLowerCase();
@@ -47,9 +49,6 @@ const CatalogDopt = () => {
 
   const toggleValue = (setter, value) =>
     setter((cur) => (cur.includes(value) ? cur.filter((i) => i !== value) : [...cur, value]));
-
-  const toggleFavorite = (id) =>
-    setFavorites((cur) => (cur.includes(id) ? cur.filter((i) => i !== id) : [...cur, id]));
 
   const resetFilters = () => {
     setBrandQuery("");
@@ -155,7 +154,7 @@ const CatalogDopt = () => {
       <div className="canto-catalog__results">
         <div ref={productsRef} className={`cran-catalog__products katolg_data ${view === "list" ? "katolg_data--list" : ""}`}>
           {visibleProducts.length === 0 ? <p className="cran-catalog__empty">{t("katolg_empty")}</p> : visibleProducts.map((product) => {
-            const isFavorite = favorites.includes(product.id);
+            const isFavorite = favorites.includes(String(product.id));
             return (
               <div key={product.id}>
                 <article
@@ -183,9 +182,9 @@ const CatalogDopt = () => {
                               const fallbackWeights = { up_to_5_5: 5.5, up_to_12: 12, up_to_20: 20, over_20: 20 };
                               const rawGross = Number(product.grossWeight ?? fallbackWeights[product.weight] ?? 0);
                               return rawGross > 0
-                                ? `${rawGross.toFixed(rawGross % 1 === 0 ? 0 : 1)} т`
+                                ? `${Number.isInteger(rawGross) ? rawGross.toString() : rawGross.toFixed(1)} т`
                                 : product.weight
-                                  ? t(`weight_${product.weight}`)
+                                  ? `${t(`weight_${product.weight}`)} т`
                                   : "-";
                             })()}
                           </span>
@@ -197,7 +196,7 @@ const CatalogDopt = () => {
                             {(() => {
                               const rawPayload = Number(product.payload ?? product.loadCapacity ?? 0);
                               return rawPayload > 0
-                                ? `${(rawPayload / 1000).toFixed((rawPayload / 1000) % 1 === 0 ? 0 : 1)} т`
+                                ? `${Number.isInteger(rawPayload) ? rawPayload.toString() : rawPayload.toFixed(1)} кг`
                                 : "-";
                             })()}
                           </span>
