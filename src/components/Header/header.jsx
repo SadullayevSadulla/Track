@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { createPortal } from "react-dom";
-import "./header.css"
+import { motion, AnimatePresence } from "framer-motion";
+import "./header.css";
 import { useLanguage } from "../../i18n/LanguageContext";
 import { useNavigate } from "react-router-dom";
 import { useFavoriteStore } from "../../store/favoriteStore";
@@ -17,6 +18,7 @@ const Header = (props) => {
     const [callModalOpen, setCallModalOpen] = useState(false);
     const [callForm, setCallForm] = useState({ name: "", phone: "", consent: true });
     const [searchQuery, setSearchQuery] = useState("");
+    const [isOpen, setIsOpen] = useState(false);
     const [isMobileLayout, setIsMobileLayout] = useState(() => window.innerWidth <= 850);
     const menuRef = useRef(null);
     const langRef = useRef(null);
@@ -339,9 +341,43 @@ const Header = (props) => {
                                     </div>
                                 </div>
                                 <div className="salom flex items-center gap-[61px]">
-                                    <div className="header_contact flex flex-col gap-[5px] ">
-                                        <p className="text-[16px] font-normal font-['Fira_Sans']">{t("work_time_label")}</p>
-                                        <p className="text-[15px] font-normal font-['Fira_Sans'] text-[#A1A1A1]">{t("address")}</p>
+                                    <div className="flex items-center gap-6 lg:gap-8">
+                                        <div className="hidden md:flex md:flex-col">
+                                            <div className="hidden lg:flex lg:items-center lg:justify-end relative">
+                                                <button
+                                                    onClick={() => setIsOpen((prev) => !prev)}
+                                                    className="cursor-pointer text-black transition-all duration-300 flex flex-col items-end"
+                                                >
+                                                    <span className="flex items-center gap-2">
+                                                        {t("work_time_label")}
+                                                        <span
+                                                            className={`text-[#FEC80B] inline-block transition-all duration-300 ${isOpen ? "rotate-180" : "rotate-0"}`}
+                                                        >
+                                                            ▼
+                                                        </span>
+                                                    </span>
+                                                    <span>{t("address")}</span>
+                                                </button>
+                                                <AnimatePresence>
+                                                    {isOpen && (
+                                                        <motion.div initial={{ height: 0, opacity: 0 }}
+                                                            animate={{ height: "auto", opacity: 1 }}
+                                                            exit={{ height: 0, opacity: 0 }}
+                                                            transition={{
+                                                                duration: 0.5,
+                                                                ease: [0.04, 0.62, 0.23, 0.98],
+                                                            }}
+                                                            className="absolute top-5 right-0 z-51 bg-white  rounded-lg p-3.5 overflow-hidden"
+                                                        >
+                                                            <div className={`flex flex-col gap-3 transition-all duration-500 ${isOpen ? "opacity-100" : "opacity-0"}`}>
+                                                                <p className="text-black">{t("work_time_text")}</p>
+                                                                <p>{t("work_time_tex2")}</p>
+                                                            </div>
+                                                        </motion.div>
+                                                    )}
+                                                </AnimatePresence>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div className="header_phone flex items-center gap-[10px]">
                                         <div className="texttt flex flex-col items-end">

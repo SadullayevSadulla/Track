@@ -510,6 +510,8 @@ const translations = {
         crumb_production: "Продукция",
         crumb_refusal: "Отказ",
         crumb_cart: "Корзина",
+        work_time_text:"Пн-пт: с 8:00 до 18:00",
+        work_time_tex2:"Сб-вс: Выходной"
 
     },
 
@@ -1019,6 +1021,8 @@ const translations = {
         crumb_production: "Mahsulotlar",
         crumb_refusal: "Rad etish",
         crumb_cart: "Savat",
+        work_time_text:"Dushanba-Juma: 8:00 dan 18:00 gacha",
+        work_time_tex2:"Sat–Sun: Closed"
     },
 
     en: {
@@ -1527,6 +1531,8 @@ const translations = {
         crumb_production: "Products",
         crumb_refusal: "Refusal",
         crumb_cart: "Cart",
+        work_time_text:"Mon–Fri: 8:00 a.m. to 6:00 p.m.",
+        work_time_tex2:"Shanba-Yakshanba: Yopiq"
 
     },
 };
