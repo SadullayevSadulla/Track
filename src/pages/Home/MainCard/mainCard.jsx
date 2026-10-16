@@ -154,7 +154,18 @@ const MainCard = () => {
                 >
                     {productsData.map((product) => (
                         <SwiperSlide key={product.id}>
-                            <div className="product-card">
+                            <div
+                                className="product-card"
+                                role="link"
+                                tabIndex={0}
+                                onClick={() => navigate(`/information/${product.id}`)}
+                                onKeyDown={(event) => {
+                                    if (event.target === event.currentTarget && (event.key === "Enter" || event.key === " ")) {
+                                        event.preventDefault();
+                                        navigate(`/information/${product.id}`);
+                                    }
+                                }}
+                            >
 
                                 <div className="product-card__image flex">
                                     <img src={product.image} alt={t(product.titleKey)} />
@@ -162,7 +173,8 @@ const MainCard = () => {
                                     <button
                                         className={`product-card__favorite ${favorites.includes(String(product.id)) ? "active" : ""
                                             }`}
-                                        onClick={() => {
+                                        onClick={(event) => {
+                                            event.stopPropagation();
                                             toggleFavorite(product.id);
                                         }}
                                     >
@@ -188,14 +200,20 @@ const MainCard = () => {
                                     </p>
 
                                     <div className="product-card__actions">
-                                        <button className="product-card__btn-main font-[400] text-[16px] text-[#000000]" onClick={() => navigate("/information")}>
+                                        <button className="product-card__btn-main font-[400] text-[16px] text-[#000000]" onClick={(event) => {
+                                            event.stopPropagation();
+                                            navigate(`/information/${product.id}`);
+                                        }}>
                                             {t("btn_more")}
                                         </button>
 
                                         <button
                                             type="button"
                                             className="product-card__btn-secondary"
-                                            onClick={() => setOfferModalOpen(true)}
+                                            onClick={(event) => {
+                                                event.stopPropagation();
+                                                setOfferModalOpen(true);
+                                            }}
                                         >
                                             {t("btn_get_offer")}
                                             <svg

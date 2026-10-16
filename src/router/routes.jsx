@@ -64,17 +64,32 @@ export const router = [
         element: <Katolg />,
     },
     {
+        id: 35,
+        path: '/catalog/shtornye-avtomobili/:productSlug',
+        element: <Information />,
+    },
+    {
         id: 7,
         path: '/onac',
         element: <Onac />
     },
     {
         id: 8,
+        path: '/information/:productId',
+        element: <Information />
+    },
+    {
+        id: 34,
         path: '/information',
         element: <Information />
     },
     {
         id: 9,
+        path: '/mainNewsCard/:newsId',
+        element: <MainNewsCard />
+    },
+    {
+        id: 36,
         path: '/mainNewsCard',
         element: <MainNewsCard />
     },

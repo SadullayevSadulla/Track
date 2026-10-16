@@ -1,28 +1,41 @@
 import React, { useState } from 'react'
+import { useParams } from 'react-router-dom'
 import "./information.css"
 import "../Home/MainCard/mainCard.css"
 import { useLanguage } from "../../i18n/LanguageContext"
-
-const productImage = "/000.webp"
-
-const specifications = [
-  ["spec_chassis_label", "spec_chassis_value"],
-  ["spec_engine_label", "spec_engine_value"],
-  ["spec_gearbox_label", "spec_gearbox_value"],
-  ["spec_length_label", null, "8990"],
-  ["spec_width_label", null, "2400"],
-  ["spec_height_label", null, "3330"],
-  ["spec_wheelbase_label", null, "5200"],
-  ["spec_platform_length_label", null, "6200"],
-  ["spec_gross_weight_label", null, "8000"],
-  ["spec_curb_weight_label", null, "6420"],
-  ["spec_payload_label", null, "1580"],
-  ["spec_crane_capacity_label", null, "32"],
-  ["spec_boom_reach_label", null, "9,8"],
-]
+import productsData from "../Home/MainCard/cardData"
+import curtainProducts from "../Katolg/katolgData"
 
 const Information = () => {
   const { t } = useLanguage();
+  const { productId, productSlug } = useParams();
+  const curtainId = productSlug?.match(/^curtain-truck-(\d{4})$/)?.[1];
+  const curtainProduct = curtainId
+    ? curtainProducts.find((item) => item.id === Number(curtainId))
+    : null;
+  const product = curtainProduct
+    ? {
+        ...curtainProduct,
+        payload: Number(curtainProduct.payload ?? curtainProduct.loadCapacity),
+      }
+    : productsData.find((item) => item.id === Number(productId)) ?? productsData[0];
+  const specifications = product.specifications ?? [
+    ...(product.titleKey === "product2_title"
+      ? [["spec_chassis_label", null, "КАМАЗ 43118"]]
+      : []),
+    ...(product.grossWeight != null
+      ? [["spec_gross_weight_label", null, `${(product.grossWeight * 1000).toLocaleString("ru-RU")}`]]
+      : []),
+    ...(product.payload != null && Number.isFinite(product.payload)
+      ? [["spec_payload_label", null, `${product.payload.toLocaleString("ru-RU")}`]]
+      : []),
+    ...(product.weight
+      ? [["spec_weight_category_label", null, `${t(`weight_${product.weight}`)} т`]]
+      : []),
+    ...(curtainProduct?.weight
+      ? [["katolg_weight_label", null, `${t(`weight_${curtainProduct.weight}`)} т`]]
+      : []),
+  ];
   const [offerModalOpen, setOfferModalOpen] = useState(false)
   const [offerForm, setOfferForm] = useState({
     name: "",
@@ -94,16 +107,16 @@ const Information = () => {
 
       <div className="information__inner">
         <h1 className="information__title">
-          {t("info_product_title")}
+          {t(product.titleKey)}
         </h1>
 
         <div className="information__layout">
           <div className="information__photo">
-            <img src={productImage} alt={t("info_product_title")} />
+            <img src={product.image} alt={t(product.titleKey)} />
           </div>
 
           <div className="information__details">
-            <h2>{t("price_on_request")}</h2>
+            <h2>{product.priceType === "from" ? `${t("price_from")} ${product.priceAmount}` : t("price_on_request")}</h2>
             <div className="information__actions">
               <button className="information__cart" type="button">{t("info_add_to_cart")}</button>
               <button className="information__offer" type="button" onClick={() => setOfferModalOpen(true)}>{t("btn_get_offer")}</button>
@@ -122,7 +135,7 @@ const Information = () => {
           </div>
         </div>
         <div className="gggg mt-10">
-          <img src="/tr80_3014.png" alt="" />
+          <img src="/tr80_3014.png" alt={t(product.titleKey)} />
         </div>
       </div>
 
@@ -135,7 +148,7 @@ const Information = () => {
           <div className="rounded-md overflow-hidden border border-neutral-200">
             <div className="bg-amber-400 px-6 py-4">
               <span className="font-bold text-neutral-900">
-                {t("info_product_title")}
+                {t(product.titleKey)}
               </span>
             </div>
 

@@ -75,19 +75,33 @@ const MainNews = () => {
                 >
                     {newsData.map((item) => (
                         <SwiperSlide key={item.id}>
-                            <div className="product-card">
+                            <div
+                                className="product-card"
+                                role="link"
+                                tabIndex={0}
+                                onClick={() => navigate(`/mainNewsCard/${item.id}`)}
+                                onKeyDown={(event) => {
+                                    if (event.target === event.currentTarget && (event.key === "Enter" || event.key === " ")) {
+                                        event.preventDefault();
+                                        navigate(`/mainNewsCard/${item.id}`);
+                                    }
+                                }}
+                            >
 
                                 <div className="product-card__image flex">
                                     <img src={item.image} alt={t(item.textKey)} />
                                 </div>
 
                                 <div className="product-card__info">
-                                    <h3 className="font-normal text-[18px] max-w-[288px] text-[#000000]">{item.date}</h3>
+                                    {(item.dateKey || item.date) && <h3 className="font-normal text-[18px] max-w-[288px] text-[#000000]">{item.dateKey ? t(item.dateKey) : item.date}</h3>}
                                     <p className="product-card__price">{t(item.textKey)}</p>
 
                                     <div className="product-card__actions">
 
-                                        <button className="product-card__btn-secondary text-[18px]" onClick={() => navigate("/mainNewsCard")}>
+                                        <button className="product-card__btn-secondary text-[18px]" onClick={(event) => {
+                                            event.stopPropagation();
+                                            navigate(`/mainNewsCard/${item.id}`);
+                                        }}>
                                             {t("btn_more")}
                                             <i className="fa-solid fa-arrow-right-long"></i>
                                         </button>

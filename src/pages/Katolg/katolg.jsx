@@ -56,6 +56,9 @@ const Katolg = () => {
     dataRef.current?.scrollIntoView({ behavior: "smooth", block: "start" })
   }
 
+  const getProductPath = (product) =>
+    `/catalog/shtornye-avtomobili/curtain-truck-${String(product.id).padStart(4, "0")}`
+
   const handleOfferChange = (event) => {
     const { name, value, type, checked } = event.target
     setOfferForm((prev) => ({
@@ -223,11 +226,11 @@ const Katolg = () => {
                   className="product-card cursor-pointer"
                   role="link"
                   tabIndex={0}
-                  onClick={() => navigate("/information")}
+                  onClick={() => navigate(getProductPath(product))}
                   onKeyDown={(event) => {
                     if (event.key === "Enter" || event.key === " ") {
                       event.preventDefault()
-                      navigate("/information")
+                      navigate(getProductPath(product))
                     }
                   }}
                 >
@@ -305,6 +308,10 @@ const Katolg = () => {
                           <button
                             type="button"
                             className="product-card__btn-main font-[400] text-[16px] text-[#000000]"
+                            onClick={(event) => {
+                              event.stopPropagation()
+                              navigate(getProductPath(product))
+                            }}
                           >
                             {t("btn_more")}
                           </button>
@@ -342,6 +349,10 @@ const Katolg = () => {
                           <button
                             type="button"
                             className="product-card__btn-main font-[400] text-[16px] text-[#000000]"
+                            onClick={(event) => {
+                              event.stopPropagation()
+                              navigate(getProductPath(product))
+                            }}
                           >
                             {t("btn_more")}
                           </button>

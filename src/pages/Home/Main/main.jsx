@@ -65,7 +65,7 @@ const Categories = () => {
         >
           {mainData.map((category) => (
             <SwiperSlide key={category.id}>
-              <Link to="/catalog/shtornye-avtomobili">
+              <Link to={category.path}>
                 <div className="category-card">
 
                   <div className="category-card__info">

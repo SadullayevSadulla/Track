@@ -22,7 +22,7 @@ const MainRus = () => {
                             </span>
                         ))}
                     </p>
-                    <button onClick={() => navigate("/onac")} className="bg-[#FEC80B]  text-white px-[30px] py-[13px] rounded-[4px] cursor-pointer hover:bg-white hover:text-[#FEC80B] hover:border border-1px yellow hover:shadow-lg">
+                    <button onClick={() => navigate("/onac")} className="bg-[#FEC80B]  text-white px-[30px] py-[13px] rounded-[4px] cursor-pointer hover:bg-white hover:text-[#FEC80B] border border-1">
                         {t("about_company_btn")} <i className="fa-solid fa-arrow-right-long"></i>
                     </button>
                 </div>

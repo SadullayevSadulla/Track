@@ -1,5 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { useLanguage } from "../i18n/LanguageContext";
+import curtainProducts from "../pages/Katolg/katolgData";
+import newsData from "../pages/Home/MainNews/newsData";
 const LABEL_KEYS = {
   "/catalog": "catalog",
   "/catalog/shtornye-avtomobili": "menu_cat_curtain",
@@ -71,6 +73,33 @@ export default function Breadcrumb() {
 
   const segments = location.pathname.split("/").filter(Boolean);
   const decodedSegments = segments.map((segment) => decodeSegment(segment));
+  const isProductInformationPath =
+    decodedSegments[0] === "information" && /^\d+$/.test(decodedSegments[1] || "");
+  const breadcrumbItems = isProductInformationPath
+    ? [{ path: "/information", label: `${t("crumb_information")} ${decodedSegments[1]}` }]
+    : segments.map((segment, index) => {
+        const path = `/${segments.slice(0, index + 1).join("/")}`;
+        const decodedPath = `/${decodedSegments.slice(0, index + 1).join("/")}`;
+        const curtainId = decodedSegments[index]?.match(/^curtain-truck-(\d{4})$/)?.[1];
+        const curtainProduct = curtainId
+          ? curtainProducts.find((product) => product.id === Number(curtainId))
+          : null;
+        const newsItem = decodedSegments[0] === "mainNewsCard" && index === 1
+          ? newsData.find((item) => item.id === Number(decodedSegments[index]))
+          : null;
+        const isFeaturedNews =
+          decodedSegments[0] === "mainNewsCard" && decodedSegments[index] === "featured";
+        return {
+          path: decodedPath,
+          label: isFeaturedNews
+            ? t("news_featured_title")
+            : newsItem
+            ? t(newsItem.textKey)
+            : curtainProduct
+            ? t(curtainProduct.titleKey)
+            : getLabel(path, decodedPath, decodedSegments[index]),
+        };
+      });
 
   return (
     <nav aria-label={t("crumb_aria_label")} className="container mb-6 mt-6 text-sm text-gray-500">
@@ -79,21 +108,16 @@ export default function Breadcrumb() {
           {t("crumb_home")}
         </Link>
 
-        {segments.map((segment, index) => {
-          const path = `/${segments.slice(0, index + 1).join("/")}`;
-          const decodedPath = `/${decodedSegments.slice(0, index + 1).join("/")}`;
-          const decodedSegment = decodeSegment(segment);
-          const label = getLabel(path, decodedPath, decodedSegment);
-          const isLast = index === segments.length - 1;
-
+        {breadcrumbItems.map((item, index) => {
+          const isLast = index === breadcrumbItems.length - 1;
           return (
-            <div key={path} className="flex items-center gap-2">
+            <div key={item.path} className="flex items-center gap-2">
               <span>/</span>
               {isLast ? (
-                <span className="text-gray-700">{label}</span>
+                <span className="text-gray-700">{item.label}</span>
               ) : (
-                <Link to={decodedPath} className="hover:text-yellow-600 transition">
-                  {label}
+                <Link to={item.path} className="hover:text-yellow-600 transition">
+                  {item.label}
                 </Link>
               )}
             </div>
