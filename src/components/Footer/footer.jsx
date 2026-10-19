@@ -49,9 +49,16 @@ const Footer = (props) => {
     { to: "/onac", label: t("menu_about_company") },
     { to: "/news", label: t("menu_about_news") },
     { to: "/hamkor", label: t("menu_about_partners") },
+    { to: "/production", label: t("menu_about_production") },
+    { to: "/hamkor", label: t("menu_about_suppliers") },
+    { to: "/otzyvy", label: t("menu_about_reviews") },
     { to: "/certeficat", label: t("menu_about_certificates") },
     { to: "/vaqansiya", label: t("menu_about_vacancies") },
     { to: "/kredit", label: t("menu_about_leasing") },
+    { to: "/service", label: t("service") },
+    { to: "/repair", label: t("repair") },
+    { to: "/contacts", label: t("contacts") },
+    { to: "/information", label: t("menu_about_useful") },
   ];
 
   const mediaLinks = [
@@ -152,7 +159,7 @@ const Footer = (props) => {
                       viewport={{ once: true, margin: "-150px" }}
                       className="flex flex-col gap-3 text-[#d1d1d1]"
                     >
-                      {aboutLinks.slice(0, 3).map((item) => (
+                      {aboutLinks.slice(0, 7).map((item) => (
                         <motion.li key={item.to} variants={shortFadeUp}>
                           <Link to={item.to}>{item.label}</Link>
                         </motion.li>
@@ -166,7 +173,7 @@ const Footer = (props) => {
                       viewport={{ once: true, margin: "-150px" }}
                       className="flex flex-col gap-3 text-[#d1d1d1]"
                     >
-                      {aboutLinks.slice(3).map((item) => (
+                      {aboutLinks.slice(7).map((item) => (
                         <motion.li key={item.to} variants={shortFadeUp}>
                           <Link to={item.to}>{item.label}</Link>
                         </motion.li>

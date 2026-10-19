@@ -41,6 +41,7 @@ const translations = {
         menu_about_certificates: "Сертификаты",
         menu_about_vacancies: "Вакансии",
         menu_about_leasing: "Кредит и лизинг",
+        menu_about_useful: "Полезные статьи",
         menu_about_otqaz: "Отзывы",
 
         menu_media_title: "Медиа",
@@ -572,6 +573,7 @@ const translations = {
         menu_about_certificates: "Sertifikatlar",
         menu_about_vacancies: "Bo'sh ish o'rinlari",
         menu_about_leasing: "Kredit va lizing",
+        menu_about_useful: "Foydali maqolalar",
         menu_about_otqaz: "O'tqaz",
 
         menu_media_title: "Media",
@@ -1097,6 +1099,7 @@ const translations = {
         menu_about_certificates: "Certificates",
         menu_about_vacancies: "Vacancies",
         menu_about_leasing: "Credit and leasing",
+        menu_about_useful: "Useful articles",
         menu_about_otqaz: "Transfer",
 
         menu_media_title: "Media",
