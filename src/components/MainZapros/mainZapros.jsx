@@ -98,7 +98,6 @@ const ContactSec = () => {
                                     name="phone"
                                     required
                                     pattern="[0-9+()\s\-]{10,}"
-                                    title="Telefon raqamini to'g'ri kiriting"
                                     className="py-2.75 px-3 rounded-sm border outline-0"
                                     type="tel"
                                     onMouseLeave={() => setIsHovered(false)}

@@ -500,7 +500,9 @@ const Header = (props) => {
                     <div className="container">
                         <div className="header_bottom flex items-center justify-between py-[1px]">
                             <div className="sa flex items-center gap-[30px]" ref={menuRef}>
-                                <img src="/logo (3).png" alt="" className="mini_logo" />
+                                <a href="/">
+                                    <img src="/logo (3).png" alt="" className="mini_logo" />
+                                </a>
 
                                 <div className="relative">
                                     <button
