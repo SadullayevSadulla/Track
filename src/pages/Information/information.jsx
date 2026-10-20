@@ -5,6 +5,32 @@ import "../Home/MainCard/mainCard.css"
 import { useLanguage } from "../../i18n/LanguageContext"
 import productsData from "../Home/MainCard/cardData"
 import curtainProducts from "../Katolg/katolgData"
+import CatalogAwpData from "../Katolg/CatalogAwp/catalogAwpData"
+import CatalogBordData from "../Katolg/CatalogBord/catalogBordData"
+import CatalogCantoData from "../Katolg/CatalogCanto/catalogCantoData"
+import CatalogDoptData from "../Katolg/CatalogDopt/CatalogDoptData"
+import CatalogEvkratorData from "../Katolg/CatalogEvkrator/catalogEvkratorData"
+import CatalogFuelData from "../Katolg/CatalogFuel/catalogFuelData"
+import CatalogFurgonData from "../Katolg/CatalogFurgon/catalogFurgonData"
+import CatalogIlData from "../Katolg/CatalogIL/catalogIlData"
+import CatalogWaterData from "../Katolg/CatalogWater/catalogWaterData"
+import CatalogYukData from "../Katolg/CatalogYuk/catalogYukData"
+import { formatUzDigits } from "../../utils/phone"
+
+const allCatalogProducts = [
+  ...productsData,
+  ...curtainProducts,
+  ...CatalogAwpData,
+  ...CatalogBordData,
+  ...CatalogCantoData,
+  ...CatalogDoptData,
+  ...CatalogEvkratorData,
+  ...CatalogFuelData,
+  ...CatalogFurgonData,
+  ...CatalogIlData,
+  ...CatalogWaterData,
+  ...CatalogYukData,
+];
 
 const Information = () => {
   const { t } = useLanguage();
@@ -13,12 +39,15 @@ const Information = () => {
   const curtainProduct = curtainId
     ? curtainProducts.find((item) => item.id === Number(curtainId))
     : null;
+  const matchedProduct = productId
+    ? allCatalogProducts.find((item) => String(item.id) === String(productId))
+    : null;
   const product = curtainProduct
     ? {
         ...curtainProduct,
         payload: Number(curtainProduct.payload ?? curtainProduct.loadCapacity),
       }
-    : productsData.find((item) => item.id === Number(productId)) ?? productsData[0];
+    : matchedProduct ?? productsData[0];
   const specifications = product.specifications ?? [
     ...(product.titleKey === "product2_title"
       ? [["spec_chassis_label", null, "КАМАЗ 43118"]]
@@ -46,9 +75,10 @@ const Information = () => {
 
   const handleOfferChange = (event) => {
     const { name, value, type, checked } = event.target
+    const sanitizedValue = type === "tel" ? formatUzDigits(value) : value
     setOfferForm((prev) => ({
       ...prev,
-      [name]: type === "checkbox" ? checked : value,
+      [name]: type === "checkbox" ? checked : sanitizedValue,
     }))
   }
 
@@ -107,12 +137,12 @@ const Information = () => {
 
       <div className="information__inner">
         <h1 className="information__title">
-          {t(product.titleKey)}
+          {product.title || t(product.titleKey)}
         </h1>
 
         <div className="information__layout">
           <div className="information__photo">
-            <img src={product.image} alt={t(product.titleKey)} />
+            <img src={product.image} alt={product.title || t(product.titleKey)} />
           </div>
 
           <div className="information__details">
@@ -148,7 +178,7 @@ const Information = () => {
           <div className="rounded-md overflow-hidden border border-neutral-200">
             <div className="bg-amber-400 px-6 py-4">
               <span className="font-bold text-neutral-900">
-                {t(product.titleKey)}
+                {product.title || t(product.titleKey)}
               </span>
             </div>
 

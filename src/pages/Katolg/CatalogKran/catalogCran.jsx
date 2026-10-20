@@ -201,11 +201,11 @@ const CatalogCran = () => {
                   className="product-card cursor-pointer"
                   role="link"
                   tabIndex={0}
-                  onClick={() => navigate("/information")}
+                  onClick={() => navigate(`/information/${product.id}`)}
                   onKeyDown={(event) => {
                     if (event.key === "Enter" || event.key === " ") {
                       event.preventDefault();
-                      navigate("/information");
+                      navigate(`/information/${product.id}`);
                     }
                   }}
                 >
@@ -280,7 +280,7 @@ const CatalogCran = () => {
                           className="product-card__btn-main"
                           onClick={(event) => {
                             event.stopPropagation();
-                            navigate("/information");
+                            navigate(`/information/${product.id}`);
                           }}
                         >
                           {t("btn_more")}
@@ -313,7 +313,7 @@ const CatalogCran = () => {
                           className="product-card__btn-main"
                           onClick={(event) => {
                             event.stopPropagation();
-                            navigate("/information");
+                            navigate(`/information/${product.id}`);
                           }}
                         >
                           {t("btn_more")}

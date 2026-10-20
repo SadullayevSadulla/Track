@@ -2,6 +2,7 @@ import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { useLanguage } from "../../i18n/LanguageContext"
 import { useCartStore } from "../../store/cartStore"
+import { formatUzDigits } from "../../utils/phone"
 import "./cart.css"
 import "../Home/MainCard/mainCard.css"
 
@@ -21,9 +22,10 @@ const Cart = () => {
 
   const handleOfferChange = (event) => {
     const { name, value, type, checked } = event.target
+    const sanitizedValue = type === "tel" ? formatUzDigits(value) : value
     setOfferForm((prev) => ({
       ...prev,
-      [name]: type === "checkbox" ? checked : value,
+      [name]: type === "checkbox" ? checked : sanitizedValue,
     }))
   }
 

@@ -83,7 +83,7 @@ const Favorit = () => {
                     <button
                       type="button"
                       className="products-page__details"
-                      onClick={() => navigate("/information")}
+                      onClick={() => navigate(`/information/${product.id}`)}
                     >
                       {t("btn_more")}
                     </button>

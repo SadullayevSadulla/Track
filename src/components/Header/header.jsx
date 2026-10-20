@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { useFavoriteStore } from "../../store/favoriteStore";
 import { useCartStore } from "../../store/cartStore";
 import { CATEGORY_PATHS, PATHS } from "../../router/paths";
+import { formatUzDigits } from "../../utils/phone";
 
 const Header = (props) => {
     const [openMenu, setOpenMenu] = useState(null);
@@ -87,9 +88,10 @@ const Header = (props) => {
 
     const handleCallChange = (event) => {
         const { name, value, type, checked } = event.target;
+        const sanitizedValue = type === "tel" ? formatUzDigits(value) : value;
         setCallForm((prev) => ({
             ...prev,
-            [name]: type === "checkbox" ? checked : value,
+            [name]: type === "checkbox" ? checked : sanitizedValue,
         }));
     };
 

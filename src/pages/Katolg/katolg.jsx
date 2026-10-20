@@ -5,6 +5,7 @@ import { useLanguage } from "../../i18n/LanguageContext"
 import { useNavigate } from "react-router-dom"
 import { useCartStore } from "../../store/cartStore"
 import { useFavoriteStore } from "../../store/favoriteStore"
+import { formatUzDigits } from "../../utils/phone"
 
 const Katolg = () => {
   const { t } = useLanguage()
@@ -61,9 +62,10 @@ const Katolg = () => {
 
   const handleOfferChange = (event) => {
     const { name, value, type, checked } = event.target
+    const sanitizedValue = type === "tel" ? formatUzDigits(value) : value
     setOfferForm((prev) => ({
       ...prev,
-      [name]: type === "checkbox" ? checked : value,
+      [name]: type === "checkbox" ? checked : sanitizedValue,
     }))
   }
 
@@ -262,7 +264,7 @@ const Katolg = () => {
 
                   <div className="product-card__info">
                     <h3 className="product-card__title">
-                      {t(product.titleKey)}
+                      {product.title || t(product.titleKey)}
                     </h3>
 
                     {view === "list" && (

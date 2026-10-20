@@ -141,7 +141,7 @@ const CatalogWater = () => {
           const isFavorite = favorites.includes(String(product.id));
           return (
             <div key={product.id}>
-              <article className={`product-card cursor-pointer ${!product.available ? "water-product--unavailable" : ""}`} role="link" tabIndex={0} onClick={() => navigate("/information")} onKeyDown={(event) => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); navigate("/information"); } }}>
+              <article className={`product-card cursor-pointer ${!product.available ? "water-product--unavailable" : ""}`} role="link" tabIndex={0} onClick={() => navigate(`/information/${product.id}`)} onKeyDown={(event) => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); navigate(`/information/${product.id}`); } }}>
                 <div className="product-card__image">
                   <img src={product.image} alt={t(product.titleKey)} />
                   {!product.available && <span className="water-product__unavailable-label">{t("awp_unavailable")}</span>}
@@ -184,7 +184,7 @@ const CatalogWater = () => {
                   )}
                   <p className="product-card__price">{t("price_on_request")}</p>
                   <div className="product-card__actions">
-                    <button type="button" className="product-card__btn-main" onClick={(event) => { event.stopPropagation(); navigate("/information"); }}>{t("btn_more")}</button>
+                    <button type="button" className="product-card__btn-main" onClick={(event) => { event.stopPropagation(); navigate(`/information/${product.id}`); }}>{t("btn_more")}</button>
                     <button type="button" className="product-card__cart cursor-pointer" onClick={(event) => { event.stopPropagation(); addToCart(product); }} aria-label={t("catalog_add_to_cart")}><i className="fa-solid fa-cart-shopping" aria-hidden="true" /></button>
                     <button type="button" className="product-card__btn-secondary text-[16px]" onClick={(event) => { event.stopPropagation(); navigate("/contacts"); }} aria-label={t("btn_get_offer")} title={t("btn_get_offer")}>{t("btn_get_offer")}<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16" /></svg></button>
                   </div>

@@ -10,6 +10,7 @@ import "swiper/css/navigation";
 import "./mainCard.css";
 import productsData from "./cardData";
 import { useLanguage } from "../../../i18n/LanguageContext";
+import { formatUzDigits } from "../../../utils/phone";
 
 const MainCard = () => {
     const favorites = useFavoriteStore((state) => state.favorites);
@@ -28,9 +29,10 @@ const MainCard = () => {
 
     const handleOfferChange = (event) => {
         const { name, value, type, checked } = event.target;
+        const sanitizedValue = type === "tel" ? formatUzDigits(value) : value;
         setOfferForm((prev) => ({
             ...prev,
-            [name]: type === "checkbox" ? checked : value,
+            [name]: type === "checkbox" ? checked : sanitizedValue,
         }));
     };
 

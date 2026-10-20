@@ -19,6 +19,7 @@ const katolgData = [
     {
         id: 1,
         titleKey: "katolg_product1_title",
+        title: "МАЗ 438121 (модель 5389D5)",
         brand: "gaz",
         weight: "up_to_5_5",
         priceType: "from",
@@ -29,6 +30,7 @@ const katolgData = [
     {
         id: 2,
         titleKey: "katolg_product1_title",
+        title: "КАМАЗ 43118 шторный грузовик",
         brand: "kamaz",
         weight: "up_to_20",
         priceType: "request",
@@ -38,6 +40,7 @@ const katolgData = [
     {
         id: 3,
         titleKey: "katolg_product1_title",
+        title: "JAC N80 тентованный грузовик",
         brand: "jac",
         weight: "up_to_12",
         priceType: "from",
@@ -48,6 +51,7 @@ const katolgData = [
     {
         id: 4,
         titleKey: "katolg_product1_title",
+        title: "DAEWOO NOVUS 4x2 шторный",
         brand: "daewoo",
         weight: "up_to_12",
         priceType: "from",
@@ -57,6 +61,7 @@ const katolgData = [
     {
         id: 5,
         titleKey: "katolg_product1_title",
+        title: "FOTON AUMARK шторная платформа",
         brand: "foton",
         weight: "up_to_5_5",
         priceType: "from",
@@ -66,6 +71,7 @@ const katolgData = [
     {
         id: 6,
         titleKey: "katolg_product1_title",
+        title: "DONGFENG 6x4 шторный фургон",
         brand: "dongfeng",
         weight: "over_20",
         priceType: "from",
@@ -75,6 +81,7 @@ const katolgData = [
     {
         id: 7,
         titleKey: "katolg_product1_title",
+        title: "МАЗ 4370 шторная платформа",
         brand: "maz",
         weight: "over_20",
         priceType: "request",
@@ -83,6 +90,7 @@ const katolgData = [
     {
         id: 8,
         titleKey: "katolg_product1_title",
+        title: "ГАЗ 3307 шторный грузовик",
         brand: "gaz",
         weight: "up_to_12",
         priceType: "from",
@@ -92,6 +100,7 @@ const katolgData = [
     {
         id: 9,
         titleKey: "katolg_product1_title",
+        title: "КАМАЗ 5320 тентованный грузовик",
         brand: "kamaz",
         weight: "over_20",
         priceType: "from",
@@ -101,6 +110,7 @@ const katolgData = [
     {
         id: 10,
         titleKey: "katolg_product1_title",
+        title: "JAC X200 тентованный вариант",
         brand: "jac",
         weight: "up_to_5_5",
         priceType: "from",

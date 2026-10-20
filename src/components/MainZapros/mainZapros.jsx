@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "motion/react";
 import { useLanguage } from "../../i18n/LanguageContext";
+import { formatUzDigits } from "../../utils/phone";
 
 const container = {
     hidden: { opacity: 0 },
@@ -100,6 +101,9 @@ const ContactSec = () => {
                                     pattern="[0-9+()\s\-]{10,}"
                                     className="py-2.75 px-3 rounded-sm border outline-0"
                                     type="tel"
+                                    onChange={(e) => {
+                                        e.target.value = formatUzDigits(e.target.value);
+                                    }}
                                     onMouseLeave={() => setIsHovered(false)}
                                     onMouseEnter={() => setIsHovered(true)}
                                     placeholder={isHovered ? "+7 (___) ___-__-__" : t("zapros_phone_placeholder")}

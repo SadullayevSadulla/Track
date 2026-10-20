@@ -9,11 +9,20 @@ import { CATEGORY_ROUTE_BY_ID, PATHS } from "../../router/paths";
 
 const LANGS = ["ru", "uz", "en"];
 
+const CYRILLIC_TO_LATIN = {
+    а: "a", б: "b", в: "v", г: "g", д: "d", е: "e", ж: "zh",
+    з: "z", и: "i", й: "y", к: "k", л: "l", м: "m", н: "n",
+    о: "o", п: "p", р: "r", с: "s", т: "t", у: "u", ф: "f",
+    х: "h", ц: "c", ч: "ch", ш: "sh", щ: "shch", ъ: "", ы: "y",
+    ь: "", э: "e", ю: "yu", я: "ya",
+};
+
 const normalize = (value) =>
     String(value ?? "")
         .toLocaleLowerCase()
         .replace(/ё/g, "е")
-        .replace(/\s+/g, " ")
+        .replace(/[а-я]/g, (letter) => CYRILLIC_TO_LATIN[letter] ?? letter)
+        .replace(/[^a-z0-9]+/g, " ")
         .trim();
 
 const allLangs = (key) =>
@@ -30,6 +39,7 @@ const productIndex = katolgData.map((product) => ({
     product,
     haystack: normalize(
         [
+            product.title,
             ...allLangs(product.titleKey),
             product.brand,
             ...(brandLabels[product.brand] || []),
@@ -55,7 +65,10 @@ function SearchPage() {
         const words = normalize(query).split(" ").filter(Boolean);
         if (words.length === 0) return { products: [], categories: [] };
 
-        const matches = (haystack) => words.every((word) => haystack.includes(word));
+        const matches = (haystack) => {
+            const haystackWords = haystack.split(" ").filter(Boolean);
+            return words.every((word) => haystackWords.some((candidate) => candidate.startsWith(word)));
+        };
 
         return {
             products: productIndex
@@ -123,17 +136,17 @@ function SearchPage() {
                         {products.map((product) => (
                             <article className="product-card" key={product.id}>
                                 <div className="product-card__image">
-                                    <img src={product.image} alt={t(product.titleKey)} />
+                                    <img src={product.image} alt={product.title || t(product.titleKey)} />
                                 </div>
                                 <div className="product-card__info">
-                                    <h3 className="product-card__title">{t(product.titleKey)}</h3>
+                                    <h3 className="product-card__title">{product.title || t(product.titleKey)}</h3>
                                     <p className="product-card__price">
                                         {product.priceType === "from"
                                             ? `${t("price_from")} ${product.priceAmount}`
                                             : t("price_on_request")}
                                     </p>
                                     <Link
-                                        to={PATHS.information}
+                                        to={`${PATHS.information}/${product.id}`}
                                         className="product-card__btn-main text-center"
                                     >
                                         {t("btn_more")}

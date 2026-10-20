@@ -95,7 +95,7 @@ const CatalogCanto = () => {
             const isFavorite = favorites.includes(String(product.id));
             return (
               <div key={product.id}>
-                <article className={`product-card cursor-pointer ${!product.available ? "canto-product--unavailable" : ""}`} role="link" tabIndex={0} onClick={() => navigate("/information")} onKeyDown={(event) => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); navigate("/information"); } }}>
+                <article className={`product-card cursor-pointer ${!product.available ? "canto-product--unavailable" : ""}`} role="link" tabIndex={0} onClick={() => navigate(`/information/${product.id}`)} onKeyDown={(event) => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); navigate(`/information/${product.id}`); } }}>
                   <div className="product-card__image">
                     <img src={product.image} alt={`${t("menu_cat_container")} ${t(`brand_${product.brand}`)} ${product.model}`} />
                     {!product.available && <span className="canto-product__unavailable-label">{t("awp_unavailable")}</span>}
@@ -141,7 +141,7 @@ const CatalogCanto = () => {
                         <p className="product-card__price">{t("price_on_request")}</p>
                         <div className="product-card__action-buttons">
                           {product.available ? <>
-                            <button type="button" className="product-card__btn-main" onClick={(event) => { event.stopPropagation(); navigate("/information"); }}>{t("btn_more")}</button>
+                            <button type="button" className="product-card__btn-main" onClick={(event) => { event.stopPropagation(); navigate(`/information/${product.id}`); }}>{t("btn_more")}</button>
                             <button type="button" className="product-card__btn-secondary" onClick={(event) => { event.stopPropagation(); navigate("/contacts"); }} aria-label={t("btn_get_offer")} title={t("btn_get_offer")}>{t("btn_get_offer")}<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16" /></svg></button>
                           </> : <button type="button" className="canto-product__similar" onClick={(event) => { event.stopPropagation(); navigate("/contacts"); }}>{t("awp_request_similar")}<i className="fa-regular fa-envelope" aria-hidden="true" /></button>}
                         </div>
@@ -151,7 +151,7 @@ const CatalogCanto = () => {
                         <p className="product-card__price">{t("price_on_request")}</p>
                         <div className="product-card__actions">
                           {product.available ? <>
-                            <button type="button" className="product-card__btn-main" onClick={(event) => { event.stopPropagation(); navigate("/information"); }}>{t("btn_more")}</button>
+                            <button type="button" className="product-card__btn-main" onClick={(event) => { event.stopPropagation(); navigate(`/information/${product.id}`); }}>{t("btn_more")}</button>
                             <button type="button" className="product-card__cart cursor-pointer" onClick={(event) => { event.stopPropagation(); addToCart(product); }} aria-label={t("catalog_add_to_cart")}><svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 16 16" aria-hidden="true"><path d="M0 0h16v16H0z" fill="none" /><path fill="currentColor" d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607L1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4a2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4a2 2 0 0 0-2-2m-7 1a1 1 0 1 1 0 2a1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2a1 1 0 0 1 0-2" /></svg></button>
                             <button type="button" className="product-card__btn-secondary text-[16px]" onClick={(event) => { event.stopPropagation(); navigate("/contacts"); }} aria-label={t("btn_get_offer")} title={t("btn_get_offer")}>{t("btn_get_offer")}<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16" /></svg></button>
                           </> : <button type="button" className="canto-product__similar" onClick={(event) => { event.stopPropagation(); navigate("/contacts"); }}>{t("awp_request_similar")}<i className="fa-regular fa-envelope" aria-hidden="true" /></button>}
